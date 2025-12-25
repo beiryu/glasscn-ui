@@ -105,7 +105,7 @@ export function MobileNav({
               ))}
             </div>
           </div>
-          <div className="flex flex-col gap-4">
+          {/* <div className="flex flex-col gap-4">
             <div className="text-muted-foreground text-sm font-medium">
               Sections
             </div>
@@ -121,9 +121,18 @@ export function MobileNav({
                 )
               })}
             </div>
-          </div>
+          </div> */}
           <div className="flex flex-col gap-8">
             {tree?.children?.map((group, index) => {
+              if (group.name?.toLowerCase().includes("registry")) {
+                return null
+              }
+              if (group.name?.toLowerCase().includes("get started")) {
+                return null
+              }
+              if (group.name?.toLowerCase().includes("forms")) {
+                return null
+              }
               if (group.type === "folder") {
                 return (
                   <div key={index} className="flex flex-col gap-4">
@@ -136,6 +145,23 @@ export function MobileNav({
                           if (!showMcpDocs && item.url.includes("/mcp")) {
                             return null
                           }
+                          
+                          // Only show Accordion, Alert Dialog, and Alert for Components section
+                          if (group.name?.toLowerCase().includes("components")) {
+                            const allowedComponents = ["accordion", "alert-dialog", "alert"]
+                            const url = item.url?.toLowerCase() || ""
+                            const name = item.name?.toLowerCase() || ""
+                            const isAllowed = allowedComponents.some(allowed => {
+                              const urlMatch = url.includes(`/${allowed}`) || url.endsWith(`/${allowed}`)
+                              const nameMatch = name === allowed || 
+                                               (allowed === "alert-dialog" && name === "alert dialog")
+                              return urlMatch || nameMatch
+                            })
+                            if (!isAllowed) {
+                              return null
+                            }
+                          }
+                          
                           return (
                             <MobileLink
                               key={`${item.url}-${index}`}

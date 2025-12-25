@@ -38,7 +38,27 @@ export async function ComponentSource({
   }
 
   if (src) {
-    const file = await fs.readFile(path.join(process.cwd(), src), "utf-8")
+    // Normalize the path - remove leading slash if present
+    const normalizedSrc = src.startsWith("/") ? src.slice(1) : src
+
+    // Resolve to absolute path
+    const projectRoot = process.cwd()
+    const resolvedPath = path.resolve(projectRoot, normalizedSrc)
+
+    // Ensure the resolved path is within the project root to prevent directory traversal
+    if (!resolvedPath.startsWith(projectRoot)) {
+      console.error(`Invalid src path: ${src} - path outside project root`)
+      return null
+    }
+
+    // Restrict to apps/v4 directory for security
+    const allowedPrefix = path.join(projectRoot, "apps", "v4")
+    if (!resolvedPath.startsWith(allowedPrefix)) {
+      console.error(`Invalid src path: ${src} - must be within apps/v4`)
+      return null
+    }
+
+    const file = await fs.readFile(resolvedPath, "utf-8")
     code = file
   }
 

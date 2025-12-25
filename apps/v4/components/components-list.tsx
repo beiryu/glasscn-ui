@@ -12,8 +12,22 @@ export function ComponentsList() {
     return
   }
 
+  const allowedComponents = ["accordion", "alert-dialog", "alert"]
+  
   const list = components.children.filter(
-    (component) => component.type === "page"
+    (component) => {
+      if (component.type !== "page") return false
+      
+      const url = component.url?.toLowerCase() || ""
+      const name = component.name?.toLowerCase() || ""
+      
+      return allowedComponents.some(allowed => {
+        const urlMatch = url.includes(`/${allowed}`) || url.endsWith(`/${allowed}`)
+        const nameMatch = name === allowed || 
+                         (allowed === "alert-dialog" && name === "alert dialog")
+        return urlMatch || nameMatch
+      })
+    }
   )
 
   return (

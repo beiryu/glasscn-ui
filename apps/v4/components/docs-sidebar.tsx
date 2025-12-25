@@ -57,7 +57,7 @@ export function DocsSidebar({
     >
       <SidebarContent className="no-scrollbar overflow-x-hidden px-2">
         <div className="from-background via-background/80 to-background/50 sticky -top-1 z-10 h-8 shrink-0 bg-gradient-to-b blur-xs" />
-        <SidebarGroup>
+        {/* <SidebarGroup>
           <SidebarGroupLabel className="text-muted-foreground font-medium">
             Sections
           </SidebarGroupLabel>
@@ -88,9 +88,18 @@ export function DocsSidebar({
               })}
             </SidebarMenu>
           </SidebarGroupContent>
-        </SidebarGroup>
+        </SidebarGroup> */}
         {tree.children.map((item) => {
           if (EXCLUDED_SECTIONS.includes(item.$id ?? "")) {
+            return null
+          }
+          if (item.name?.toLowerCase().includes("registry")) {
+            return null
+          }
+          if (item.name?.toLowerCase().includes("get started")) {
+            return null
+          }
+          if (item.name?.toLowerCase().includes("forms")) {
             return null
           }
 
@@ -111,8 +120,19 @@ export function DocsSidebar({
                         return null
                       }
 
+                      // Only show Accordion, Alert Dialog, and Alert
+                      const allowedComponents = ["accordion", "alert-dialog", "alert"]
+                      const url = item.url?.toLowerCase() || ""
+                      const name = item.name?.toLowerCase() || ""
+                      const isAllowed = item.type === "page" && allowedComponents.some(allowed => {
+                        const urlMatch = url.includes(`/${allowed}`) || url.endsWith(`/${allowed}`)
+                        const nameMatch = name === allowed || 
+                                         (allowed === "alert-dialog" && name === "alert dialog")
+                        return urlMatch || nameMatch
+                      })
+
                       return (
-                        item.type === "page" &&
+                        isAllowed &&
                         !EXCLUDED_PAGES.includes(item.url) && (
                           <SidebarMenuItem key={item.url}>
                             <SidebarMenuButton

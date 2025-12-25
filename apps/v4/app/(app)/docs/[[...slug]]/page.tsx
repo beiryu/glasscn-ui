@@ -22,6 +22,22 @@ export const revalidate = false
 export const dynamic = "force-static"
 export const dynamicParams = false
 
+const ALLOWED_COMPONENTS = ["accordion", "alert-dialog", "alert"]
+
+function isAllowedComponent(url: string | undefined, name: string | undefined): boolean {
+  if (!url && !name) return false
+  
+  const urlLower = url?.toLowerCase() || ""
+  const nameLower = name?.toLowerCase() || ""
+  
+  return ALLOWED_COMPONENTS.some(allowed => {
+    const urlMatch = urlLower.includes(`/${allowed}`) || urlLower.endsWith(`/${allowed}`)
+    const nameMatch = nameLower === allowed || 
+                     (allowed === "alert-dialog" && nameLower === "alert dialog")
+    return urlMatch || nameMatch
+  })
+}
+
 export function generateStaticParams() {
   return source.generateParams()
 }
@@ -85,7 +101,17 @@ export default async function Page(props: {
 
   const doc = page.data
   const MDX = doc.body
-  const neighbours = findNeighbour(source.pageTree, page.url)
+  const allNeighbours = findNeighbour(source.pageTree, page.url)
+  
+  // Filter neighbours to only include allowed components
+  const neighbours = {
+    previous: allNeighbours.previous && isAllowedComponent(allNeighbours.previous.url, allNeighbours.previous.name)
+      ? allNeighbours.previous
+      : null,
+    next: allNeighbours.next && isAllowedComponent(allNeighbours.next.url, allNeighbours.next.name)
+      ? allNeighbours.next
+      : null,
+  }
 
   const raw = await page.data.getText("raw")
   const { attributes } = fm(raw)
@@ -206,7 +232,7 @@ export default async function Page(props: {
           </div>
         ) : null}
         <div className="flex flex-1 flex-col gap-12 px-6">
-          <OpenInV0Cta />
+          {/* <OpenInV0Cta /> */}
         </div>
       </div>
     </div>

@@ -42,24 +42,24 @@ export function SiteHeader() {
           </Button>
           <MainNav items={siteConfig.navItems} className="hidden lg:flex" />
           <div className="ml-auto flex items-center gap-2 md:flex-1 md:justify-end">
-            <div className="hidden w-full flex-1 md:flex md:w-auto md:flex-none">
+            {/* <div className="hidden w-full flex-1 md:flex md:w-auto md:flex-none">
               <CommandMenu
                 tree={pageTree}
                 colors={colors}
                 navItems={siteConfig.navItems}
               />
-            </div>
+            </div> */}
             <Separator
               orientation="vertical"
               className="ml-2 hidden lg:block"
             />
-            <GitHubLink />
+            {/* <GitHubLink /> */}
             <Separator orientation="vertical" className="3xl:flex hidden" />
             <SiteConfig className="3xl:flex hidden" />
             <Separator orientation="vertical" />
             <ModeSwitcher />
             <Separator orientation="vertical" className="mr-2" />
-            <Button
+            {/* <Button
               asChild
               size="sm"
               className="hidden h-[31px] rounded-lg sm:flex"
@@ -74,7 +74,7 @@ export function SiteHeader() {
                 <HugeiconsIcon icon={PlusSignIcon} />
                 New
               </Link>
-            </Button>
+            </Button> */}
           </div>
         </div>
       </div>
