@@ -735,6 +735,19 @@
       "type": "registry:ui"
     },
     {
+      "name": "typography",
+      "dependencies": [
+        "@radix-ui/react-slot"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/ui/typography.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
       "name": "toggle",
       "dependencies": [
         "@radix-ui/react-toggle"
@@ -7250,6 +7263,71 @@
       "files": [
         {
           "path": "registry/new-york-v4/examples/typography-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "typography-custom",
+      "registryDependencies": [
+        "typography"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/typography-custom.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "typography-title",
+      "registryDependencies": [
+        "typography"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/typography-title.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "typography-subheading",
+      "registryDependencies": [
+        "typography"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/typography-subheading.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "typography-body",
+      "registryDependencies": [
+        "typography"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/typography-body.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "typography-body-small",
+      "registryDependencies": [
+        "typography"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/typography-body-small.tsx",
           "type": "registry:example"
         }
       ],

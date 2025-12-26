@@ -2399,6 +2399,61 @@ export const examples: Registry["items"] = [
     ],
   },
   {
+    name: "typography-custom",
+    type: "registry:example",
+    registryDependencies: ["typography"],
+    files: [
+      {
+        path: "examples/typography-custom.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "typography-title",
+    type: "registry:example",
+    registryDependencies: ["typography"],
+    files: [
+      {
+        path: "examples/typography-title.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "typography-subheading",
+    type: "registry:example",
+    registryDependencies: ["typography"],
+    files: [
+      {
+        path: "examples/typography-subheading.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "typography-body",
+    type: "registry:example",
+    registryDependencies: ["typography"],
+    files: [
+      {
+        path: "examples/typography-body.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "typography-body-small",
+    type: "registry:example",
+    registryDependencies: ["typography"],
+    files: [
+      {
+        path: "examples/typography-body-small.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
     name: "typography-h1",
     type: "registry:example",
     files: [

@@ -1,12 +1,8 @@
-import {
-  Geist_Mono as FontMono,
-  Geist as FontSans,
-  Inter,
-} from "next/font/google"
+import { Geist_Mono as FontMono, Inter } from "next/font/google"
 
 import { cn } from "@/lib/utils"
 
-const fontSans = FontSans({
+const fontSans = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
 })

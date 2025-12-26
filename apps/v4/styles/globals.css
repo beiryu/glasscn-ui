@@ -23,6 +23,7 @@
   --breakpoint-4xl: 2000px;
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
+  --font-inter: var(--font-inter);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -70,6 +71,11 @@
   --color-code-number: var(--code-number);
   --color-selection: var(--selection);
   --color-selection-foreground: var(--selection-foreground);
+  --color-ghostwhite: #f8f8ff;
+  --color-gray: #808080;
+  --spacing-num-280_5: 280.5px;
+  --tracking-num--0_01: -0.01em;
+  --opacity-num-0_5: 0.5;
 }
 
 :root {
@@ -170,6 +176,7 @@
     @apply overscroll-y-none scroll-smooth;
   }
   body {
+    font-family: var(--font-inter);
     font-synthesis-weight: none;
     text-rendering: optimizeLegibility;
   }
@@ -366,5 +373,31 @@
 @layer components {
   .dialog-ring {
     @apply rounded-xl border-none bg-clip-padding shadow-2xl ring-4 ring-neutral-200/80 dark:bg-neutral-900 dark:ring-neutral-800;
+  }
+}
+
+@layer utilities {
+  .font-inter {
+    font-family: var(--font-inter);
+  }
+
+  .tracking-num--0_01 {
+    letter-spacing: var(--tracking-num--0_01);
+  }
+
+  .opacity-num-0_5 {
+    opacity: var(--opacity-num-0_5);
+  }
+
+  .w-num-280_5 {
+    width: var(--spacing-num-280_5);
+  }
+
+  .text-ghostwhite {
+    color: var(--color-ghostwhite);
+  }
+
+  .bg-gray {
+    background-color: var(--color-gray);
   }
 }

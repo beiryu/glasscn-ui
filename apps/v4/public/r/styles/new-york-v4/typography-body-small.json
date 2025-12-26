@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "typography-body-small",
+  "registryDependencies": [
+    "typography"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/typography-body-small.tsx",
+      "content": "import { BodySmall } from \"@/registry/new-york-v4/ui/typography\"\n\nexport default function TypographyBodySmall() {\n  return <BodySmall>Body Small - 14px Regular</BodySmall>\n}\n\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

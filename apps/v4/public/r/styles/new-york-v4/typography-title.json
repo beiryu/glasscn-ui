@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "typography-title",
+  "registryDependencies": [
+    "typography"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/typography-title.tsx",
+      "content": "import { Title } from \"@/registry/new-york-v4/ui/typography\"\n\nexport default function TypographyTitle() {\n  return <Title>Title - 24px SemiBold</Title>\n}\n\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

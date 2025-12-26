@@ -120,8 +120,8 @@ export function DocsSidebar({
                         return null
                       }
 
-                      // Only show Accordion, Alert Dialog, and Alert
-                      const allowedComponents = ["accordion", "alert-dialog", "alert"]
+                      // Only show Accordion, Alert Dialog, Alert, and Typography
+                      const allowedComponents = ["accordion", "alert-dialog", "alert", "typography"]
                       const url = item.url?.toLowerCase() || ""
                       const name = item.name?.toLowerCase() || ""
                       const isAllowed = item.type === "page" && allowedComponents.some(allowed => {

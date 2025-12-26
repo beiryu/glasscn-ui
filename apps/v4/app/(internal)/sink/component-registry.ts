@@ -58,6 +58,7 @@ import { TextareaDemo } from "./components/textarea-demo"
 import { ToggleDemo } from "./components/toggle-demo"
 import { ToggleGroupDemo } from "./components/toggle-group-demo"
 import { TooltipDemo } from "./components/tooltip-demo"
+import { TypographyDemo } from "./components/typography-demo"
 
 type ComponentConfig = {
   name: string
@@ -407,6 +408,12 @@ export const componentRegistry: Record<string, ComponentConfig> = {
     component: TooltipDemo,
     type: "registry:ui",
     href: "/sink/tooltip",
+  },
+  typography: {
+    name: "Typography",
+    component: TypographyDemo,
+    type: "registry:ui",
+    href: "/sink/typography",
   },
   blocks: {
     name: "Forms",

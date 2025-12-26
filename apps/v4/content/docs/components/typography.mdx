@@ -1,66 +1,186 @@
 ---
 title: Typography
-description: Styles for headings, paragraphs, lists...etc
+description: Custom typography components with predefined styles for titles, subheadings, body text, and more.
 component: true
 ---
 
-We do not ship any typography styles by default. This page is an example of how you can use utility classes to style your text.
-
 <ComponentPreview
-  name="typography-demo"
-  description="A collection of typographic elements."
+  name="typography-custom"
+  description="A collection of custom typography components."
   className="[&_.preview]:!h-auto"
-  hideCode
 />
 
-## h1
+## Installation
 
-<ComponentPreview name="typography-h1" />
+<CodeTabs>
 
-## h2
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
 
-<ComponentPreview name="typography-h2" />
+```bash
+npx shadcn@latest add typography
+```
 
-## h3
+</TabsContent>
 
-<ComponentPreview name="typography-h3" />
+<TabsContent value="manual">
 
-## h4
+<Steps>
 
-<ComponentPreview name="typography-h4" />
+<Step>Install the following dependencies:</Step>
 
-## p
+```bash
+npm install @radix-ui/react-slot
+```
 
-<ComponentPreview name="typography-p" />
+<Step>Copy and paste the following code into your project.</Step>
 
-## blockquote
+<ComponentSource name="typography" title="components/ui/typography.tsx" />
 
-<ComponentPreview name="typography-blockquote" />
+<Step>Update the import paths to match your project setup.</Step>
 
-## table
+</Steps>
 
-<ComponentPreview name="typography-table" />
+</TabsContent>
 
-## list
+</CodeTabs>
 
-<ComponentPreview name="typography-list" />
+## Usage
 
-## Inline code
+```tsx showLineNumbers
+import {
+  Title,
+  Subheading,
+  Body,
+  BodySmall,
+  Typography,
+} from "@/components/ui/typography"
+```
 
-<ComponentPreview name="typography-inline-code" />
+## Examples
 
-## Lead
+### Title
 
-<ComponentPreview name="typography-lead" />
+<ComponentPreview name="typography-title" className="mb-4" />
 
-## Large
+```tsx
+<Title>Title - 24px SemiBold</Title>
+```
 
-<ComponentPreview name="typography-large" />
+### Subheading
 
-## Small
+<ComponentPreview name="typography-subheading" className="mb-4" />
 
-<ComponentPreview name="typography-small" />
+```tsx
+<Subheading>Subheading - 18px Medium</Subheading>
+```
 
-## Muted
+### Body
 
-<ComponentPreview name="typography-muted" />
+<ComponentPreview name="typography-body" className="mb-4" />
+
+```tsx
+<Body>Body - 16px Medium</Body>
+```
+
+### Body Small
+
+<ComponentPreview name="typography-body-small" className="mb-4" />
+
+```tsx
+<BodySmall>Body Small - 14px Regular</BodySmall>
+```
+
+### With Custom Colors
+
+```tsx showLineNumbers
+<Title textColor="ghostwhite">Title with Ghostwhite Color</Title>
+<Subheading textColor="muted">Subheading with Muted Color</Subheading>
+<Body textColor="ghostwhite">Body with Ghostwhite Color</Body>
+<BodySmall textColor="muted">Body Small with Muted Color</BodySmall>
+```
+
+### Custom Element
+
+You can use the `as` prop to render a different HTML element:
+
+```tsx showLineNumbers
+<Typography variant="title" as="h1">
+  Custom Title as h1
+</Typography>
+
+<Typography variant="subheading" as="h2">
+  Custom Subheading as h2
+</Typography>
+```
+
+### With Custom Classes
+
+```tsx showLineNumbers
+<Typography variant="body" className="opacity-num-0_5">
+  Body text with custom opacity
+</Typography>
+```
+
+## API Reference
+
+### Typography
+
+The main `Typography` component that accepts variant and textColor props.
+
+| Prop       | Type                                                                              | Default     |
+| ---------- | --------------------------------------------------------------------------------- | ----------- |
+| `variant`  | `"title" \| "subheading" \| "body" \| "body-small"`                             | `"body"`    |
+| `textColor`| `"default" \| "ghostwhite" \| "muted"`                                           | `"default"` |
+| `as`       | `React.ElementType`                                                               | `"p"`       |
+| `asChild`  | `boolean`                                                                         | `false`     |
+
+### Title
+
+Convenience component for title variant. Defaults to `h2` element.
+
+| Prop       | Type                                                                              | Default     |
+| ---------- | --------------------------------------------------------------------------------- | ----------- |
+| `textColor`| `"default" \| "ghostwhite" \| "muted"`                                           | `"default"` |
+| `as`       | `"h1" \| "h2" \| "h3" \| "h4" \| "h5" \| "h6"`                                   | `"h2"`      |
+
+### Subheading
+
+Convenience component for subheading variant. Defaults to `h3` element.
+
+| Prop       | Type                                                                              | Default     |
+| ---------- | --------------------------------------------------------------------------------- | ----------- |
+| `textColor`| `"default" \| "ghostwhite" \| "muted"`                                           | `"default"` |
+| `as`       | `"h1" \| "h2" \| "h3" \| "h4" \| "h5" \| "h6"`                                   | `"h3"`      |
+
+### Body
+
+Convenience component for body variant. Defaults to `p` element.
+
+| Prop       | Type                                                                              | Default     |
+| ---------- | --------------------------------------------------------------------------------- | ----------- |
+| `textColor`| `"default" \| "ghostwhite" \| "muted"`                                           | `"default"` |
+
+### BodySmall
+
+Convenience component for body-small variant. Defaults to `p` element.
+
+| Prop       | Type                                                                              | Default     |
+| ---------- | --------------------------------------------------------------------------------- | ----------- |
+| `textColor`| `"default" \| "ghostwhite" \| "muted"`                                           | `"default"` |
+
+## Typography Variants
+
+| Variant      | Font Size | Line Height | Font Weight | Use Case              |
+| ------------ | --------- | ----------- | ------------ | ---------------------- |
+| `title`      | 24px      | 28px (1.75rem) | SemiBold (600) | Main page titles, section headers |
+| `subheading` | 18px      | 26px (1.625rem) | Medium (500) | Subsection titles, card headers |
+| `body`       | 16px      | 24px (1.5rem) | Medium (500) | Main content text, paragraphs |
+| `body-small` | 14px      | 20px (1.25rem) | Regular (400) | Secondary text, captions, labels |
+
+All variants use:
+- **Font**: Inter (`font-inter`)
+- **Letter Spacing**: -0.01em (`tracking-num--0_01`)

@@ -12,7 +12,7 @@ export function ComponentsList() {
     return
   }
 
-  const allowedComponents = ["accordion", "alert-dialog", "alert"]
+  const allowedComponents = ["accordion", "alert-dialog", "alert", "typography"]
   
   const list = components.children.filter(
     (component) => {

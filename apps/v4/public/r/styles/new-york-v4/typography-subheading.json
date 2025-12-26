@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "typography-subheading",
+  "registryDependencies": [
+    "typography"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/typography-subheading.tsx",
+      "content": "import { Subheading } from \"@/registry/new-york-v4/ui/typography\"\n\nexport default function TypographySubheading() {\n  return <Subheading>Subheading - 18px Medium</Subheading>\n}\n\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}
