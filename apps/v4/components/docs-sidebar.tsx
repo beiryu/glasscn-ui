@@ -120,16 +120,40 @@ export function DocsSidebar({
                         return null
                       }
 
-                      // Only show Accordion, Alert Dialog, Alert, and Typography
-                      const allowedComponents = ["accordion", "alert-dialog", "alert", "typography"]
+                      // Only show Accordion, Alert, Typography, Checkbox, Slider, Switch, and Dialog
+                      const allowedComponents = [
+                        "accordion",
+                        "alert",
+                        "typography",
+                        "checkbox",
+                        "slider",
+                        "switch",
+                        "dialog",
+                      ]
+                      const excludedComponents = ["alert-dialog", "accordion"]
                       const url = item.url?.toLowerCase() || ""
                       const name = item.name?.toLowerCase() || ""
-                      const isAllowed = item.type === "page" && allowedComponents.some(allowed => {
-                        const urlMatch = url.includes(`/${allowed}`) || url.endsWith(`/${allowed}`)
-                        const nameMatch = name === allowed || 
-                                         (allowed === "alert-dialog" && name === "alert dialog")
+
+                      // Exclude alert-dialog explicitly
+                      const isExcluded = excludedComponents.some((excluded) => {
+                        const urlMatch =
+                          url.includes(`/${excluded}`) ||
+                          url.endsWith(`/${excluded}`)
+                        const nameMatch =
+                          name === excluded || name === "alert dialog"
                         return urlMatch || nameMatch
                       })
+
+                      const isAllowed =
+                        item.type === "page" &&
+                        !isExcluded &&
+                        allowedComponents.some((allowed) => {
+                          const urlMatch =
+                            url.includes(`/${allowed}`) ||
+                            url.endsWith(`/${allowed}`)
+                          const nameMatch = name === allowed
+                          return urlMatch || nameMatch
+                        })
 
                       return (
                         isAllowed &&

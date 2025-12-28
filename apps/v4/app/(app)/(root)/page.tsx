@@ -18,7 +18,7 @@ import { Button } from "@/registry/new-york-v4/ui/button"
 
 import { RootComponents } from "./components"
 
-const title = "Danyell Glass Design System"
+const title = "Denyell Glass Design System"
 const description =
   "A comprehensive collection of beautifully designed components, carefully crafted to help you build exceptional user interfaces. Customize, extend, and make it your own."
 

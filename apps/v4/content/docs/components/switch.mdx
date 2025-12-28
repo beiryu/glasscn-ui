@@ -2,30 +2,11 @@
 title: Switch
 description: A control that allows the user to toggle between checked and not checked.
 component: true
-links:
-  doc: https://www.radix-ui.com/docs/primitives/components/switch
-  api: https://www.radix-ui.com/docs/primitives/components/switch#api-reference
 ---
 
 <ComponentPreview name="switch-demo" description="A switch component." />
 
 ## Installation
-
-<CodeTabs>
-
-<TabsList>
-  <TabsTrigger value="cli">CLI</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
-</TabsList>
-<TabsContent value="cli">
-
-```bash
-npx shadcn@latest add switch
-```
-
-</TabsContent>
-
-<TabsContent value="manual">
 
 <Steps>
 
@@ -43,16 +24,20 @@ npm install @radix-ui/react-switch
 
 </Steps>
 
-</TabsContent>
-
-</CodeTabs>
-
 ## Usage
 
 ```tsx
 import { Switch } from "@/components/ui/switch"
 ```
 
+### Default
+
 ```tsx
 <Switch />
+```
+
+### Checked
+
+```tsx
+<Switch defaultChecked />
 ```

@@ -7,7 +7,7 @@
   "files": [
     {
       "path": "registry/new-york-v4/examples/switch-demo.tsx",
-      "content": "import { Label } from \"@/registry/new-york-v4/ui/label\"\nimport { Switch } from \"@/registry/new-york-v4/ui/switch\"\n\nexport default function SwitchDemo() {\n  return (\n    <div className=\"flex items-center space-x-2\">\n      <Switch id=\"airplane-mode\" />\n      <Label htmlFor=\"airplane-mode\">Airplane Mode</Label>\n    </div>\n  )\n}\n",
+      "content": "import { Label } from \"@/registry/new-york-v4/ui/label\"\nimport { Switch } from \"@/registry/new-york-v4/ui/switch\"\n\nexport default function SwitchDemo() {\n  return (\n    <div className=\"flex items-start gap-3.5\">\n      <div className=\"flex items-center gap-[5px]\">\n        <Switch id=\"switch-checked\" defaultChecked />\n        <Label htmlFor=\"switch-checked\" className=\"text-[15px] text-white tracking-[-0.01em]\">\n          Field\n        </Label>\n      </div>\n      <div className=\"flex items-center gap-[5px]\">\n        <Switch id=\"switch-unchecked\" />\n        <Label htmlFor=\"switch-unchecked\" className=\"text-[15px] text-white tracking-[-0.01em]\">\n          Field\n        </Label>\n      </div>\n    </div>\n  )\n}\n",
       "type": "registry:example"
     }
   ],

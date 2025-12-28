@@ -574,6 +574,28 @@ export const examples: Registry["items"] = [
     ],
   },
   {
+    name: "checkbox-hover",
+    type: "registry:example",
+    registryDependencies: ["checkbox"],
+    files: [
+      {
+        path: "examples/checkbox-hover.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "checkbox-error",
+    type: "registry:example",
+    registryDependencies: ["checkbox"],
+    files: [
+      {
+        path: "examples/checkbox-error.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
     name: "collapsible-demo",
     type: "registry:example",
     registryDependencies: ["collapsible"],

@@ -35,7 +35,40 @@ export async function getRegistryItems(
 }
 
 export async function getRegistryItem(name: string, styleName: Style["name"]) {
-  const item = Index[styleName]?.[name]
+  let item = Index[styleName]?.[name]
+
+  // In dev mode, if item not found in Index, try to load from source file directly
+  if (!item && process.env.NODE_ENV === "development") {
+    // Try to find the file in common locations
+    const possiblePaths = [
+      `registry/${styleName}/examples/${name}.tsx`,
+      `registry/${styleName}/ui/${name}.tsx`,
+      `registry/${styleName}/examples/${name}`,
+      `registry/${styleName}/ui/${name}`,
+    ]
+
+    for (const filePath of possiblePaths) {
+      try {
+        const fullPath = path.join(process.cwd(), filePath)
+        await fs.access(fullPath)
+        // File exists, create a mock item
+        const itemType = filePath.includes("/examples/")
+          ? "registry:example"
+          : "registry:ui"
+        item = {
+          name,
+          type: itemType,
+          files: [{ path: fullPath, type: itemType }],
+          registryDependencies: filePath.includes("/examples/")
+            ? ["checkbox"]
+            : undefined,
+        }
+        break
+      } catch {
+        continue
+      }
+    }
+  }
 
   if (!item) {
     return null

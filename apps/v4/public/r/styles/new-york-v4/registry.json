@@ -5025,6 +5025,32 @@
       "type": "registry:example"
     },
     {
+      "name": "checkbox-hover",
+      "registryDependencies": [
+        "checkbox"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/checkbox-hover.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "checkbox-error",
+      "registryDependencies": [
+        "checkbox"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/checkbox-error.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
       "name": "collapsible-demo",
       "registryDependencies": [
         "collapsible"

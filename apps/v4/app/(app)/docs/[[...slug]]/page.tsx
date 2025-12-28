@@ -4,18 +4,13 @@ import { mdxComponents } from "@/mdx-components"
 import {
   IconArrowLeft,
   IconArrowRight,
-  IconArrowUpRight,
 } from "@tabler/icons-react"
-import fm from "front-matter"
 import { findNeighbour } from "fumadocs-core/page-tree"
-import z from "zod"
 
 import { source } from "@/lib/source"
 import { absoluteUrl } from "@/lib/utils"
-import { DocsCopyPage } from "@/components/docs-copy-page"
 import { DocsTableOfContents } from "@/components/docs-toc"
 import { OpenInV0Cta } from "@/components/open-in-v0-cta"
-import { Badge } from "@/registry/new-york-v4/ui/badge"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
 export const revalidate = false
@@ -24,16 +19,21 @@ export const dynamicParams = false
 
 const ALLOWED_COMPONENTS = ["accordion", "alert-dialog", "alert"]
 
-function isAllowedComponent(url: string | undefined, name: string | undefined): boolean {
+function isAllowedComponent(
+  url: string | undefined,
+  name: string | undefined
+): boolean {
   if (!url && !name) return false
-  
+
   const urlLower = url?.toLowerCase() || ""
   const nameLower = name?.toLowerCase() || ""
-  
-  return ALLOWED_COMPONENTS.some(allowed => {
-    const urlMatch = urlLower.includes(`/${allowed}`) || urlLower.endsWith(`/${allowed}`)
-    const nameMatch = nameLower === allowed || 
-                     (allowed === "alert-dialog" && nameLower === "alert dialog")
+
+  return ALLOWED_COMPONENTS.some((allowed) => {
+    const urlMatch =
+      urlLower.includes(`/${allowed}`) || urlLower.endsWith(`/${allowed}`)
+    const nameMatch =
+      nameLower === allowed ||
+      (allowed === "alert-dialog" && nameLower === "alert dialog")
     return urlMatch || nameMatch
   })
 }
@@ -102,29 +102,24 @@ export default async function Page(props: {
   const doc = page.data
   const MDX = doc.body
   const allNeighbours = findNeighbour(source.pageTree, page.url)
-  
+
   // Filter neighbours to only include allowed components
   const neighbours = {
-    previous: allNeighbours.previous && isAllowedComponent(allNeighbours.previous.url, allNeighbours.previous.name)
-      ? allNeighbours.previous
-      : null,
-    next: allNeighbours.next && isAllowedComponent(allNeighbours.next.url, allNeighbours.next.name)
-      ? allNeighbours.next
-      : null,
+    previous:
+      allNeighbours.previous &&
+      isAllowedComponent(
+        allNeighbours.previous.url,
+        allNeighbours.previous.name
+      )
+        ? allNeighbours.previous
+        : null,
+    next:
+      allNeighbours.next &&
+      isAllowedComponent(allNeighbours.next.url, allNeighbours.next.name)
+        ? allNeighbours.next
+        : null,
   }
 
-  const raw = await page.data.getText("raw")
-  const { attributes } = fm(raw)
-  const { links } = z
-    .object({
-      links: z
-        .object({
-          doc: z.string().optional(),
-          api: z.string().optional(),
-        })
-        .optional(),
-    })
-    .parse(attributes)
 
   return (
     <div className="flex items-stretch text-[1.05rem] sm:text-[15px] xl:w-full">
@@ -138,7 +133,6 @@ export default async function Page(props: {
                   {doc.title}
                 </h1>
                 <div className="docs-nav bg-background/80 border-border/50 fixed inset-x-0 bottom-0 isolate z-50 flex items-center gap-2 border-t px-6 py-4 backdrop-blur-sm sm:static sm:z-0 sm:border-t-0 sm:bg-transparent sm:px-0 sm:pt-1.5 sm:backdrop-blur-none">
-                  <DocsCopyPage page={raw} url={absoluteUrl(page.url)} />
                   {neighbours.previous && (
                     <Button
                       variant="secondary"
@@ -173,24 +167,6 @@ export default async function Page(props: {
                 </p>
               )}
             </div>
-            {links ? (
-              <div className="flex items-center gap-2 pt-4">
-                {links?.doc && (
-                  <Badge asChild variant="secondary" className="rounded-full">
-                    <a href={links.doc} target="_blank" rel="noreferrer">
-                      Docs <IconArrowUpRight />
-                    </a>
-                  </Badge>
-                )}
-                {links?.api && (
-                  <Badge asChild variant="secondary" className="rounded-full">
-                    <a href={links.api} target="_blank" rel="noreferrer">
-                      API Reference <IconArrowUpRight />
-                    </a>
-                  </Badge>
-                )}
-              </div>
-            ) : null}
           </div>
           <div className="w-full flex-1 *:data-[slot=alert]:first:mt-0">
             <MDX components={mdxComponents} />

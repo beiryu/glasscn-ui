@@ -7,7 +7,7 @@
   "files": [
     {
       "path": "registry/new-york-v4/examples/typography-subheading.tsx",
-      "content": "import { Subheading } from \"@/registry/new-york-v4/ui/typography\"\n\nexport default function TypographySubheading() {\n  return <Subheading>Subheading - 18px Medium</Subheading>\n}\n\n",
+      "content": "import { Subheading } from \"@/registry/new-york-v4/ui/typography\"\n\nexport default function TypographySubheading() {\n  return <Subheading>Subheading - 18px Medium</Subheading>\n}\n",
       "type": "registry:example"
     }
   ],

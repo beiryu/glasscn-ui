@@ -9,42 +9,42 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/registry/new-york-v4/ui/dialog"
-import { Input } from "@/registry/new-york-v4/ui/input"
-import { Label } from "@/registry/new-york-v4/ui/label"
 
 export default function DialogDemo() {
   return (
     <Dialog>
-      <form>
-        <DialogTrigger asChild>
-          <Button variant="outline">Open Dialog</Button>
-        </DialogTrigger>
-        <DialogContent className="sm:max-w-[425px]">
+      <DialogTrigger asChild>
+        <Button variant="outline">Open Dialog</Button>
+      </DialogTrigger>
+      <DialogContent className="w-[420px]">
+        <div className="flex flex-col items-start gap-4">
           <DialogHeader>
-            <DialogTitle>Edit profile</DialogTitle>
+            <DialogTitle>Erase draft?</DialogTitle>
             <DialogDescription>
-              Make changes to your profile here. Click save when you&apos;re
-              done.
+              This will permanently delete the current draft.
             </DialogDescription>
           </DialogHeader>
-          <div className="grid gap-4">
-            <div className="grid gap-3">
-              <Label htmlFor="name-1">Name</Label>
-              <Input id="name-1" name="name" defaultValue="Pedro Duarte" />
+          <DialogFooter className="w-full">
+            <div className="flex flex-1 items-start justify-end gap-2">
+              <DialogClose asChild>
+                <Button
+                  variant="destructive"
+                  className="w-[110.5px] gap-1.5 rounded-xl border border-[rgba(171,171,171,0.4)] px-[15px] py-[7.5px] text-[14.3px] leading-[120%] tracking-[-0.02em] capitalize [text-shadow:0px_0.5957661271095276px_0px_rgba(171,171,171,0.25)]"
+                >
+                  Cancel
+                </Button>
+              </DialogClose>
+              <Button
+                type="button"
+                variant="default"
+                className="w-[110.5px] gap-1.5 rounded-xl border border-[rgba(171,171,171,0.4)] px-[15px] py-[7.5px] text-[14.3px] leading-[120%] tracking-[-0.02em] text-[#045d14] capitalize [text-shadow:0px_0.5957661271095276px_0px_rgba(171,171,171,0.25)]"
+              >
+                Approve
+              </Button>
             </div>
-            <div className="grid gap-3">
-              <Label htmlFor="username-1">Username</Label>
-              <Input id="username-1" name="username" defaultValue="@peduarte" />
-            </div>
-          </div>
-          <DialogFooter>
-            <DialogClose asChild>
-              <Button variant="outline">Cancel</Button>
-            </DialogClose>
-            <Button type="submit">Save changes</Button>
           </DialogFooter>
-        </DialogContent>
-      </form>
+        </div>
+      </DialogContent>
     </Dialog>
   )
 }

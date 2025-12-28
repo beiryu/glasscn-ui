@@ -31,11 +31,11 @@ export function ComponentPreviewTabs({
         <div
           data-align={align}
           className={cn(
-            "preview flex w-full justify-center data-[align=center]:items-center data-[align=end]:items-end data-[align=start]:items-start",
-            chromeLessOnMobile ? "sm:p-10" : "h-[450px] p-10"
+            "preview flex w-full justify-center items-center data-[align=center]:items-center data-[align=end]:items-end data-[align=start]:items-start",
+            chromeLessOnMobile ? "sm:p-10" : "min-h-[600px] h-[600px] p-10"
           )}
         >
-          {component}
+          <div className="mx-auto">{component}</div>
         </div>
         {!hideCode && (
           <div

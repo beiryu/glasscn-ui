@@ -12,22 +12,6 @@ component: true
 
 ## Installation
 
-<CodeTabs>
-
-<TabsList>
-  <TabsTrigger value="cli">CLI</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
-</TabsList>
-<TabsContent value="cli">
-
-```bash
-npx shadcn@latest add typography
-```
-
-</TabsContent>
-
-<TabsContent value="manual">
-
 <Steps>
 
 <Step>Install the following dependencies:</Step>
@@ -44,18 +28,14 @@ npm install @radix-ui/react-slot
 
 </Steps>
 
-</TabsContent>
-
-</CodeTabs>
-
 ## Usage
 
 ```tsx showLineNumbers
 import {
-  Title,
-  Subheading,
   Body,
   BodySmall,
+  Subheading,
+  Title,
   Typography,
 } from "@/components/ui/typography"
 ```
@@ -131,56 +111,57 @@ You can use the `as` prop to render a different HTML element:
 
 The main `Typography` component that accepts variant and textColor props.
 
-| Prop       | Type                                                                              | Default     |
-| ---------- | --------------------------------------------------------------------------------- | ----------- |
-| `variant`  | `"title" \| "subheading" \| "body" \| "body-small"`                             | `"body"`    |
-| `textColor`| `"default" \| "ghostwhite" \| "muted"`                                           | `"default"` |
-| `as`       | `React.ElementType`                                                               | `"p"`       |
-| `asChild`  | `boolean`                                                                         | `false`     |
+| Prop        | Type                                                | Default     |
+| ----------- | --------------------------------------------------- | ----------- |
+| `variant`   | `"title" \| "subheading" \| "body" \| "body-small"` | `"body"`    |
+| `textColor` | `"default" \| "ghostwhite" \| "muted"`              | `"default"` |
+| `as`        | `React.ElementType`                                 | `"p"`       |
+| `asChild`   | `boolean`                                           | `false`     |
 
 ### Title
 
 Convenience component for title variant. Defaults to `h2` element.
 
-| Prop       | Type                                                                              | Default     |
-| ---------- | --------------------------------------------------------------------------------- | ----------- |
-| `textColor`| `"default" \| "ghostwhite" \| "muted"`                                           | `"default"` |
-| `as`       | `"h1" \| "h2" \| "h3" \| "h4" \| "h5" \| "h6"`                                   | `"h2"`      |
+| Prop        | Type                                           | Default     |
+| ----------- | ---------------------------------------------- | ----------- |
+| `textColor` | `"default" \| "ghostwhite" \| "muted"`         | `"default"` |
+| `as`        | `"h1" \| "h2" \| "h3" \| "h4" \| "h5" \| "h6"` | `"h2"`      |
 
 ### Subheading
 
 Convenience component for subheading variant. Defaults to `h3` element.
 
-| Prop       | Type                                                                              | Default     |
-| ---------- | --------------------------------------------------------------------------------- | ----------- |
-| `textColor`| `"default" \| "ghostwhite" \| "muted"`                                           | `"default"` |
-| `as`       | `"h1" \| "h2" \| "h3" \| "h4" \| "h5" \| "h6"`                                   | `"h3"`      |
+| Prop        | Type                                           | Default     |
+| ----------- | ---------------------------------------------- | ----------- |
+| `textColor` | `"default" \| "ghostwhite" \| "muted"`         | `"default"` |
+| `as`        | `"h1" \| "h2" \| "h3" \| "h4" \| "h5" \| "h6"` | `"h3"`      |
 
 ### Body
 
 Convenience component for body variant. Defaults to `p` element.
 
-| Prop       | Type                                                                              | Default     |
-| ---------- | --------------------------------------------------------------------------------- | ----------- |
-| `textColor`| `"default" \| "ghostwhite" \| "muted"`                                           | `"default"` |
+| Prop        | Type                                   | Default     |
+| ----------- | -------------------------------------- | ----------- |
+| `textColor` | `"default" \| "ghostwhite" \| "muted"` | `"default"` |
 
 ### BodySmall
 
 Convenience component for body-small variant. Defaults to `p` element.
 
-| Prop       | Type                                                                              | Default     |
-| ---------- | --------------------------------------------------------------------------------- | ----------- |
-| `textColor`| `"default" \| "ghostwhite" \| "muted"`                                           | `"default"` |
+| Prop        | Type                                   | Default     |
+| ----------- | -------------------------------------- | ----------- |
+| `textColor` | `"default" \| "ghostwhite" \| "muted"` | `"default"` |
 
 ## Typography Variants
 
-| Variant      | Font Size | Line Height | Font Weight | Use Case              |
-| ------------ | --------- | ----------- | ------------ | ---------------------- |
-| `title`      | 24px      | 28px (1.75rem) | SemiBold (600) | Main page titles, section headers |
-| `subheading` | 18px      | 26px (1.625rem) | Medium (500) | Subsection titles, card headers |
-| `body`       | 16px      | 24px (1.5rem) | Medium (500) | Main content text, paragraphs |
-| `body-small` | 14px      | 20px (1.25rem) | Regular (400) | Secondary text, captions, labels |
+| Variant      | Font Size | Line Height     | Font Weight    | Use Case                          |
+| ------------ | --------- | --------------- | -------------- | --------------------------------- |
+| `title`      | 24px      | 28px (1.75rem)  | SemiBold (600) | Main page titles, section headers |
+| `subheading` | 18px      | 26px (1.625rem) | Medium (500)   | Subsection titles, card headers   |
+| `body`       | 16px      | 24px (1.5rem)   | Medium (500)   | Main content text, paragraphs     |
+| `body-small` | 14px      | 20px (1.25rem)  | Regular (400)  | Secondary text, captions, labels  |
 
 All variants use:
+
 - **Font**: Inter (`font-inter`)
 - **Letter Spacing**: -0.01em (`tracking-num--0_01`)

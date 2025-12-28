@@ -12,23 +12,32 @@ export function ComponentsList() {
     return
   }
 
-  const allowedComponents = ["accordion", "alert-dialog", "alert", "typography"]
-  
-  const list = components.children.filter(
-    (component) => {
-      if (component.type !== "page") return false
-      
-      const url = component.url?.toLowerCase() || ""
-      const name = component.name?.toLowerCase() || ""
-      
-      return allowedComponents.some(allowed => {
-        const urlMatch = url.includes(`/${allowed}`) || url.endsWith(`/${allowed}`)
-        const nameMatch = name === allowed || 
-                         (allowed === "alert-dialog" && name === "alert dialog")
-        return urlMatch || nameMatch
-      })
-    }
-  )
+  const allowedComponents = ["accordion", "alert", "typography", "checkbox", "slider", "switch", "dialog"]
+  const excludedComponents = ["alert-dialog", "accordion"]
+
+  const list = components.children.filter((component) => {
+    if (component.type !== "page") return false
+
+    const url = component.url?.toLowerCase() || ""
+    const name = component.name?.toLowerCase() || ""
+
+    // Exclude alert-dialog explicitly
+    const isExcluded = excludedComponents.some((excluded) => {
+      const urlMatch =
+        url.includes(`/${excluded}`) || url.endsWith(`/${excluded}`)
+      const nameMatch = name === excluded || name === "alert dialog"
+      return urlMatch || nameMatch
+    })
+
+    if (isExcluded) return false
+
+    return allowedComponents.some((allowed) => {
+      const urlMatch =
+        url.includes(`/${allowed}`) || url.endsWith(`/${allowed}`)
+      const nameMatch = name === allowed
+      return urlMatch || nameMatch
+    })
+  })
 
   return (
     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 md:gap-x-8 lg:gap-x-16 lg:gap-y-6 xl:gap-x-20">

@@ -4,18 +4,34 @@ import { Checkbox } from "@/registry/new-york-v4/ui/checkbox"
 
 export default function CheckboxWithText() {
   return (
-    <div className="items-top flex gap-2">
-      <Checkbox id="terms1" />
-      <div className="grid gap-1.5 leading-none">
-        <label
-          htmlFor="terms1"
-          className="text-sm leading-none font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-        >
-          Accept terms and conditions
-        </label>
-        <p className="text-muted-foreground text-sm">
-          You agree to our Terms of Service and Privacy Policy.
-        </p>
+    <div className="flex flex-col gap-6">
+      <div className="items-top flex gap-2">
+        <Checkbox id="terms1" />
+        <div className="grid gap-1.5 leading-none">
+          <label
+            htmlFor="terms1"
+            className="text-sm leading-none font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+          >
+            Accept terms and conditions
+          </label>
+          <p className="text-muted-foreground text-sm">
+            You agree to our Terms of Service and Privacy Policy.
+          </p>
+        </div>
+      </div>
+      <div className="items-top flex gap-2">
+        <Checkbox id="terms1-circular" variant="circular" />
+        <div className="grid gap-1.5 leading-none">
+          <label
+            htmlFor="terms1-circular"
+            className="text-sm leading-none font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+          >
+            Circular checkbox with text
+          </label>
+          <p className="text-muted-foreground text-sm">
+            You agree to our Terms of Service and Privacy Policy.
+          </p>
+        </div>
       </div>
     </div>
   )

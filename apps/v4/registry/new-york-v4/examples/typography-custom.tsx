@@ -1,4 +1,10 @@
-import { Title, Subheading, Body, BodySmall, Typography } from "@/registry/new-york-v4/ui/typography"
+import {
+  Body,
+  BodySmall,
+  Subheading,
+  Title,
+  Typography,
+} from "@/registry/new-york-v4/ui/typography"
 
 export default function TypographyCustom() {
   return (
@@ -31,4 +37,3 @@ export default function TypographyCustom() {
     </div>
   )
 }
-

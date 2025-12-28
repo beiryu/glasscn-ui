@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "checkbox-hover",
+  "registryDependencies": [
+    "checkbox"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/checkbox-hover.tsx",
+      "content": "\"use client\"\n\nimport { Checkbox } from \"@/registry/new-york-v4/ui/checkbox\"\nimport { Label } from \"@/registry/new-york-v4/ui/label\"\n\nexport default function CheckboxHover() {\n  return (\n    <div className=\"flex flex-col gap-6\">\n      <div className=\"flex items-center gap-3\">\n        <Checkbox id=\"hover-unchecked\" />\n        <Label htmlFor=\"hover-unchecked\">Hover over this checkbox</Label>\n      </div>\n      <div className=\"flex items-center gap-3\">\n        <Checkbox id=\"hover-checked\" defaultChecked />\n        <Label htmlFor=\"hover-checked\">Hover over checked checkbox</Label>\n      </div>\n      <div className=\"flex items-center gap-3\">\n        <Checkbox id=\"hover-circular\" variant=\"circular\" />\n        <Label htmlFor=\"hover-circular\">Circular checkbox</Label>\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

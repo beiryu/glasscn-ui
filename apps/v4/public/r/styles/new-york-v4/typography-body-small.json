@@ -7,7 +7,7 @@
   "files": [
     {
       "path": "registry/new-york-v4/examples/typography-body-small.tsx",
-      "content": "import { BodySmall } from \"@/registry/new-york-v4/ui/typography\"\n\nexport default function TypographyBodySmall() {\n  return <BodySmall>Body Small - 14px Regular</BodySmall>\n}\n\n",
+      "content": "import { BodySmall } from \"@/registry/new-york-v4/ui/typography\"\n\nexport default function TypographyBodySmall() {\n  return <BodySmall>Body Small - 14px Regular</BodySmall>\n}\n",
       "type": "registry:example"
     }
   ],

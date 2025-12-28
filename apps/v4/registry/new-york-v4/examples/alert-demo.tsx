@@ -1,4 +1,4 @@
-import { AlertCircleIcon, CheckCircle2Icon, PopcornIcon } from "lucide-react"
+import { AlertCircleIcon, CheckCircle2Icon } from "lucide-react"
 
 import {
   Alert,
@@ -8,31 +8,36 @@ import {
 
 export default function AlertDemo() {
   return (
-    <div className="grid w-full max-w-xl items-start gap-4">
-      <Alert>
+    <div className="flex w-full flex-col flex-wrap content-start items-start gap-6">
+      <Alert variant="success">
         <CheckCircle2Icon />
-        <AlertTitle>Success! Your changes have been saved</AlertTitle>
-        <AlertDescription>
-          This is an alert with icon, title and description.
-        </AlertDescription>
-      </Alert>
-      <Alert>
-        <PopcornIcon />
-        <AlertTitle>
-          This Alert has a title and an icon. No description.
-        </AlertTitle>
+        <div className="flex flex-1 flex-col items-start">
+          <AlertTitle>Changes have been saved</AlertTitle>
+        </div>
       </Alert>
       <Alert variant="destructive">
         <AlertCircleIcon />
-        <AlertTitle>Unable to process your payment.</AlertTitle>
-        <AlertDescription>
-          <p>Please verify your billing information and try again.</p>
-          <ul className="list-inside list-disc text-sm">
-            <li>Check your card details</li>
-            <li>Ensure sufficient funds</li>
-            <li>Verify billing address</li>
-          </ul>
-        </AlertDescription>
+        <div className="flex flex-1 flex-col items-start gap-px">
+          <AlertTitle>Please fill required fields</AlertTitle>
+          <AlertDescription>
+            Some fields are missing or invalid.
+          </AlertDescription>
+        </div>
+      </Alert>
+      <Alert variant="destructive">
+        <AlertCircleIcon />
+        <div className="flex flex-1 flex-col items-start">
+          <AlertTitle>Error! Could not connect</AlertTitle>
+        </div>
+      </Alert>
+      <Alert variant="default">
+        <CheckCircle2Icon />
+        <div className="flex flex-1 flex-col items-start gap-px">
+          <AlertTitle>Profile updated</AlertTitle>
+          <AlertDescription>
+            Your settings have been updated successfully.
+          </AlertDescription>
+        </div>
       </Alert>
     </div>
   )

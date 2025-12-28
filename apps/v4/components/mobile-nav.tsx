@@ -145,23 +145,35 @@ export function MobileNav({
                           if (!showMcpDocs && item.url.includes("/mcp")) {
                             return null
                           }
-                          
+
                           // Only show Accordion, Alert Dialog, and Alert for Components section
-                          if (group.name?.toLowerCase().includes("components")) {
-                            const allowedComponents = ["accordion", "alert-dialog", "alert"]
+                          if (
+                            group.name?.toLowerCase().includes("components")
+                          ) {
+                            const allowedComponents = [
+                              "accordion",
+                              "alert-dialog",
+                              "alert",
+                            ]
                             const url = item.url?.toLowerCase() || ""
                             const name = item.name?.toLowerCase() || ""
-                            const isAllowed = allowedComponents.some(allowed => {
-                              const urlMatch = url.includes(`/${allowed}`) || url.endsWith(`/${allowed}`)
-                              const nameMatch = name === allowed || 
-                                               (allowed === "alert-dialog" && name === "alert dialog")
-                              return urlMatch || nameMatch
-                            })
+                            const isAllowed = allowedComponents.some(
+                              (allowed) => {
+                                const urlMatch =
+                                  url.includes(`/${allowed}`) ||
+                                  url.endsWith(`/${allowed}`)
+                                const nameMatch =
+                                  name === allowed ||
+                                  (allowed === "alert-dialog" &&
+                                    name === "alert dialog")
+                                return urlMatch || nameMatch
+                              }
+                            )
                             if (!isAllowed) {
                               return null
                             }
                           }
-                          
+
                           return (
                             <MobileLink
                               key={`${item.url}-${index}`}

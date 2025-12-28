@@ -4946,6 +4946,44 @@ export const Index: Record<string, Record<string, any>> = {
       categories: undefined,
       meta: undefined,
     },
+    "checkbox-hover": {
+      name: "checkbox-hover",
+      title: "undefined",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["checkbox"],
+      files: [{
+        path: "registry/new-york-v4/examples/checkbox-hover.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/examples/checkbox-hover.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: undefined,
+      meta: undefined,
+    },
+    "checkbox-error": {
+      name: "checkbox-error",
+      title: "undefined",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["checkbox"],
+      files: [{
+        path: "registry/new-york-v4/examples/checkbox-error.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/examples/checkbox-error.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: undefined,
+      meta: undefined,
+    },
     "collapsible-demo": {
       name: "collapsible-demo",
       title: "undefined",

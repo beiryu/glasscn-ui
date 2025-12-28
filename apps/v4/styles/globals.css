@@ -397,6 +397,78 @@
     color: var(--color-ghostwhite);
   }
 
+  /* Custom checkbox gradient for checked state */
+  [data-slot="checkbox"][data-state="checked"] {
+    background:
+      linear-gradient(180deg, rgba(93, 113, 249, 0), rgba(24, 127, 245, 0.8)),
+      #5dcdf9 !important;
+  }
+
+  /* Custom checkbox gradient for error checked state */
+  [data-slot="checkbox"][data-state="checked"][aria-invalid="true"] {
+    background: linear-gradient(180deg, #ef4444 27.48%, #d60808) !important;
+  }
+
+  /* Custom slider range gradient */
+  [data-slot="slider-range"] {
+    background:
+      linear-gradient(180deg, rgba(143, 252, 206, 0), rgba(68, 222, 106, 0.8)),
+      #67f95d !important;
+  }
+
+  /* Custom slider thumb gradient */
+  [data-slot="slider-thumb"] {
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0)),
+      linear-gradient(180deg, rgba(143, 252, 206, 0), rgba(68, 222, 106, 0.8)),
+      #67f95d !important;
+  }
+
+  /* Custom switch checked state gradient */
+  [data-slot="switch"][data-state="checked"] {
+    background: linear-gradient(270deg, #67f95d, #1dac13) !important;
+  }
+
+  /* Custom switch unchecked state background */
+  [data-slot="switch"][data-state="unchecked"] {
+    background:
+      linear-gradient(#e2e8f0, #e2e8f0), rgba(60, 60, 67, 0.3) !important;
+  }
+
+  /* Custom alert success variant gradient */
+  [data-slot="alert"][data-variant="success"] {
+    background:
+      linear-gradient(180deg, rgba(184, 255, 160, 0), rgba(184, 255, 160, 0.8)),
+      #e3ffda !important;
+  }
+
+  /* Custom alert destructive variant gradient */
+  [data-slot="alert"][data-variant="destructive"] {
+    background:
+      linear-gradient(180deg, rgba(255, 160, 162, 0), rgba(255, 160, 162, 0.8)),
+      #ffdadb !important;
+  }
+
+  /* Custom alert default variant gradient */
+  [data-slot="alert"][data-variant="default"] {
+    background:
+      linear-gradient(180deg, rgba(238, 238, 238, 0), rgba(238, 238, 238, 0.5)),
+      rgba(238, 238, 238, 0.1) !important;
+  }
+
+  /* Custom dialog button gradients */
+  [data-slot="dialog-footer"] [data-slot="button"][data-variant="destructive"] {
+    background:
+      linear-gradient(180deg, rgba(249, 142, 93, 0), rgba(245, 24, 28, 0.8)),
+      #f95d86 !important;
+  }
+
+  [data-slot="dialog-footer"] [data-slot="button"][data-variant="default"] {
+    background:
+      linear-gradient(180deg, rgba(93, 249, 173, 0), rgba(24, 245, 65, 0.8)),
+      #67f95d !important;
+  }
+
   .bg-gray {
     background-color: var(--color-gray);
   }

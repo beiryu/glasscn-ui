@@ -1,8 +1,8 @@
 import {
-  Title,
-  Subheading,
   Body,
   BodySmall,
+  Subheading,
+  Title,
   Typography,
 } from "@/registry/new-york-v4/ui/typography"
 
@@ -41,9 +41,7 @@ export function TypographyDemo() {
       <div className="space-y-4">
         <div>
           <Title>Example Usage</Title>
-          <Subheading className="mt-2">
-            List of all your creators
-          </Subheading>
+          <Subheading className="mt-2">List of all your creators</Subheading>
           <Body className="mt-4">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -57,4 +55,3 @@ export function TypographyDemo() {
     </div>
   )
 }
-
