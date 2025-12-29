@@ -2,19 +2,12 @@ import Link from "next/link"
 
 import {
   Breadcrumb,
-  BreadcrumbEllipsis,
   BreadcrumbItem,
   BreadcrumbLink,
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/registry/new-york-v4/ui/breadcrumb"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/registry/new-york-v4/ui/dropdown-menu"
 
 export default function BreadcrumbDemo() {
   return (
@@ -27,27 +20,13 @@ export default function BreadcrumbDemo() {
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>
-          <DropdownMenu>
-            <DropdownMenuTrigger className="flex items-center gap-1">
-              <BreadcrumbEllipsis className="size-4" />
-              <span className="sr-only">Toggle menu</span>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="start">
-              <DropdownMenuItem>Documentation</DropdownMenuItem>
-              <DropdownMenuItem>Themes</DropdownMenuItem>
-              <DropdownMenuItem>GitHub</DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
-        </BreadcrumbItem>
-        <BreadcrumbSeparator />
-        <BreadcrumbItem>
           <BreadcrumbLink asChild>
-            <Link href="/docs/components">Components</Link>
+            <Link href="/page">Page</Link>
           </BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>
-          <BreadcrumbPage>Breadcrumb</BreadcrumbPage>
+          <BreadcrumbPage>Active page</BreadcrumbPage>
         </BreadcrumbItem>
       </BreadcrumbList>
     </Breadcrumb>

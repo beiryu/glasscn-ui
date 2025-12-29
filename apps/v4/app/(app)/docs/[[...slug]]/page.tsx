@@ -1,42 +1,14 @@
-import Link from "next/link"
 import { notFound } from "next/navigation"
 import { mdxComponents } from "@/mdx-components"
-import {
-  IconArrowLeft,
-  IconArrowRight,
-} from "@tabler/icons-react"
-import { findNeighbour } from "fumadocs-core/page-tree"
 
 import { source } from "@/lib/source"
 import { absoluteUrl } from "@/lib/utils"
 import { DocsTableOfContents } from "@/components/docs-toc"
 import { OpenInV0Cta } from "@/components/open-in-v0-cta"
-import { Button } from "@/registry/new-york-v4/ui/button"
 
 export const revalidate = false
 export const dynamic = "force-static"
 export const dynamicParams = false
-
-const ALLOWED_COMPONENTS = ["accordion", "alert-dialog", "alert"]
-
-function isAllowedComponent(
-  url: string | undefined,
-  name: string | undefined
-): boolean {
-  if (!url && !name) return false
-
-  const urlLower = url?.toLowerCase() || ""
-  const nameLower = name?.toLowerCase() || ""
-
-  return ALLOWED_COMPONENTS.some((allowed) => {
-    const urlMatch =
-      urlLower.includes(`/${allowed}`) || urlLower.endsWith(`/${allowed}`)
-    const nameMatch =
-      nameLower === allowed ||
-      (allowed === "alert-dialog" && nameLower === "alert dialog")
-    return urlMatch || nameMatch
-  })
-}
 
 export function generateStaticParams() {
   return source.generateParams()
@@ -101,25 +73,6 @@ export default async function Page(props: {
 
   const doc = page.data
   const MDX = doc.body
-  const allNeighbours = findNeighbour(source.pageTree, page.url)
-
-  // Filter neighbours to only include allowed components
-  const neighbours = {
-    previous:
-      allNeighbours.previous &&
-      isAllowedComponent(
-        allNeighbours.previous.url,
-        allNeighbours.previous.name
-      )
-        ? allNeighbours.previous
-        : null,
-    next:
-      allNeighbours.next &&
-      isAllowedComponent(allNeighbours.next.url, allNeighbours.next.name)
-        ? allNeighbours.next
-        : null,
-  }
-
 
   return (
     <div className="flex items-stretch text-[1.05rem] sm:text-[15px] xl:w-full">
@@ -132,34 +85,6 @@ export default async function Page(props: {
                 <h1 className="scroll-m-20 text-4xl font-semibold tracking-tight sm:text-3xl xl:text-4xl">
                   {doc.title}
                 </h1>
-                <div className="docs-nav bg-background/80 border-border/50 fixed inset-x-0 bottom-0 isolate z-50 flex items-center gap-2 border-t px-6 py-4 backdrop-blur-sm sm:static sm:z-0 sm:border-t-0 sm:bg-transparent sm:px-0 sm:pt-1.5 sm:backdrop-blur-none">
-                  {neighbours.previous && (
-                    <Button
-                      variant="secondary"
-                      size="icon"
-                      className="extend-touch-target ml-auto size-8 shadow-none md:size-7"
-                      asChild
-                    >
-                      <Link href={neighbours.previous.url}>
-                        <IconArrowLeft />
-                        <span className="sr-only">Previous</span>
-                      </Link>
-                    </Button>
-                  )}
-                  {neighbours.next && (
-                    <Button
-                      variant="secondary"
-                      size="icon"
-                      className="extend-touch-target size-8 shadow-none md:size-7"
-                      asChild
-                    >
-                      <Link href={neighbours.next.url}>
-                        <span className="sr-only">Next</span>
-                        <IconArrowRight />
-                      </Link>
-                    </Button>
-                  )}
-                </div>
               </div>
               {doc.description && (
                 <p className="text-muted-foreground text-[1.05rem] text-balance sm:text-base">
@@ -171,32 +96,6 @@ export default async function Page(props: {
           <div className="w-full flex-1 *:data-[slot=alert]:first:mt-0">
             <MDX components={mdxComponents} />
           </div>
-        </div>
-        <div className="mx-auto hidden h-16 w-full max-w-2xl items-center gap-2 px-4 sm:flex md:px-0">
-          {neighbours.previous && (
-            <Button
-              variant="secondary"
-              size="sm"
-              asChild
-              className="shadow-none"
-            >
-              <Link href={neighbours.previous.url}>
-                <IconArrowLeft /> {neighbours.previous.name}
-              </Link>
-            </Button>
-          )}
-          {neighbours.next && (
-            <Button
-              variant="secondary"
-              size="sm"
-              className="ml-auto shadow-none"
-              asChild
-            >
-              <Link href={neighbours.next.url}>
-                {neighbours.next.name} <IconArrowRight />
-              </Link>
-            </Button>
-          )}
         </div>
       </div>
       <div className="sticky top-[calc(var(--header-height)+1px)] z-30 ml-auto hidden h-[calc(100svh-var(--footer-height)+2rem)] w-72 flex-col gap-4 overflow-hidden overscroll-none pb-8 xl:flex">

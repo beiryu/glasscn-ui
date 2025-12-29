@@ -5,12 +5,8 @@ import {
   DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuLabel,
-  DropdownMenuPortal,
   DropdownMenuSeparator,
   DropdownMenuShortcut,
-  DropdownMenuSub,
-  DropdownMenuSubContent,
-  DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@/registry/new-york-v4/ui/dropdown-menu"
 
@@ -43,17 +39,6 @@ export default function DropdownMenuDemo() {
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
           <DropdownMenuItem>Team</DropdownMenuItem>
-          <DropdownMenuSub>
-            <DropdownMenuSubTrigger>Invite users</DropdownMenuSubTrigger>
-            <DropdownMenuPortal>
-              <DropdownMenuSubContent>
-                <DropdownMenuItem>Email</DropdownMenuItem>
-                <DropdownMenuItem>Message</DropdownMenuItem>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem>More...</DropdownMenuItem>
-              </DropdownMenuSubContent>
-            </DropdownMenuPortal>
-          </DropdownMenuSub>
           <DropdownMenuItem>
             New Team
             <DropdownMenuShortcut>⌘+T</DropdownMenuShortcut>

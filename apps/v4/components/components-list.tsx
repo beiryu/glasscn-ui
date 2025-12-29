@@ -12,7 +12,7 @@ export function ComponentsList() {
     return
   }
 
-  const allowedComponents = ["accordion", "alert", "typography", "checkbox", "slider", "switch", "dialog"]
+  const allowedComponents = ["accordion", "alert", "typography", "checkbox", "slider", "switch", "dialog", "badge", "breadcrumb", "button-group", "button", "dropdown-menu"]
   const excludedComponents = ["alert-dialog", "accordion"]
 
   const list = components.children.filter((component) => {

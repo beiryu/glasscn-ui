@@ -4,7 +4,7 @@ import { Button } from "@/registry/new-york-v4/ui/button"
 
 export default function ButtonWithIcon() {
   return (
-    <Button variant="outline" size="sm">
+    <Button size="sm">
       <IconGitBranch /> New Branch
     </Button>
   )

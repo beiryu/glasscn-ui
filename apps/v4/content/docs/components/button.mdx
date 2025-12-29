@@ -5,41 +5,59 @@ featured: true
 component: true
 ---
 
-import { InfoIcon } from "lucide-react"
-
-<Callout variant="info" icon={<InfoIcon />}>
-**Updated:** We have updated the button component to add new sizes: `icon-sm` and `icon-lg`. See the
-[changelog](/docs/components/button#changelog) for more details. Follow the
-instructions to update your project.
-
-</Callout>
-
-<ComponentPreview name="button-demo" description="A button" className="mb-4" />
+<ComponentPreview name="button-demo" description="Button variants" className="mb-4" />
 
 ```tsx showLineNumbers
-<Button variant="outline">Button</Button>
-<Button variant="outline" size="icon" aria-label="Submit">
-  <ArrowUpIcon />
-</Button>
+{/* Top Row - Action Buttons */}
+<div className="flex flex-wrap items-center gap-2">
+  <Button variant="success">
+    <CheckIcon />
+    Approve
+  </Button>
+  <Button variant="destructive">
+    <TrashIcon />
+    Delete
+  </Button>
+  <Button>
+    <PencilIcon />
+    Edit
+  </Button>
+  <Button>
+    <SearchIcon />
+    Search
+  </Button>
+  <Button>
+    <BookmarkIcon />
+    Save
+  </Button>
+</div>
+
+{/* Middle Row - Navigation Buttons */}
+<div className="flex flex-wrap items-center gap-2">
+  <Button variant="secondary">
+    <ArrowLeftIcon />
+    Previous
+  </Button>
+  <Button variant="secondary">
+    <ArrowRightIcon />
+    Next
+  </Button>
+</div>
+
+{/* Bottom Row - Control Buttons */}
+<div className="flex flex-wrap items-center gap-2">
+  <Button variant="outline">
+    Dropdown
+    <ChevronDownIcon />
+  </Button>
+  <Button variant="outline">
+    Option
+    <ArrowUpDownIcon />
+  </Button>
+</div>
 ```
 
 ## Installation
-
-<CodeTabs>
-
-<TabsList>
-  <TabsTrigger value="cli">CLI</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
-</TabsList>
-<TabsContent value="cli">
-
-```bash
-npx shadcn@latest add button
-```
-
-</TabsContent>
-
-<TabsContent value="manual">
 
 <Steps>
 
@@ -56,10 +74,6 @@ npm install @radix-ui/react-slot
 <Step>Update the import paths to match your project setup.</Step>
 
 </Steps>
-
-</TabsContent>
-
-</CodeTabs>
 
 ## Usage
 
@@ -148,18 +162,6 @@ If you want to keep the `cursor: pointer` behavior, add the following code to yo
 <Button variant="secondary">Secondary</Button>
 ```
 
-### Ghost
-
-<ComponentPreview
-  name="button-ghost"
-  description="A button using the ghost variant"
-  className="mb-4"
-/>
-
-```tsx
-<Button variant="ghost">Ghost</Button>
-```
-
 ### Destructive
 
 <ComponentPreview
@@ -172,16 +174,16 @@ If you want to keep the `cursor: pointer` behavior, add the following code to yo
 <Button variant="destructive">Destructive</Button>
 ```
 
-### Link
+### Success
 
 <ComponentPreview
-  name="button-link"
-  description="A button using the link variant."
+  name="button-success"
+  description="A success button"
   className="mb-4"
 />
 
 ```tsx
-<Button variant="link">Link</Button>
+<Button variant="success">Approve</Button>
 ```
 
 ### Icon
@@ -210,7 +212,7 @@ based on the size of the button. You do not need any margin on the icon.
 />
 
 ```tsx
-<Button variant="outline" size="sm">
+<Button size="sm">
   <IconGitBranch /> New Branch
 </Button>
 ```
@@ -249,46 +251,20 @@ To create a button group, use the `ButtonGroup` component. See the [Button Group
 <ComponentPreview name="button-group-demo" className="mb-4" />
 
 ```tsx showLineNumbers
-<ButtonGroup>
-  <ButtonGroup>
-    <Button variant="outline" size="icon" aria-label="Go Back">
-      <ArrowLeftIcon />
-    </Button>
-  </ButtonGroup>
-  <ButtonGroup>
-    <Button variant="outline">Archive</Button>
-    <Button variant="outline">Report</Button>
-  </ButtonGroup>
-  <ButtonGroup>
-    <Button variant="outline">Snooze</Button>
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="icon" aria-label="More Options">
-          <MoreHorizontalIcon />
-        </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent />
-    </DropdownMenu>
-  </ButtonGroup>
-</ButtonGroup>
-```
-
-### Link
-
-You can use the `asChild` prop to make another component look like a button. Here's an example of a link that looks like a button.
-
-```tsx showLineNumbers
-import Link from "next/link"
-
-import { Button } from "@/components/ui/button"
-
-export function LinkAsButton() {
-  return (
-    <Button asChild>
-      <Link href="/login">Login</Link>
-    </Button>
-  )
-}
+<div className="flex gap-2">
+  <Button variant="secondary" size="icon" aria-label="Previous">
+    <ArrowLeftIcon />
+  </Button>
+  <Button variant="secondary" size="icon" aria-label="Next">
+    <ArrowRightIcon />
+  </Button>
+  <Button variant="secondary" size="icon" aria-label="Page 1">
+    1
+  </Button>
+  <Button variant="secondary" size="icon" aria-label="Page 2">
+    2
+  </Button>
+</div>
 ```
 
 ## API Reference
@@ -297,27 +273,8 @@ export function LinkAsButton() {
 
 The `Button` component is a wrapper around the `button` element that adds a variety of styles and functionality.
 
-| Prop      | Type                                                                          | Default     |
-| --------- | ----------------------------------------------------------------------------- | ----------- |
-| `variant` | `"default" \| "outline" \| "ghost" \| "destructive" \| "secondary" \| "link"` | `"default"` |
+| Prop      | Type                                                                    | Default     |
+| --------- | ----------------------------------------------------------------------- | ----------- |
+| `variant` | `"default" \| "outline" \| "destructive" \| "secondary" \| "success"` | `"default"` |
 | `size`    | `"default" \| "sm" \| "lg" \| "icon" \| "icon-sm" \| "icon-lg"`               | `"default"` |
 | `asChild` | `boolean`                                                                     | `false`     |
-
-## Changelog
-
-### 2025-09-24 New sizes
-
-We have added two new sizes to the button component: `icon-sm` and `icon-lg`. These sizes are used to create icon buttons. To add them, edit `button.tsx` and add the following code under `size` in `buttonVariants`:
-
-```tsx showLineNumbers title="components/ui/button.tsx"
-const buttonVariants = cva("...", {
-  variants: {
-    size: {
-      // ...
-      "icon-sm": "size-8",
-      "icon-lg": "size-10",
-      // ...
-    },
-  },
-})
-```

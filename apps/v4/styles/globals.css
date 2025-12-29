@@ -72,7 +72,11 @@
   --color-selection: var(--selection);
   --color-selection-foreground: var(--selection-foreground);
   --color-ghostwhite: #f8f8ff;
-  --color-gray: #808080;
+  --color-gray: rgba(255, 255, 255, 0.05);
+  --color-darkslateblue: #042d5d;
+  --color-whitesmoke: rgba(238, 238, 238, 0.1);
+  --color-maroon: #5d0405;
+  --color-darkgreen: #045d14;
   --spacing-num-280_5: 280.5px;
   --tracking-num--0_01: -0.01em;
   --opacity-num-0_5: 0.5;
@@ -452,6 +456,12 @@
   /* Custom alert default variant gradient */
   [data-slot="alert"][data-variant="default"] {
     background:
+      linear-gradient(180deg, rgba(200, 200, 200, 0), rgba(200, 200, 200, 0.3)),
+      rgba(240, 240, 240, 0.8) !important;
+  }
+
+  .dark [data-slot="alert"][data-variant="default"] {
+    background:
       linear-gradient(180deg, rgba(238, 238, 238, 0), rgba(238, 238, 238, 0.5)),
       rgba(238, 238, 238, 0.1) !important;
   }
@@ -469,7 +479,99 @@
       #67f95d !important;
   }
 
+  /* Custom badge inset shadow - only for solid appearance */
+  [data-slot="badge"][data-appearance="solid"] {
+    box-shadow:
+      0px -0.8px 0px rgba(255, 255, 255, 0.25) inset,
+      0px 0.8px 0px rgba(0, 0, 0, 0.25) inset !important;
+  }
+
+  /* Custom badge gradients - only for solid appearance */
+  [data-slot="badge"][data-intent="info"][data-appearance="solid"] {
+    background: linear-gradient(180deg, #345cff, #032dd9) !important;
+  }
+
+  [data-slot="badge"][data-intent="success"][data-appearance="solid"] {
+    background: linear-gradient(180deg, #34c759, #008923) !important;
+  }
+
+  [data-slot="badge"][data-intent="warning"][data-appearance="solid"] {
+    background: linear-gradient(180deg, #ead026, #ad9706) !important;
+  }
+
+  [data-slot="badge"][data-intent="error"][data-appearance="solid"] {
+    background: linear-gradient(180deg, #ef4444, #a90000) !important;
+  }
+
+  /* Custom badge outline shadow - varies by intent */
+  [data-slot="badge"][data-intent="success"][data-appearance="outline"] {
+    box-shadow:
+      -1px 0px 0.2px rgba(52, 199, 89, 0.25) inset,
+      1px 0px 0.2px rgba(52, 199, 89, 0.25) inset !important;
+  }
+
+  [data-slot="badge"][data-intent="warning"][data-appearance="outline"] {
+    box-shadow:
+      -1px 0px 0.2px rgba(234, 208, 38, 0.25) inset,
+      1px 0px 0.2px rgba(234, 208, 38, 0.25) inset !important;
+  }
+
+  [data-slot="badge"][data-intent="error"][data-appearance="outline"] {
+    box-shadow:
+      -1px 0px 0.2px rgba(239, 68, 68, 0.25) inset,
+      1px 0px 0.2px rgba(239, 68, 68, 0.25) inset !important;
+  }
+
+  [data-slot="badge"][data-intent="info"][data-appearance="outline"] {
+    box-shadow:
+      -1px 0px 0.2px rgba(84, 118, 255, 0.25) inset,
+      1px 0px 0.2px rgba(84, 118, 255, 0.25) inset !important;
+  }
+
   .bg-gray {
     background-color: var(--color-gray);
+  }
+
+  /* Glass Liquid Effect Classes */
+  .glass {
+    position: relative;
+    background: transparent;
+    overflow: hidden;
+    box-shadow:
+      0 2px 6px rgba(0, 0, 0, 0.2),
+      0 0 6px rgba(0, 0, 0, 0.1);
+    isolation: isolate;
+  }
+
+  /* Backdrop blur layer */
+  .glass::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    border-radius: inherit;
+    filter: url(#lg-dist-bg);
+  }
+
+  /* Glass overlay layer */
+  .glass::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: inherit;
+    box-shadow:
+      inset 0.5px 0.5px 0 rgba(255, 255, 255, 0.45),
+      inset 0 0 1px rgba(255, 255, 255, 0.45);
+    pointer-events: none;
+  }
+
+  /* Content wrapper - đảm bảo content nằm trên các layer */
+  .glass > * {
+    position: relative;
+    z-index: 2;
   }
 }

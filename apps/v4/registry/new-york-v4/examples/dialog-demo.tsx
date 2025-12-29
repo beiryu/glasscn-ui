@@ -27,18 +27,9 @@ export default function DialogDemo() {
           <DialogFooter className="w-full">
             <div className="flex flex-1 items-start justify-end gap-2">
               <DialogClose asChild>
-                <Button
-                  variant="destructive"
-                  className="w-[110.5px] gap-1.5 rounded-xl border border-[rgba(171,171,171,0.4)] px-[15px] py-[7.5px] text-[14.3px] leading-[120%] tracking-[-0.02em] capitalize [text-shadow:0px_0.5957661271095276px_0px_rgba(171,171,171,0.25)]"
-                >
-                  Cancel
-                </Button>
+                <Button variant="destructive">Cancel</Button>
               </DialogClose>
-              <Button
-                type="button"
-                variant="default"
-                className="w-[110.5px] gap-1.5 rounded-xl border border-[rgba(171,171,171,0.4)] px-[15px] py-[7.5px] text-[14.3px] leading-[120%] tracking-[-0.02em] text-[#045d14] capitalize [text-shadow:0px_0.5957661271095276px_0px_rgba(171,171,171,0.25)]"
-              >
+              <Button type="button" variant="success">
                 Approve
               </Button>
             </div>

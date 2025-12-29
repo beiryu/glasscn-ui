@@ -1,38 +1,52 @@
-import { AlertCircleIcon, BadgeCheckIcon, CheckIcon } from "lucide-react"
+import {
+  AlertTriangleIcon,
+  BadgeCheckIcon,
+  CheckCircle2Icon,
+  InfoIcon,
+  XIcon,
+} from "lucide-react"
 
 import { Badge } from "@/registry/new-york-v4/ui/badge"
 
 export default function BadgeDemo() {
   return (
-    <div className="flex flex-col items-center gap-2">
-      <div className="flex w-full flex-wrap gap-2">
-        <Badge>Badge</Badge>
-        <Badge variant="secondary">Secondary</Badge>
-        <Badge variant="destructive">Destructive</Badge>
-        <Badge variant="outline">Outline</Badge>
-      </div>
-      <div className="flex w-full flex-wrap gap-2">
-        <Badge
-          variant="secondary"
-          className="bg-blue-500 text-white dark:bg-blue-600"
-        >
+    <div className="flex flex-col items-start gap-2.5">
+      {/* Solid appearance badges (with gradient and shadow) */}
+      <div className="flex items-start gap-2.5">
+        <Badge intent="info" appearance="solid">
           <BadgeCheckIcon />
-          Verified
+          Revenue
         </Badge>
-        <Badge className="h-5 min-w-5 rounded-full px-1 font-mono tabular-nums">
-          8
+        <Badge intent="success" appearance="solid">
+          <BadgeCheckIcon />
+          Revenue
         </Badge>
-        <Badge
-          className="h-5 min-w-5 rounded-full px-1 font-mono tabular-nums"
-          variant="destructive"
-        >
-          99
+        <Badge intent="warning" appearance="solid">
+          <BadgeCheckIcon />
+          Revenue
         </Badge>
-        <Badge
-          className="h-5 min-w-5 rounded-full px-1 font-mono tabular-nums"
-          variant="outline"
-        >
-          20+
+        <Badge intent="error" appearance="solid">
+          <BadgeCheckIcon />
+          Revenue
+        </Badge>
+      </div>
+      {/* Outline appearance badges (solid background, no gradient) */}
+      <div className="flex items-start gap-2.5">
+        <Badge intent="success" appearance="outline">
+          <CheckCircle2Icon />
+          Green
+        </Badge>
+        <Badge intent="warning" appearance="outline">
+          <AlertTriangleIcon />
+          Yellow
+        </Badge>
+        <Badge intent="info" appearance="outline">
+          <InfoIcon />
+          Blue
+        </Badge>
+        <Badge intent="error" appearance="outline">
+          <XIcon />
+          Red
         </Badge>
       </div>
     </div>

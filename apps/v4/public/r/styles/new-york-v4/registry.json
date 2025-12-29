@@ -4629,6 +4629,19 @@
       "type": "registry:example"
     },
     {
+      "name": "button-success",
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/button-success.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
       "name": "button-link",
       "registryDependencies": [
         "button"

@@ -120,17 +120,20 @@ export function DocsSidebar({
                         return null
                       }
 
-                      // Only show Accordion, Alert, Typography, Checkbox, Slider, Switch, and Dialog
+                      // Only show Accordion, Alert, Typography, Checkbox, Slider, Switch, Dialog, Breadcrumb, Badge, and Dropdown Menu
                       const allowedComponents = [
-                        "accordion",
                         "alert",
                         "typography",
                         "checkbox",
                         "slider",
                         "switch",
                         "dialog",
+                        "breadcrumb",
+                        "badge",
+                        "dropdown-menu",
+                        "button",
                       ]
-                      const excludedComponents = ["alert-dialog", "accordion"]
+                      const excludedComponents: string[] = []
                       const url = item.url?.toLowerCase() || ""
                       const name = item.name?.toLowerCase() || ""
 

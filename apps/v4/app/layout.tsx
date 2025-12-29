@@ -10,6 +10,7 @@ import { Analytics } from "@/components/analytics"
 import { TailwindIndicator } from "@/components/tailwind-indicator"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Toaster } from "@/registry/bases/radix/ui/sonner"
+import { LiquidGlassFilter } from "@/registry/new-york-v4/ui/liquid-glass-filter"
 
 import "@/styles/globals.css"
 
@@ -90,6 +91,7 @@ export default function RootLayout({
           "group/body overscroll-none antialiased [--footer-height:calc(var(--spacing)*14)] [--header-height:calc(var(--spacing)*14)] xl:[--footer-height:calc(var(--spacing)*24)]"
         )}
       >
+        <LiquidGlassFilter />
         <ThemeProvider>
           <LayoutProvider>
             <ActiveThemeProvider>

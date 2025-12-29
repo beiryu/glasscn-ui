@@ -9,7 +9,9 @@ export default function SliderDemo({ className, ...props }: SliderProps) {
   return (
     <div className={cn("flex w-full flex-col items-start gap-3.5", className)}>
       <div className="flex items-center gap-3.5">
-        <div className="text-[11px] tracking-[-0.01em] text-white">Default</div>
+        <div className="text-foreground text-[11px] tracking-[-0.01em] dark:text-white">
+          Default
+        </div>
         <Slider
           defaultValue={[50]}
           max={100}
@@ -19,7 +21,7 @@ export default function SliderDemo({ className, ...props }: SliderProps) {
         />
       </div>
       <div className="flex items-center gap-3.5">
-        <div className="text-[11px] tracking-[-0.01em] text-white">
+        <div className="text-foreground text-[11px] tracking-[-0.01em] dark:text-white">
           Range Short
         </div>
         <Slider
@@ -31,7 +33,7 @@ export default function SliderDemo({ className, ...props }: SliderProps) {
         />
       </div>
       <div className="flex items-center gap-3.5">
-        <div className="text-[11px] tracking-[-0.01em] text-white">
+        <div className="text-foreground text-[11px] tracking-[-0.01em] dark:text-white">
           Range Wide
         </div>
         <Slider
