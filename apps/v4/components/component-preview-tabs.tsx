@@ -19,6 +19,12 @@ export function ComponentPreviewTabs({
   component: React.ReactNode
   source: React.ReactNode
 }) {
+  const [mounted, setMounted] = React.useState(false)
+
+  React.useEffect(() => {
+    setMounted(true)
+  }, [])
+
   return (
     <div
       className={cn(
@@ -31,11 +37,25 @@ export function ComponentPreviewTabs({
         <div
           data-align={align}
           className={cn(
-            "preview flex w-full justify-center items-center data-[align=center]:items-center data-[align=end]:items-end data-[align=start]:items-start bg-muted/30",
-            chromeLessOnMobile ? "sm:p-10" : "min-h-[600px] h-[600px] p-10"
+            "preview bg-muted/30 flex w-full items-center justify-center data-[align=center]:items-center data-[align=end]:items-end data-[align=start]:items-start",
+            chromeLessOnMobile ? "sm:p-10" : "h-[600px] min-h-[600px] p-10"
           )}
         >
-          <div className="mx-auto">{component}</div>
+          <div className="mx-auto">
+            {mounted ? (
+              <React.Suspense
+                fallback={
+                  <div className="text-muted-foreground flex h-10 w-20 items-center justify-center text-sm">
+                    Loading...
+                  </div>
+                }
+              >
+                {component}
+              </React.Suspense>
+            ) : (
+              <div className="h-10 w-20" aria-hidden="true" />
+            )}
+          </div>
         </div>
         {!hideCode && (
           <div

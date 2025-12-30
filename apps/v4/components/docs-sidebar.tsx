@@ -122,6 +122,7 @@ export function DocsSidebar({
 
                       // Only show Accordion, Alert, Typography, Checkbox, Slider, Switch, Dialog, Breadcrumb, Badge, and Dropdown Menu
                       const allowedComponents = [
+                        "accordion",
                         "alert",
                         "typography",
                         "checkbox",
@@ -132,9 +133,15 @@ export function DocsSidebar({
                         "badge",
                         "dropdown-menu",
                         "button",
+                        "card",
                         "input",
+                        "tab",
+                        "tooltip",
                       ]
-                      const excludedComponents: string[] = ["input-otp"]
+                      const excludedComponents: string[] = [
+                        "input-otp",
+                        "table",
+                      ]
                       const url = item.url?.toLowerCase() || ""
                       const name = item.name?.toLowerCase() || ""
 

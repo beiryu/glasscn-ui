@@ -27,7 +27,8 @@ function AccordionItem({
     <AccordionPrimitive.Item
       data-slot="accordion-item"
       className={cn(
-        "flex flex-col gap-2.5 rounded-[10px] bg-white/10 px-[18px] py-4",
+        "glass flex flex-col items-start gap-2.5 rounded-[10px] bg-[rgba(255,255,255,0.1)] px-[18px] py-4 text-left text-white transition-all",
+        "hover:shadow-[0px_0px_0px_4px_rgba(255,255,255,0.05)] hover:[background:linear-gradient(180deg,rgba(255,255,255,0.2),rgba(255,255,255,0)),linear-gradient(rgba(255,255,255,0.1),rgba(255,255,255,0.1))]",
         className
       )}
       {...props}
@@ -41,11 +42,11 @@ function AccordionTrigger({
   ...props
 }: React.ComponentProps<typeof AccordionPrimitive.Trigger>) {
   return (
-    <AccordionPrimitive.Header className="flex">
+    <AccordionPrimitive.Header className="flex self-stretch">
       <AccordionPrimitive.Trigger
         data-slot="accordion-trigger"
         className={cn(
-          "flex flex-1 items-center justify-between gap-5 text-sm leading-[21px] tracking-[0.01em] text-white transition-all outline-none focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50 [&[data-state=open]>svg]:rotate-180",
+          "flex w-full flex-1 items-center justify-between gap-5 text-sm leading-[21px] tracking-[0.01em] text-white transition-all outline-none focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50 [&[data-state=open]>svg]:rotate-180",
           className
         )}
         {...props}

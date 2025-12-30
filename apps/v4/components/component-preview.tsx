@@ -165,12 +165,15 @@ export function ComponentPreview({
     )
   }
 
+  // Render component - lazy components will be handled by Suspense in ComponentPreviewTabs
+  const ComponentElement = Component ? <Component /> : null
+
   return (
     <ComponentPreviewTabs
       className={className}
       align={align}
       hideCode={hideCode}
-      component={<Component />}
+      component={ComponentElement}
       source={
         <ComponentSource
           name={name}

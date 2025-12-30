@@ -57,57 +57,7 @@ We do not wrap Recharts. This means you're not locked into an abstraction. When 
 
 </Callout>
 
-<CodeTabs>
-
-<TabsList>
-  <TabsTrigger value="cli">CLI</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
-</TabsList>
-<TabsContent value="cli">
-
 <Steps>
-
-<Step>Run the following command to install `chart.tsx`</Step>
-
-```bash
-npx shadcn@latest add chart
-```
-
-<Step>Add the following colors to your CSS file</Step>
-
-```css title="app/globals.css" showLineNumbers
-@layer base {
-  :root {
-    --chart-1: oklch(0.646 0.222 41.116);
-    --chart-2: oklch(0.6 0.118 184.704);
-    --chart-3: oklch(0.398 0.07 227.392);
-    --chart-4: oklch(0.828 0.189 84.429);
-    --chart-5: oklch(0.769 0.188 70.08);
-  }
-
-  .dark {
-    --chart-1: oklch(0.488 0.243 264.376);
-    --chart-2: oklch(0.696 0.17 162.48);
-    --chart-3: oklch(0.769 0.188 70.08);
-    --chart-4: oklch(0.627 0.265 303.9);
-    --chart-5: oklch(0.645 0.246 16.439);
-  }
-}
-```
-
-</Steps>
-
-</TabsContent>
-
-<TabsContent value="manual">
-
-<Steps>
-
-<Step>Install the following dependencies:</Step>
-
-```bash
-npm install recharts
-```
 
 <Step>Copy and paste the following code into `components/ui/chart.tsx`.</Step>
 
@@ -136,10 +86,6 @@ npm install recharts
 ```
 
 </Steps>
-
-</TabsContent>
-
-</CodeTabs>
 
 ## Your First Chart
 

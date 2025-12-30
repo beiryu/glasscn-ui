@@ -13,7 +13,7 @@ import { Label } from "@/registry/new-york-v4/ui/label"
 
 export default function CardDemo() {
   return (
-    <Card className="w-full max-w-sm">
+    <Card className="min-w-sm">
       <CardHeader>
         <CardTitle>Login to your account</CardTitle>
         <CardDescription>

@@ -73,7 +73,7 @@
   --color-selection-foreground: var(--selection-foreground);
   --color-ghostwhite: #f8f8ff;
   --color-gray: rgba(255, 255, 255, 0.05);
-  --color-gray-100: #171717;
+  --color-gray-100: rgba(255, 255, 255, 0.25);
   --color-gray-200: rgba(255, 255, 255, 0.1);
   --color-crimson: #ef4444;
   --color-darkslateblue: #042d5d;
@@ -611,5 +611,68 @@
       0 2px 6px rgba(0, 0, 0, 0.2),
       0 0 6px rgba(0, 0, 0, 0.1),
       0px 0px 0px 3px rgba(239, 68, 68, 0.15) !important;
+  }
+
+  /* Glass effect for active tab trigger */
+  [data-slot="tabs-trigger"][data-state="active"] {
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.25) !important;
+    overflow: hidden;
+    box-shadow:
+      0 2px 6px rgba(0, 0, 0, 0.2),
+      0 0 6px rgba(0, 0, 0, 0.1);
+    isolation: isolate;
+    --glass-overlay-shadow-color: 255, 255, 255;
+    --glass-overlay-shadow-opacity: 0.45;
+  }
+
+  [data-slot="tabs-trigger"][data-state="active"]::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    border-radius: inherit;
+    filter: url(#lg-dist-bg);
+  }
+
+  [data-slot="tabs-trigger"][data-state="active"]::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: inherit;
+    box-shadow:
+      inset 0.5px 0.5px 0
+        rgba(
+          var(--glass-overlay-shadow-color),
+          var(--glass-overlay-shadow-opacity)
+        ),
+      inset 0 0 1px
+        rgba(
+          var(--glass-overlay-shadow-color),
+          var(--glass-overlay-shadow-opacity)
+        );
+    pointer-events: none;
+  }
+
+  [data-slot="tabs-trigger"][data-state="active"] > * {
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Accordion item with glass effect - ensure background is applied */
+  [data-slot="accordion-item"].glass {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+  }
+
+  /* Accordion item hover state */
+  [data-slot="accordion-item"].glass:hover {
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0)),
+      linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)) !important;
+    box-shadow: 0px 0px 0px 4px rgba(255, 255, 255, 0.05) !important;
   }
 }

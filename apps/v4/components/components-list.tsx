@@ -12,8 +12,26 @@ export function ComponentsList() {
     return
   }
 
-  const allowedComponents = ["accordion", "alert", "typography", "checkbox", "slider", "switch", "dialog", "badge", "breadcrumb", "button-group", "button", "dropdown-menu", "input", "input-group"]
-  const excludedComponents = ["alert-dialog", "accordion"]
+  const allowedComponents = [
+    "accordion",
+    "alert",
+    "typography",
+    "checkbox",
+    "slider",
+    "switch",
+    "dialog",
+    "badge",
+    "breadcrumb",
+    "button-group",
+    "button",
+    "card",
+    "dropdown-menu",
+    "input",
+    "input-group",
+    "tab",
+    "tooltip",
+  ]
+  const excludedComponents = ["alert-dialog"]
 
   const list = components.children.filter((component) => {
     if (component.type !== "page") return false
