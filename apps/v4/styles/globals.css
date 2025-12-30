@@ -73,6 +73,9 @@
   --color-selection-foreground: var(--selection-foreground);
   --color-ghostwhite: #f8f8ff;
   --color-gray: rgba(255, 255, 255, 0.05);
+  --color-gray-100: #171717;
+  --color-gray-200: rgba(255, 255, 255, 0.1);
+  --color-crimson: #ef4444;
   --color-darkslateblue: #042d5d;
   --color-whitesmoke: rgba(238, 238, 238, 0.1);
   --color-maroon: #5d0405;
@@ -541,6 +544,8 @@
       0 2px 6px rgba(0, 0, 0, 0.2),
       0 0 6px rgba(0, 0, 0, 0.1);
     isolation: isolate;
+    --glass-overlay-shadow-color: 255, 255, 255;
+    --glass-overlay-shadow-opacity: 0.45;
   }
 
   /* Backdrop blur layer */
@@ -564,14 +569,47 @@
     background-color: rgba(255, 255, 255, 0);
     border-radius: inherit;
     box-shadow:
-      inset 0.5px 0.5px 0 rgba(255, 255, 255, 0.45),
-      inset 0 0 1px rgba(255, 255, 255, 0.45);
+      inset 0.5px 0.5px 0
+        rgba(
+          var(--glass-overlay-shadow-color),
+          var(--glass-overlay-shadow-opacity)
+        ),
+      inset 0 0 1px
+        rgba(
+          var(--glass-overlay-shadow-color),
+          var(--glass-overlay-shadow-opacity)
+        );
     pointer-events: none;
   }
 
-  /* Content wrapper - đảm bảo content nằm trên các layer */
+  /* Content wrapper - ensure content is on top of layers */
   .glass > * {
     position: relative;
     z-index: 2;
+  }
+
+  /* Glass focused state - when input inside is focus-visible */
+  .glass:has(input:focus-visible),
+  .glass:has([data-slot="input-group-control"]:focus-visible),
+  .glass:has(*:focus-visible) {
+    --glass-overlay-shadow-color: 65, 100, 241 !important;
+    --glass-overlay-shadow-opacity: 1 !important;
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    box-shadow:
+      0 2px 6px rgba(0, 0, 0, 0.2),
+      0 0 6px rgba(0, 0, 0, 0.1),
+      0px 0px 0px 4px rgba(65, 100, 241, 0.25) !important;
+  }
+
+  /* Glass error state - when input inside has aria-invalid */
+  .glass:has(input[aria-invalid="true"]),
+  .glass:has([data-slot="input-group-control"][aria-invalid="true"]),
+  .glass:has(*[aria-invalid="true"]) {
+    --glass-overlay-shadow-color: 239, 68, 68 !important;
+    --glass-overlay-shadow-opacity: 0.6 !important;
+    box-shadow:
+      0 2px 6px rgba(0, 0, 0, 0.2),
+      0 0 6px rgba(0, 0, 0, 0.1),
+      0px 0px 0px 3px rgba(239, 68, 68, 0.15) !important;
   }
 }

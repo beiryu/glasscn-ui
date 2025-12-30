@@ -132,8 +132,9 @@ export function DocsSidebar({
                         "badge",
                         "dropdown-menu",
                         "button",
+                        "input",
                       ]
-                      const excludedComponents: string[] = []
+                      const excludedComponents: string[] = ["input-otp"]
                       const url = item.url?.toLowerCase() || ""
                       const name = item.name?.toLowerCase() || ""
 
