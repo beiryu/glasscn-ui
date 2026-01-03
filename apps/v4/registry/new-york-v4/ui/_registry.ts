@@ -192,6 +192,28 @@ export const ui: Registry["items"] = [
     ],
   },
   {
+    name: "card-solid",
+    type: "registry:ui",
+    dependencies: ["class-variance-authority"],
+    files: [
+      {
+        path: "ui/card-solid.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "card-outline",
+    type: "registry:ui",
+    dependencies: ["class-variance-authority"],
+    files: [
+      {
+        path: "ui/card-outline.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
     name: "dialog",
     type: "registry:ui",
     dependencies: ["@radix-ui/react-dialog"],

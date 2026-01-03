@@ -1,0 +1,85 @@
+---
+title: Card Outline
+description: Information cards with outline borders and transparent backgrounds.
+featured: true
+component: true
+---
+
+<ComponentPreview
+  name="card-outline-demo"
+  description="Card Outline with outline borders and transparent backgrounds."
+/>
+
+## Installation
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="card-outline" title="components/ui/card-outline.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+## Usage
+
+```tsx showLineNumbers
+import { CardOutline } from "@/components/ui/card-outline"
+```
+
+```tsx showLineNumbers
+<CardOutline
+  title="Active Users"
+  value="1,234"
+  icon="users"
+  variant="success"
+  trend={{
+    value: "+12%",
+    label: "from last month",
+    isPositive: true,
+  }}
+/>
+```
+
+## Examples
+
+### States
+
+<ComponentPreview
+  name="card-outline-states"
+  description="Card Outline showing different states: regular, hover/focused, and disabled."
+/>
+
+## API Reference
+
+### CardOutline
+
+| Prop        | Type                                                     | Default     | Description                  |
+| ----------- | -------------------------------------------------------- | ----------- | ---------------------------- |
+| `title`     | `string`                                                 | -           | The title/label of the card  |
+| `value`     | `string \| number`                                       | -           | The main value to display    |
+| `icon`      | `"users" \| "user-plus" \| "trending-up" \| "activity"`  | -           | Optional icon name           |
+| `variant`   | `"default" \| "success" \| "warning" \| "danger"`        | `"default"` | Visual variant of the card   |
+| `size`      | `"default" \| "sm" \| "lg"`                              | `"default"` | Size of the card             |
+| `state`     | `"default" \| "hover" \| "disabled"`                     | `"default"` | State of the card            |
+| `trend`     | `{ value: string, label: string, isPositive?: boolean }` | -           | Optional trend indicator     |
+| `disabled`  | `boolean`                                                | `false`     | Whether the card is disabled |
+| `className` | `string`                                                 | -           | Additional CSS classes       |
+
+### Preset Components
+
+The component also exports preset components for common use cases:
+
+- `ActiveCreatorsCardOutline` - Pre-configured for active creators with Users icon
+- `NewSignupsCardOutline` - Pre-configured for new signups with UserPlus icon
+
+```tsx showLineNumbers
+import {
+  ActiveCreatorsCardOutline,
+  NewSignupsCardOutline,
+} from "@/components/ui/card-outline"
+
+<ActiveCreatorsCardOutline value="07" />
+<NewSignupsCardOutline value="03" />
+```

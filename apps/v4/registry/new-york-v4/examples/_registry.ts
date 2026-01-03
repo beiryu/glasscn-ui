@@ -618,6 +618,61 @@ export const examples: Registry["items"] = [
     ],
   },
   {
+    name: "card-solid-demo",
+    type: "registry:example",
+    registryDependencies: ["card-solid"],
+    files: [
+      {
+        path: "examples/card-solid-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "card-outline-demo",
+    type: "registry:example",
+    registryDependencies: ["card-outline"],
+    files: [
+      {
+        path: "examples/card-outline-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "card-outline-states",
+    type: "registry:example",
+    registryDependencies: ["card-outline"],
+    files: [
+      {
+        path: "examples/card-outline-states.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "card-solid-states",
+    type: "registry:example",
+    registryDependencies: ["card-solid"],
+    files: [
+      {
+        path: "examples/card-solid-states.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "card-solid-variants",
+    type: "registry:example",
+    registryDependencies: ["card-solid"],
+    files: [
+      {
+        path: "examples/card-solid-variants.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
     name: "combobox-demo",
     type: "registry:example",
     registryDependencies: ["command"],

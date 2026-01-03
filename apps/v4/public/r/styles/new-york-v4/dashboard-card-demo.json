@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dashboard-card-demo",
+  "registryDependencies": [
+    "dashboard-card"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/dashboard-card-demo.tsx",
+      "content": "import * as React from \"react\"\n\nimport { DashboardCard } from \"@/registry/new-york-v4/ui/dashboard-card\"\n\nexport default function DashboardCardDemo() {\n  return (\n    <div className=\"grid grid-cols-1 md:grid-cols-2 gap-4 w-full\">\n      <DashboardCard\n        title=\"Active Creators\"\n        value=\"07\"\n        icon=\"users\"\n        variant=\"success\"\n      />\n      <DashboardCard\n        title=\"New Signups\"\n        value=\"03\"\n        icon=\"user-plus\"\n        variant=\"warning\"\n      />\n    </div>\n  )\n}\n\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

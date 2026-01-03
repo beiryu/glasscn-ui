@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dashboard-card-outline-demo",
+  "registryDependencies": [
+    "dashboard-card-outline"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/dashboard-card-outline-demo.tsx",
+      "content": "import * as React from \"react\"\n\nimport { DashboardCardOutline } from \"@/registry/new-york-v4/ui/dashboard-card-outline\"\n\nexport default function DashboardCardOutlineDemo() {\n  return (\n    <div className=\"grid grid-cols-1 gap-4 md:grid-cols-2\">\n      <DashboardCardOutline\n        title=\"Active Creators\"\n        value=\"07\"\n        icon=\"users\"\n        variant=\"success\"\n      />\n      <DashboardCardOutline\n        title=\"New Signups\"\n        value=\"03\"\n        icon=\"user-plus\"\n        variant=\"warning\"\n      />\n    </div>\n  )\n}\n\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

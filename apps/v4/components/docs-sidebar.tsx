@@ -138,6 +138,8 @@ export function DocsSidebar({
                         "tab",
                         "tooltip",
                         "multi-select",
+                        "card-solid",
+                        "card-outline",
                       ]
                       const excludedComponents: string[] = [
                         "input-otp",

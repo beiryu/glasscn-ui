@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "card-solid-states",
+  "registryDependencies": [
+    "card-solid"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/card-solid-states.tsx",
+      "content": "import * as React from \"react\"\n\nimport {\n  ActiveCreatorsCardSolid,\n  NewSignupsCardSolid,\n} from \"@/registry/new-york-v4/ui/card-solid\"\n\nexport default function CardSolidStates() {\n  return (\n    <div className=\"space-y-8\">\n      <div>\n        <h3 className=\"mb-4 text-lg font-semibold\">Regular</h3>\n        <div className=\"grid grid-cols-1 gap-4 md:grid-cols-2\">\n          <ActiveCreatorsCardSolid value=\"07\" />\n          <NewSignupsCardSolid value=\"03\" />\n        </div>\n      </div>\n\n      <div>\n        <h3 className=\"mb-4 text-lg font-semibold\">Hover/Focused State</h3>\n        <div className=\"grid grid-cols-1 gap-4 md:grid-cols-2\">\n          <ActiveCreatorsCardSolid value=\"07\" state=\"hover\" />\n          <NewSignupsCardSolid value=\"03\" state=\"hover\" />\n        </div>\n      </div>\n\n      <div>\n        <h3 className=\"mb-4 text-lg font-semibold\">Disabled State</h3>\n        <div className=\"grid grid-cols-1 gap-4 md:grid-cols-2\">\n          <ActiveCreatorsCardSolid value=\"07\" disabled />\n          <NewSignupsCardSolid value=\"03\" disabled />\n        </div>\n      </div>\n    </div>\n  )\n}\n\n\n\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

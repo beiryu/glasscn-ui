@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "card-solid-demo",
+  "registryDependencies": [
+    "card-solid"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/card-solid-demo.tsx",
+      "content": "import * as React from \"react\"\n\nimport { CardSolid } from \"@/registry/new-york-v4/ui/card-solid\"\n\nexport default function CardSolidDemo() {\n  return (\n    <div className=\"grid grid-cols-1 gap-4 w-full md:grid-cols-2\">\n      <CardSolid\n        title=\"Active Creators\"\n        value=\"07\"\n        icon=\"users\"\n        variant=\"success\"\n      />\n      <CardSolid\n        title=\"New Signups\"\n        value=\"03\"\n        icon=\"user-plus\"\n        variant=\"warning\"\n      />\n    </div>\n  )\n}\n\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

@@ -268,6 +268,32 @@
       "type": "registry:ui"
     },
     {
+      "name": "card-solid",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/ui/card-solid.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "card-outline",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/ui/card-outline.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
       "name": "dialog",
       "dependencies": [
         "@radix-ui/react-dialog"
@@ -5087,6 +5113,71 @@
       "files": [
         {
           "path": "registry/new-york-v4/examples/collapsible-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "card-solid-demo",
+      "registryDependencies": [
+        "card-solid"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/card-solid-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "card-outline-demo",
+      "registryDependencies": [
+        "card-outline"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/card-outline-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "card-outline-states",
+      "registryDependencies": [
+        "card-outline"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/card-outline-states.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "card-solid-states",
+      "registryDependencies": [
+        "card-solid"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/card-solid-states.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "card-solid-variants",
+      "registryDependencies": [
+        "card-solid"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/card-solid-variants.tsx",
           "type": "registry:example"
         }
       ],

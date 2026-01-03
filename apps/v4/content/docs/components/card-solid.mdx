@@ -1,0 +1,92 @@
+---
+title: Card Solid
+description: Information cards with gradient backgrounds and different states.
+featured: true
+component: true
+---
+
+<ComponentPreview
+  name="card-solid-demo"
+  description="Card Solid with different variants and icons."
+/>
+
+## Installation
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="card-solid" title="components/ui/card-solid.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+## Usage
+
+```tsx showLineNumbers
+import { CardSolid } from "@/components/ui/card-solid"
+```
+
+```tsx showLineNumbers
+<CardSolid
+  title="Active Users"
+  value="1,234"
+  icon="users"
+  variant="success"
+  trend={{
+    value: "+12%",
+    label: "from last month",
+    isPositive: true,
+  }}
+/>
+```
+
+## Examples
+
+### States
+
+<ComponentPreview
+  name="card-solid-states"
+  description="Card Solid showing different states: regular, hover/focused, and disabled."
+/>
+
+### Variants
+
+<ComponentPreview
+  name="card-solid-variants"
+  description="Card Solid with different variants matching the design system."
+/>
+
+## API Reference
+
+### CardSolid
+
+| Prop        | Type                                                     | Default     | Description                  |
+| ----------- | -------------------------------------------------------- | ----------- | ---------------------------- |
+| `title`     | `string`                                                 | -           | The title/label of the card  |
+| `value`     | `string \| number`                                       | -           | The main value to display    |
+| `icon`      | `"users" \| "user-plus" \| "trending-up" \| "activity"`  | -           | Optional icon name           |
+| `variant`   | `"default" \| "success" \| "warning" \| "danger"`        | `"default"` | Visual variant of the card   |
+| `size`      | `"default" \| "sm" \| "lg"`                              | `"default"` | Size of the card             |
+| `state`     | `"default" \| "hover" \| "disabled"`                     | `"default"` | State of the card            |
+| `trend`     | `{ value: string, label: string, isPositive?: boolean }` | -           | Optional trend indicator     |
+| `disabled`  | `boolean`                                                | `false`     | Whether the card is disabled |
+| `className` | `string`                                                 | -           | Additional CSS classes       |
+
+### Preset Components
+
+The component also exports preset components for common use cases:
+
+- `ActiveCreatorsCardSolid` - Pre-configured for active creators with Users icon
+- `NewSignupsCardSolid` - Pre-configured for new signups with UserPlus icon
+
+```tsx showLineNumbers
+import {
+  ActiveCreatorsCardSolid,
+  NewSignupsCardSolid,
+} from "@/components/ui/card-solid"
+
+<ActiveCreatorsCardSolid value="07" />
+<NewSignupsCardSolid value="03" />
+```
