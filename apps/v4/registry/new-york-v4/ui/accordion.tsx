@@ -27,8 +27,7 @@ function AccordionItem({
     <AccordionPrimitive.Item
       data-slot="accordion-item"
       className={cn(
-        "glass flex flex-col items-start gap-2.5 rounded-[10px] bg-[rgba(255,255,255,0.1)] px-[18px] py-4 text-left text-white transition-all",
-        "hover:shadow-[0px_0px_0px_4px_rgba(255,255,255,0.05)] hover:[background:linear-gradient(180deg,rgba(255,255,255,0.2),rgba(255,255,255,0)),linear-gradient(rgba(255,255,255,0.1),rgba(255,255,255,0.1))]",
+        "glass flex flex-col items-start gap-2.5 rounded-[10px] px-[18px] py-4 text-left backdrop-blur-sm transition-all",
         className
       )}
       {...props}
@@ -46,13 +45,13 @@ function AccordionTrigger({
       <AccordionPrimitive.Trigger
         data-slot="accordion-trigger"
         className={cn(
-          "flex w-full flex-1 items-center justify-between gap-5 text-sm leading-[21px] tracking-[0.01em] text-white transition-all outline-none focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50 [&[data-state=open]>svg]:rotate-180",
+          "flex w-full flex-1 items-center justify-between gap-5 text-sm leading-[21px] tracking-[0.01em] transition-all outline-none focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50 [&[data-state=open]>svg]:rotate-180",
           className
         )}
         {...props}
       >
         {children}
-        <ChevronDownIcon className="pointer-events-none h-4 w-4 shrink-0 text-white transition-transform duration-200" />
+        <ChevronDownIcon className="pointer-events-none h-4 w-4 shrink-0 transition-transform duration-200" />
       </AccordionPrimitive.Trigger>
     </AccordionPrimitive.Header>
   )

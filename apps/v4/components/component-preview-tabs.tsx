@@ -36,8 +36,14 @@ export function ComponentPreviewTabs({
       <div data-slot="preview">
         <div
           data-align={align}
+          style={{
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
           className={cn(
-            "preview bg-muted/30 flex w-full items-center justify-center data-[align=center]:items-center data-[align=end]:items-end data-[align=start]:items-start",
+            "preview flex w-full items-center justify-center data-[align=center]:items-center data-[align=end]:items-end data-[align=start]:items-start",
+            "bg-[url('/background-light.avif')] dark:bg-[url('/background-dark.avif')]",
             chromeLessOnMobile ? "sm:p-10" : "h-[600px] min-h-[600px] p-10"
           )}
         >

@@ -541,8 +541,8 @@
     background: transparent;
     overflow: hidden;
     box-shadow:
-      0 2px 6px rgba(0, 0, 0, 0.2),
-      0 0 6px rgba(0, 0, 0, 0.1);
+      0 1px 3px rgba(0, 0, 0, 0.12),
+      0 0 3px rgba(0, 0, 0, 0.06);
     isolation: isolate;
     --glass-overlay-shadow-color: 255, 255, 255;
     --glass-overlay-shadow-opacity: 0.45;
@@ -596,9 +596,9 @@
     --glass-overlay-shadow-opacity: 1 !important;
     background-color: rgba(255, 255, 255, 0.1) !important;
     box-shadow:
-      0 2px 6px rgba(0, 0, 0, 0.2),
-      0 0 6px rgba(0, 0, 0, 0.1),
-      0px 0px 0px 4px rgba(65, 100, 241, 0.25) !important;
+      0 1px 3px rgba(0, 0, 0, 0.12),
+      0 0 3px rgba(0, 0, 0, 0.06),
+      0px 0px 0px 4px rgba(65, 100, 241, 0.2) !important;
   }
 
   /* Glass error state - when input inside has aria-invalid */
@@ -608,9 +608,9 @@
     --glass-overlay-shadow-color: 239, 68, 68 !important;
     --glass-overlay-shadow-opacity: 0.6 !important;
     box-shadow:
-      0 2px 6px rgba(0, 0, 0, 0.2),
-      0 0 6px rgba(0, 0, 0, 0.1),
-      0px 0px 0px 3px rgba(239, 68, 68, 0.15) !important;
+      0 1px 3px rgba(0, 0, 0, 0.12),
+      0 0 3px rgba(0, 0, 0, 0.06),
+      0px 0px 0px 3px rgba(239, 68, 68, 0.12) !important;
   }
 
   /* Glass effect for active tab trigger */
@@ -619,8 +619,8 @@
     background-color: rgba(255, 255, 255, 0.25) !important;
     overflow: hidden;
     box-shadow:
-      0 2px 6px rgba(0, 0, 0, 0.2),
-      0 0 6px rgba(0, 0, 0, 0.1);
+      0 1px 3px rgba(0, 0, 0, 0.12),
+      0 0 3px rgba(0, 0, 0, 0.06);
     isolation: isolate;
     --glass-overlay-shadow-color: 255, 255, 255;
     --glass-overlay-shadow-opacity: 0.45;
@@ -661,11 +661,6 @@
   [data-slot="tabs-trigger"][data-state="active"] > * {
     position: relative;
     z-index: 2;
-  }
-
-  /* Accordion item with glass effect - ensure background is applied */
-  [data-slot="accordion-item"].glass {
-    background-color: rgba(255, 255, 255, 0.1) !important;
   }
 
   /* Accordion item hover state */

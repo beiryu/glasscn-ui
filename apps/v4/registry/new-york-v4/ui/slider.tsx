@@ -39,7 +39,7 @@ function Slider({
       <SliderPrimitive.Track
         data-slot="slider-track"
         className={cn(
-          "border-border bg-muted relative grow overflow-hidden rounded-full border data-[orientation=horizontal]:h-1.5 data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-2 dark:border-white/10 dark:bg-white/10"
+          "border-border relative grow overflow-hidden rounded-full border bg-black/5 backdrop-blur-xs data-[orientation=horizontal]:h-1.5 data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-2 dark:border-white/10 dark:bg-white/10"
         )}
       >
         <SliderPrimitive.Range

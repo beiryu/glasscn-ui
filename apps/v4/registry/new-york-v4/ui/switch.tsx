@@ -13,11 +13,11 @@ function Switch({
     <SwitchPrimitive.Root
       data-slot="switch"
       className={cn(
-        "peer inline-flex h-4.5 w-10.25 shrink-0 items-center overflow-hidden rounded-full p-0.25 transition-all outline-none focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50",
+        "peer inline-flex h-4.5 w-10.25 shrink-0 items-center overflow-hidden rounded-full p-0.25 transition-all outline-none hover:shadow-[0px_0px_0px_2px_rgba(255,255,255,0.25)] focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50",
         // Unchecked state:
         "",
         // Unchecked hover:
-        "data-[state=unchecked]:hover:shadow-[0px_0px_0px_2px_rgba(255,255,255,0.25)]",
+        "",
         // Checked state:
         "",
         // Checked disabled:

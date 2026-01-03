@@ -5,7 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const badgeVariants = cva(
-  "inline-flex items-center rounded-full border-[1px] py-[3px] px-[8px] gap-[5px] min-h-[24px] text-xs font-semibold tracking-[0.02em] leading-4 whitespace-nowrap shrink-0 [&>svg]:size-[13px] [&>svg]:pointer-events-none transition-[color,box-shadow] overflow-hidden",
+  "backdrop-blur-xs inline-flex items-center rounded-full border-[1px] py-[3px] px-[8px] gap-[5px] min-h-[24px] text-xs font-semibold tracking-[0.02em] leading-4 whitespace-nowrap shrink-0 [&>svg]:size-[13px] [&>svg]:pointer-events-none transition-[color,box-shadow] overflow-hidden",
   {
     variants: {
       intent: {

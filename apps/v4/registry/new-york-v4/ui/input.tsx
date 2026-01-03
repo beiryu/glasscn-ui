@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils"
 
 function Input({ className, type, ...props }: React.ComponentProps<"input">) {
   return (
-    <div className="glass relative rounded-md has-[:focus-visible]:shadow-[0px_0px_0px_4px_rgba(65,100,241,0.25)]">
+    <div className="glass relative rounded-md backdrop-blur-sm has-[:focus-visible]:shadow-[0px_0px_0px_4px_rgba(65,100,241,0.25)]">
       <input
         type={type}
         data-slot="input"
