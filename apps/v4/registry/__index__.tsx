@@ -575,6 +575,25 @@ export const Index: Record<string, Record<string, any>> = {
       categories: undefined,
       meta: undefined,
     },
+    "multi-select": {
+      name: "multi-select",
+      title: "undefined",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: ["badge","button","command","popover"],
+      files: [{
+        path: "registry/new-york-v4/ui/multi-select.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/ui/multi-select.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: undefined,
+      meta: undefined,
+    },
     "navigation-menu": {
       name: "navigation-menu",
       title: "undefined",
@@ -7163,6 +7182,63 @@ export const Index: Record<string, Record<string, any>> = {
       }],
       component: React.lazy(async () => {
         const mod = await import("@/registry/new-york-v4/examples/select-scrollable.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: undefined,
+      meta: undefined,
+    },
+    "multi-select-demo": {
+      name: "multi-select-demo",
+      title: "undefined",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["multi-select"],
+      files: [{
+        path: "registry/new-york-v4/examples/multi-select-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/examples/multi-select-demo.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: undefined,
+      meta: undefined,
+    },
+    "multi-select-with-icons": {
+      name: "multi-select-with-icons",
+      title: "undefined",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["multi-select"],
+      files: [{
+        path: "registry/new-york-v4/examples/multi-select-with-icons.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/examples/multi-select-with-icons.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: undefined,
+      meta: undefined,
+    },
+    "multi-select-async": {
+      name: "multi-select-async",
+      title: "undefined",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["multi-select"],
+      files: [{
+        path: "registry/new-york-v4/examples/multi-select-async.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/examples/multi-select-async.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),

@@ -340,6 +340,17 @@ export const ui: Registry["items"] = [
     ],
   },
   {
+    name: "multi-select",
+    type: "registry:ui",
+    registryDependencies: ["badge", "button", "command", "popover"],
+    files: [
+      {
+        path: "ui/multi-select.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
     name: "navigation-menu",
     type: "registry:ui",
     dependencies: ["@radix-ui/react-navigation-menu"],

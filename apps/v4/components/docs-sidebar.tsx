@@ -120,7 +120,7 @@ export function DocsSidebar({
                         return null
                       }
 
-                      // Only show Accordion, Alert, Typography, Checkbox, Slider, Switch, Dialog, Breadcrumb, Badge, and Dropdown Menu
+                      // Only show specific components in sidebar
                       const allowedComponents = [
                         "accordion",
                         "alert",
@@ -137,6 +137,7 @@ export function DocsSidebar({
                         "input",
                         "tab",
                         "tooltip",
+                        "multi-select",
                       ]
                       const excludedComponents: string[] = [
                         "input-otp",

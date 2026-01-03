@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "multi-select-async",
+  "registryDependencies": [
+    "multi-select"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/multi-select-async.tsx",
+      "content": "import * as React from \"react\"\nimport { MultiSelect, type MultiSelectOption } from \"@/registry/new-york-v4/ui/multi-select\"\n\n// Simulate async data loading\nconst fetchOptions = async (): Promise<MultiSelectOption[]> => {\n  return new Promise((resolve) => {\n    setTimeout(() => {\n      resolve([\n        { value: \"javascript\", label: \"JavaScript\" },\n        { value: \"typescript\", label: \"TypeScript\" },\n        { value: \"python\", label: \"Python\" },\n        { value: \"java\", label: \"Java\" },\n        { value: \"csharp\", label: \"C#\" },\n        { value: \"go\", label: \"Go\" },\n        { value: \"rust\", label: \"Rust\" },\n        { value: \"php\", label: \"PHP\" },\n      ])\n    }, 1000)\n  })\n}\n\nexport default function MultiSelectAsync() {\n  const [selectedLanguages, setSelectedLanguages] = React.useState<string[]>([])\n  const [options, setOptions] = React.useState<MultiSelectOption[]>([])\n  const [loading, setLoading] = React.useState(true)\n\n  React.useEffect(() => {\n    fetchOptions().then((data) => {\n      setOptions(data)\n      setLoading(false)\n    })\n  }, [])\n\n  if (loading) {\n    return (\n      <div className=\"w-full max-w-md\">\n        <div className=\"flex h-10 w-full animate-pulse rounded-md bg-muted\" />\n      </div>\n    )\n  }\n\n  return (\n    <div className=\"w-full max-w-md\">\n      <MultiSelect\n        options={options}\n        onValueChange={setSelectedLanguages}\n        defaultValue={selectedLanguages}\n        placeholder=\"Select programming languages\"\n        animation={1}\n        maxCount={4}\n      />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

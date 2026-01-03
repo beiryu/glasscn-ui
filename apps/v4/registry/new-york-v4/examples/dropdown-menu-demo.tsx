@@ -1,3 +1,8 @@
+"use client"
+
+import * as React from "react"
+import { ChevronDown } from "lucide-react"
+
 import { Button } from "@/registry/new-york-v4/ui/button"
 import {
   DropdownMenu,
@@ -11,10 +16,17 @@ import {
 } from "@/registry/new-york-v4/ui/dropdown-menu"
 
 export default function DropdownMenuDemo() {
+  const [open, setOpen] = React.useState(false)
+
   return (
-    <DropdownMenu>
+    <DropdownMenu open={open} onOpenChange={setOpen}>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline">Open</Button>
+        <Button variant="outline">
+          Open
+          <ChevronDown
+            className={`ml-2 size-4 transition-transform duration-300 ${open ? "rotate-180" : ""}`}
+          />
+        </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56" align="start">
         <DropdownMenuLabel>My Account</DropdownMenuLabel>

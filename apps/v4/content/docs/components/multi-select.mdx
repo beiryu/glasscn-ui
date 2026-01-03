@@ -1,0 +1,91 @@
+---
+title: Multi Select
+description: A multi-select component that allows users to select multiple options from a dropdown list with search functionality.
+featured: true
+component: true
+---
+
+<ComponentPreview
+  name="multi-select-demo"
+  description="A multi-select component with basic functionality."
+/>
+
+## Installation
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="multi-select" title="components/ui/multi-select.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+## Usage
+
+```tsx showLineNumbers
+import { MultiSelect } from "@/components/ui/multi-select"
+```
+
+```tsx showLineNumbers
+const options = [
+  { value: "react", label: "React" },
+  { value: "vue", label: "Vue.js" },
+  { value: "angular", label: "Angular" },
+]
+
+function MyComponent() {
+  const [selectedValues, setSelectedValues] = useState<string[]>([])
+
+  return (
+    <MultiSelect
+      options={options}
+      onValueChange={setSelectedValues}
+      defaultValue={selectedValues}
+      placeholder="Select frameworks"
+      maxCount={3}
+    />
+  )
+}
+```
+
+## Examples
+
+### With Icons
+
+<ComponentPreview
+  name="multi-select-with-icons"
+  description="A multi-select component with icons for each option."
+/>
+
+### Async Loading
+
+<ComponentPreview
+  name="multi-select-async"
+  description="A multi-select component that loads options asynchronously."
+/>
+
+## API Reference
+
+### MultiSelect
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `options` | `MultiSelectOption[]` | - | Array of options to display |
+| `onValueChange` | `(value: string[]) => void` | - | Callback when selection changes |
+| `defaultValue` | `string[]` | `[]` | Default selected values |
+| `placeholder` | `string` | `"Select items"` | Placeholder text |
+| `animation` | `number` | `0` | Animation duration in seconds |
+| `maxCount` | `number` | `3` | Maximum number of badges to show |
+| `modalPopover` | `boolean` | `false` | Whether to use modal popover |
+| `asChild` | `boolean` | `false` | Render as child component |
+| `className` | `string` | - | Additional CSS classes |
+
+### MultiSelectOption
+
+| Prop | Type | Description |
+| --- | --- | --- |
+| `label` | `string` | Display text for the option |
+| `value` | `string` | Unique value for the option |
+| `icon` | `React.ComponentType<{ className?: string }>` | Optional icon component |

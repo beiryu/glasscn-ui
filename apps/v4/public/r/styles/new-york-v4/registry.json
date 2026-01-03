@@ -443,6 +443,22 @@
       "type": "registry:ui"
     },
     {
+      "name": "multi-select",
+      "registryDependencies": [
+        "badge",
+        "button",
+        "command",
+        "popover"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/ui/multi-select.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
       "name": "navigation-menu",
       "dependencies": [
         "@radix-ui/react-navigation-menu"
@@ -6754,6 +6770,45 @@
       "files": [
         {
           "path": "registry/new-york-v4/examples/select-scrollable.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "multi-select-demo",
+      "registryDependencies": [
+        "multi-select"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/multi-select-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "multi-select-with-icons",
+      "registryDependencies": [
+        "multi-select"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/multi-select-with-icons.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "multi-select-async",
+      "registryDependencies": [
+        "multi-select"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/multi-select-async.tsx",
           "type": "registry:example"
         }
       ],
