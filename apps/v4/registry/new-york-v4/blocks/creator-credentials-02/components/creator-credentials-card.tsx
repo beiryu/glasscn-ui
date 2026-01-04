@@ -49,22 +49,26 @@ export function CreatorCredentialsCard({
   return (
     <article
       className={cn(
-        "box-border flex w-full max-w-xs flex-col items-center gap-5 rounded-2xl border border-gray-200 bg-gradient-to-b from-[#13161b] to-[#141414] px-0 pt-0 pb-4 text-left text-[10.5px] text-white",
+        "box-border flex w-full max-w-xs flex-col items-center gap-5 rounded-2xl border border-gray-300 bg-white px-0 pt-0 pb-4 text-left text-[10.5px] text-gray-900 shadow-sm dark:border-gray-200 dark:bg-gradient-to-b dark:from-[#13161b] dark:to-[#141414] dark:text-white",
         className
       )}
       {...props}
     >
       {/* Header Section with Orangered Gradient */}
-      <header className="flex items-center justify-between gap-5 self-stretch rounded-t-2xl rounded-b-none bg-gradient-to-b from-[rgba(255,98,26,0.5)] to-[rgba(255,98,26,0)] p-4">
+      <header className="flex items-center justify-between gap-5 self-stretch rounded-t-2xl rounded-b-none bg-gradient-to-b from-green-50 to-transparent p-4 dark:bg-gradient-to-b dark:from-[rgba(255,98,26,0.5)] dark:to-[rgba(255,98,26,0)]">
         <div className="flex items-center gap-2.5">
           {/* Logo with Gradient */}
           <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-gray-200 bg-gradient-to-br from-[#8b63ff] via-[#f92ca8] to-[#f78b55]">
             <span className="text-lg font-bold">if</span>
           </div>
           <div className="flex flex-col items-start gap-0">
-            <p className="leading-4 opacity-50">Creator Login Credentials</p>
-            <h2 className="text-lg leading-5 font-semibold">{creatorName}</h2>
-            <p className="text-xs leading-4.5 font-medium opacity-75">
+            <p className="leading-4 text-gray-600 dark:text-white dark:opacity-50">
+              Creator Login Credentials
+            </p>
+            <h2 className="text-lg leading-5 font-semibold text-gray-900 dark:text-white">
+              {creatorName}
+            </h2>
+            <p className="text-xs leading-4.5 font-medium text-gray-600 dark:text-white dark:opacity-75">
               {creatorHandle}
             </p>
           </div>
@@ -75,12 +79,12 @@ export function CreatorCredentialsCard({
       </header>
 
       {/* Main Content Section */}
-      <main className="flex w-full flex-col items-start gap-4 px-4 text-xs text-white">
+      <main className="flex w-full flex-col items-start gap-4 px-4 text-xs text-gray-900 dark:text-white">
         {/* Creator Code Section */}
-        <section className="flex flex-col items-center self-stretch rounded-xl border border-[rgba(24,127,245,0.5)] bg-gradient-to-b from-[rgba(24,127,245,0.2)] via-[rgba(24,127,245,0.1)] to-[rgba(24,127,245,0)] p-3 text-[rgba(24,127,245,0.8)]">
+        <section className="flex flex-col items-center self-stretch rounded-xl border border-blue-200 bg-gradient-to-b from-blue-50 via-blue-50/50 to-transparent p-3 text-blue-700 dark:border-[rgba(24,127,245,0.5)] dark:bg-gradient-to-b dark:from-[rgba(24,127,245,0.2)] dark:via-[rgba(24,127,245,0.1)] dark:to-[rgba(24,127,245,0)] dark:text-[rgba(24,127,245,0.8)]">
           <div className="flex w-full items-center justify-between gap-5">
             <div className="flex items-center gap-1">
-              <User className="size-4" />
+              <User className="size-4 text-blue-700 dark:text-blue-400" />
               <span className="leading-4 font-medium tracking-[-0.01em]">
                 CREATOR CODE
               </span>
@@ -89,11 +93,14 @@ export function CreatorCredentialsCard({
               <b className="leading-6 tracking-[0.01em]">{creatorCode}</b>
               <button
                 onClick={() => copyToClipboard(creatorCode, "code")}
-                className="size-4 opacity-80 transition-opacity hover:opacity-100"
+                className="size-4 text-blue-600 opacity-80 transition-opacity hover:opacity-100 dark:text-blue-400"
                 aria-label="Copy creator code"
               >
                 <Copy
-                  className={cn("size-4", copiedCode && "text-orange-300")}
+                  className={cn(
+                    "size-4",
+                    copiedCode && "text-green-600 dark:text-orange-300"
+                  )}
                 />
               </button>
             </div>
@@ -102,21 +109,24 @@ export function CreatorCredentialsCard({
 
         {/* Login Reference Section */}
         <section className="flex flex-col items-start gap-1 self-stretch">
-          <label className="leading-4.5 font-medium tracking-[-0.01em] opacity-75">
+          <label className="leading-4.5 font-medium tracking-[-0.01em] text-gray-600 dark:text-white dark:opacity-75">
             LOGIN REFERENCE
           </label>
-          <div className="box-border flex items-center self-stretch overflow-hidden rounded-xl border border-white/20 bg-gradient-to-b from-[rgba(255,255,255,0.1)] via-[rgba(255,255,255,0.05)] to-[rgba(255,255,255,0)] px-3 py-2 text-xs">
+          <div className="box-border flex items-center self-stretch overflow-hidden rounded-xl border border-gray-200 bg-gray-50 px-3 py-2 text-xs text-gray-900 dark:border-white/20 dark:bg-transparent dark:bg-gradient-to-b dark:from-[rgba(255,255,255,0.1)] dark:via-[rgba(255,255,255,0.05)] dark:to-[rgba(255,255,255,0)] dark:text-white">
             <div className="flex flex-1 items-center justify-between gap-2">
-              <span className="leading-5 tracking-[-0.01em] opacity-75">
+              <span className="leading-5 tracking-[-0.01em] text-gray-700 dark:text-white dark:opacity-75">
                 {loginReference}
               </span>
               <button
                 onClick={() => copyToClipboard(loginReference, "reference")}
-                className="size-4 shrink-0 opacity-80 transition-opacity hover:opacity-100"
+                className="size-4 shrink-0 text-gray-600 opacity-80 transition-opacity hover:opacity-100 dark:text-gray-400"
                 aria-label="Copy login reference"
               >
                 <Copy
-                  className={cn("size-4", copiedReference && "text-orange-400")}
+                  className={cn(
+                    "size-4",
+                    copiedReference && "text-green-600 dark:text-orange-400"
+                  )}
                 />
               </button>
             </div>
@@ -125,26 +135,28 @@ export function CreatorCredentialsCard({
 
         {/* Steps Section */}
         <section className="flex flex-col items-start gap-1 self-stretch">
-          <label className="leading-4.5 font-medium tracking-[-0.01em] opacity-75">
+          <label className="leading-4.5 font-medium tracking-[-0.01em] text-gray-600 dark:text-white dark:opacity-75">
             STEPS TO GUIDE
           </label>
-          <div className="flex items-center self-stretch overflow-hidden rounded-xl border border-white/20 bg-gradient-to-b from-[rgba(255,255,255,0.1)] via-[rgba(255,255,255,0.05)] to-[rgba(255,255,255,0)] px-3 py-2 text-xs">
-            <ol className="m-0 list-decimal pl-4 text-[length:inherit] leading-5 tracking-[-0.01em] opacity-75">
+          <div className="flex items-center self-stretch overflow-hidden rounded-xl border border-gray-200 bg-gray-50 px-3 py-2 text-xs text-gray-900 dark:border-white/20 dark:bg-transparent dark:bg-gradient-to-b dark:from-[rgba(255,255,255,0.1)] dark:via-[rgba(255,255,255,0.05)] dark:to-[rgba(255,255,255,0)] dark:text-white">
+            <ol className="m-0 list-decimal pl-4 text-[length:inherit] leading-5 tracking-[-0.01em] text-gray-700 dark:text-white/75">
               {steps.map((step, index) => (
                 <li
                   key={index}
                   className={index < steps.length - 1 ? "mb-0" : ""}
                 >
-                  <span>
+                  <span className="text-gray-700 dark:text-white/75">
                     {step.includes(creatorCode) ? (
                       <>
                         Enter their 6 digit code :{" "}
-                        <b className="font-inter text-[#87ceeb]">
+                        <b className="font-inter text-blue-600 dark:text-[#87ceeb]">
                           {creatorCode}
                         </b>
                       </>
                     ) : (
-                      <span className="font-inter text-white">{step}</span>
+                      <span className="font-inter text-gray-900 dark:text-white/75">
+                        {step}
+                      </span>
                     )}
                   </span>
                 </li>

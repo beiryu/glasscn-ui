@@ -21,19 +21,30 @@ export function LoginForm({
   return (
     <article
       className={cn(
-        "relative flex h-full w-full flex-col items-start justify-center gap-[15px] overflow-hidden rounded-2xl border border-gray-200 bg-gradient-to-b from-[#13161b] to-[#141414] p-7 text-sm text-white",
+        "relative flex h-full w-full flex-col items-start justify-center gap-[15px] overflow-hidden rounded-2xl border border-gray-300 bg-white p-7 text-sm text-gray-900 shadow-sm dark:border-gray-200 dark:bg-gradient-to-b dark:from-[#13161b] dark:to-[#141414] dark:text-white",
         className
       )}
       {...props}
     >
       {/* Gradient Background Overlay */}
       <div
-        className="pointer-events-none absolute inset-0 opacity-20"
+        className="pointer-events-none absolute inset-0 hidden opacity-20 dark:block"
         style={{
           background: `
             radial-gradient(circle at 20% 30%, rgba(139, 99, 255, 0.4) 0%, transparent 50%),
             radial-gradient(circle at 80% 70%, rgba(249, 44, 168, 0.3) 0%, transparent 50%),
             radial-gradient(circle at 50% 50%, rgba(247, 139, 85, 0.2) 0%, transparent 60%)
+          `,
+        }}
+      />
+      {/* Light Mode Gradient Background Overlay */}
+      <div
+        className="pointer-events-none absolute inset-0 block opacity-10 dark:hidden"
+        style={{
+          background: `
+            radial-gradient(circle at 20% 30%, rgba(139, 99, 255, 0.15) 0%, transparent 50%),
+            radial-gradient(circle at 80% 70%, rgba(249, 44, 168, 0.12) 0%, transparent 50%),
+            radial-gradient(circle at 50% 50%, rgba(247, 139, 85, 0.1) 0%, transparent 60%)
           `,
         }}
       />
@@ -48,10 +59,10 @@ export function LoginForm({
 
         {/* Header */}
         <header className="flex w-full flex-col items-center justify-center gap-0 text-lg">
-          <h1 className="text-lg leading-6 font-semibold tracking-[-0.01em]">
+          <h1 className="text-lg leading-6 font-semibold tracking-[-0.01em] text-gray-900 dark:text-white">
             Login to your account
           </h1>
-          <p className="text-base leading-6 font-medium tracking-[-0.01em] opacity-50">
+          <p className="text-base leading-6 font-medium tracking-[-0.01em] text-gray-600 dark:text-white dark:opacity-50">
             Enter your details to login
           </p>
         </header>
@@ -61,7 +72,7 @@ export function LoginForm({
           <Button
             variant="secondary"
             type="button"
-            className="flex-1 rounded-lg border-[rgba(255,255,255,0.1)] bg-[rgba(255,255,255,0.05)] px-3 py-2.5 hover:bg-[rgba(255,255,255,0.1)]"
+            className="flex-1 rounded-lg border border-gray-200 bg-gray-50 px-3 py-2.5 hover:bg-gray-100 dark:border-[rgba(255,255,255,0.1)] dark:bg-[rgba(255,255,255,0.05)] dark:hover:bg-[rgba(255,255,255,0.1)]"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -77,7 +88,7 @@ export function LoginForm({
           <Button
             variant="secondary"
             type="button"
-            className="flex-1 rounded-lg border-[rgba(255,255,255,0.1)] bg-[rgba(255,255,255,0.05)] px-3 py-2.5 hover:bg-[rgba(255,255,255,0.1)]"
+            className="flex-1 rounded-lg border border-gray-200 bg-gray-50 px-3 py-2.5 hover:bg-gray-100 dark:border-[rgba(255,255,255,0.1)] dark:bg-[rgba(255,255,255,0.05)] dark:hover:bg-[rgba(255,255,255,0.1)]"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -95,7 +106,7 @@ export function LoginForm({
         {/* OR Divider */}
         <div className="flex w-full items-center justify-center gap-[15px] text-xs">
           <Separator className="flex-1" />
-          <span className="text-xs leading-6 font-medium tracking-[-0.01em] opacity-50">
+          <span className="text-xs leading-6 font-medium tracking-[-0.01em] text-gray-600 dark:text-white dark:opacity-50">
             OR
           </span>
           <Separator className="flex-1" />
@@ -103,18 +114,18 @@ export function LoginForm({
 
         {/* Email Field */}
         <div className="flex w-full flex-col items-start gap-[5px]">
-          <label className="text-sm leading-[21px] font-medium tracking-[0.01em]">
+          <label className="text-sm leading-[21px] font-medium tracking-[0.01em] text-gray-900 dark:text-white">
             Email address
           </label>
-          <InputGroup className="min-h-[36px] rounded-lg border-[rgba(255,255,255,0.1)] bg-[rgba(255,255,255,0.1)]">
+          <InputGroup className="min-h-[36px] rounded-lg border border-gray-200 bg-gray-50 dark:border-[rgba(255,255,255,0.1)] dark:bg-[rgba(255,255,255,0.1)]">
             <InputGroupAddon>
-              <Mail className="h-[18px] w-[18px] text-white opacity-50" />
+              <Mail className="h-[18px] w-[18px] text-gray-600 dark:text-white dark:opacity-50" />
             </InputGroupAddon>
             <InputGroupInput
               id="email"
               type="email"
               placeholder="username@example.com"
-              className="flex-1 bg-transparent text-sm leading-[21px] tracking-[-0.01em] text-white opacity-50 placeholder:text-white placeholder:opacity-50 focus:outline-none"
+              className="flex-1 bg-transparent text-sm leading-[21px] tracking-[-0.01em] text-gray-900 placeholder:text-gray-500 focus:outline-none dark:text-white dark:opacity-50 dark:placeholder:text-white dark:placeholder:opacity-50"
             />
           </InputGroup>
         </div>
@@ -122,31 +133,31 @@ export function LoginForm({
         {/* Password Field */}
         <div className="flex w-full flex-col items-start gap-[5px]">
           <div className="flex w-full items-start justify-between gap-5">
-            <label className="text-sm leading-[21px] font-medium tracking-[0.01em]">
+            <label className="text-sm leading-[21px] font-medium tracking-[0.01em] text-gray-900 dark:text-white">
               Password
             </label>
             <a
               href="#"
-              className="text-sm leading-[21px] font-medium tracking-[0.01em] opacity-50 hover:opacity-75"
+              className="text-sm leading-[21px] font-medium tracking-[0.01em] text-gray-600 hover:text-gray-900 dark:text-white dark:opacity-50 dark:hover:opacity-75"
             >
               Forgot password?
             </a>
           </div>
-          <InputGroup className="min-h-[36px] rounded-lg border-[rgba(255,255,255,0.1)] bg-[rgba(255,255,255,0.1)]">
+          <InputGroup className="min-h-[36px] rounded-lg border border-gray-200 bg-gray-50 dark:border-[rgba(255,255,255,0.1)] dark:bg-[rgba(255,255,255,0.1)]">
             <InputGroupAddon>
-              <Key className="h-[18px] w-[18px] text-white opacity-50" />
+              <Key className="h-[18px] w-[18px] text-gray-600 dark:text-white dark:opacity-50" />
             </InputGroupAddon>
             <InputGroupInput
               id="password"
               type={showPassword ? "text" : "password"}
               placeholder="••••••••••••••••••"
-              className="flex-1 bg-transparent text-sm leading-[21px] tracking-[-0.01em] text-white opacity-50 placeholder:text-white placeholder:opacity-50 focus:outline-none"
+              className="flex-1 bg-transparent text-sm leading-[21px] tracking-[-0.01em] text-gray-900 placeholder:text-gray-500 focus:outline-none dark:text-white dark:opacity-50 dark:placeholder:text-white dark:placeholder:opacity-50"
             />
             <InputGroupAddon align="inline-end">
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
-                className="text-white opacity-50 hover:opacity-75"
+                className="text-gray-600 hover:text-gray-900 dark:text-white dark:opacity-50 dark:hover:opacity-75"
               >
                 {showPassword ? (
                   <EyeOff className="h-[18px] w-[18px]" />
@@ -168,12 +179,12 @@ export function LoginForm({
 
         {/* Sign Up Link */}
         <footer className="flex w-full items-center justify-center gap-[5px] text-base">
-          <span className="text-base leading-6 font-medium tracking-[-0.01em] opacity-50">
+          <span className="text-base leading-6 font-medium tracking-[-0.01em] text-gray-600 dark:text-white dark:opacity-50">
             Don&apos;t have an account?
           </span>
           <a
             href="#"
-            className="text-base leading-6 font-semibold tracking-[-0.01em] hover:underline"
+            className="text-base leading-6 font-semibold tracking-[-0.01em] text-gray-900 hover:underline dark:text-white"
           >
             Sign up
           </a>

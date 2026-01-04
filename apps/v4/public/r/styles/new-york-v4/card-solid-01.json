@@ -8,13 +8,13 @@
   "files": [
     {
       "path": "registry/new-york-v4/blocks/card-solid-01/page.tsx",
-      "content": "import { CardSolidDemo } from \"./components/card-solid-demo\"\n\nexport default function Page() {\n  return (\n    <div className=\"flex min-h-screen w-full items-center justify-center p-6 md:p-10\">\n      <div className=\"w-full max-w-4xl\">\n        <CardSolidDemo />\n      </div>\n    </div>\n  )\n}\n\n",
+      "content": "import { CardSolidDemo } from \"./components/card-solid-demo\"\n\nexport default function Page() {\n  return (\n    <div className=\"flex min-h-screen w-full items-center justify-center p-6 md:p-10\">\n      <div className=\"w-full max-w-4xl\">\n        <CardSolidDemo />\n      </div>\n    </div>\n  )\n}\n",
       "type": "registry:page",
       "target": "app/card-solid/page.tsx"
     },
     {
       "path": "registry/new-york-v4/blocks/card-solid-01/components/card-solid-demo.tsx",
-      "content": "import * as React from \"react\"\n\nimport { CardSolid } from \"@/registry/new-york-v4/ui/card-solid\"\n\nexport function CardSolidDemo() {\n  return (\n    <div className=\"grid w-full grid-cols-1 gap-4 md:grid-cols-2\">\n      <CardSolid\n        title=\"Active Creators\"\n        value=\"07\"\n        icon=\"users\"\n        variant=\"success\"\n      />\n      <CardSolid\n        title=\"New Signups\"\n        value=\"03\"\n        icon=\"user-plus\"\n        variant=\"warning\"\n      />\n    </div>\n  )\n}\n\n",
+      "content": "import * as React from \"react\"\n\nimport { CardSolid } from \"@/registry/new-york-v4/ui/card-solid\"\n\nexport function CardSolidDemo() {\n  return (\n    <div className=\"grid w-full grid-cols-1 gap-4 md:grid-cols-2\">\n      <CardSolid\n        title=\"Active Creators\"\n        value=\"07\"\n        icon=\"users\"\n        variant=\"success\"\n      />\n      <CardSolid\n        title=\"New Signups\"\n        value=\"03\"\n        icon=\"user-plus\"\n        variant=\"warning\"\n      />\n    </div>\n  )\n}\n",
       "type": "registry:component"
     }
   ],

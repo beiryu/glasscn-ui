@@ -45,8 +45,8 @@ export function ChatAIInterface({
   return (
     <article
       className={cn(
-        "flex h-[750px] w-full flex-col items-end justify-between rounded-[15px] border border-gray-200 bg-gradient-to-b from-[#13161b] to-[#141414] p-[10px] text-left text-lg text-white",
-        "bg-[linear-gradient(180deg,rgba(249,44,168,0.05),rgba(249,44,168,0)),linear-gradient(180deg,#13161b,#141414)]",
+        "flex h-[750px] w-full flex-col items-end justify-between rounded-[15px] border border-gray-300 bg-white p-[10px] text-left text-lg text-gray-900 shadow-sm dark:border-gray-200 dark:bg-gradient-to-b dark:from-[#13161b] dark:to-[#141414] dark:text-white",
+        "dark:bg-[linear-gradient(180deg,rgba(249,44,168,0.05),rgba(249,44,168,0)),linear-gradient(180deg,#13161b,#141414)]",
         className
       )}
       {...props}
@@ -54,10 +54,10 @@ export function ChatAIInterface({
       {/* Header Section */}
       <header className="flex w-full flex-col items-start">
         <div className="flex w-[461px] flex-col items-start gap-0 p-[10px]">
-          <h1 className="w-full text-lg leading-6 font-semibold tracking-[-0.01em]">
+          <h1 className="w-full text-lg leading-6 font-semibold tracking-[-0.01em] text-gray-900 dark:text-white">
             Chat with Influere AI
           </h1>
-          <p className="w-full text-base leading-6 font-medium tracking-[-0.01em] opacity-50">
+          <p className="w-full text-base leading-6 font-medium tracking-[-0.01em] text-gray-600 dark:text-white dark:opacity-50">
             Know more about your creators
           </p>
         </div>
@@ -69,8 +69,8 @@ export function ChatAIInterface({
         <section className="flex w-full flex-col items-end gap-[30px]">
           {/* User Message */}
           <div className="flex flex-col items-start py-0 pr-[10px] pl-0">
-            <div className="rounded-[10px] border border-[rgba(226,232,240,0.1)] bg-[rgba(255,255,255,0.05)] px-3 py-[10px] shadow-[0px_1px_2px_rgba(0,0,0,0.05)]">
-              <p className="w-[324px] text-sm leading-5 font-medium tracking-[-0.01em] opacity-80">
+            <div className="rounded-[10px] border border-gray-200 bg-gray-50 px-3 py-[10px] shadow-[0px_1px_2px_rgba(0,0,0,0.05)] dark:border-[rgba(226,232,240,0.1)] dark:bg-[rgba(255,255,255,0.05)]">
+              <p className="w-[324px] text-sm leading-5 font-medium tracking-[-0.01em] text-gray-700 dark:text-white dark:opacity-80">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.
               </p>
@@ -88,15 +88,15 @@ export function ChatAIInterface({
             >
               Influere AI
             </span>
-            <p className="w-full text-sm leading-5 font-medium tracking-[-0.01em] opacity-80">
+            <p className="w-full text-sm leading-5 font-medium tracking-[-0.01em] text-gray-700 dark:text-white dark:opacity-80">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
-            <p className="w-full text-base leading-5 font-medium tracking-[-0.01em] opacity-75">
+            <p className="w-full text-base leading-5 font-medium tracking-[-0.01em] text-gray-700 dark:text-white dark:opacity-75">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
-            <div className="w-full text-sm leading-5 font-medium tracking-[-0.01em] opacity-80">
+            <div className="w-full text-sm leading-5 font-medium tracking-[-0.01em] text-gray-700 dark:text-white dark:opacity-80">
               <ul className="m-0 list-disc pl-[19px]">
                 <li className="mb-0">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
@@ -117,7 +117,7 @@ export function ChatAIInterface({
                 </li>
               </ul>
             </div>
-            <p className="w-full text-sm leading-5 font-medium tracking-[-0.01em] opacity-80">
+            <p className="w-full text-sm leading-5 font-medium tracking-[-0.01em] text-gray-700 dark:text-white dark:opacity-80">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>

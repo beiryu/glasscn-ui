@@ -73,16 +73,16 @@ export function AssignCreatorsCard({
   return (
     <article
       className={cn(
-        "flex h-[588px] w-full max-w-4xl flex-row gap-0 rounded-[15px] border bg-gradient-to-b from-[#13161b] to-[#141414] text-sm text-white",
+        "flex h-[588px] w-full max-w-4xl flex-row gap-0 rounded-[15px] border border-gray-300 bg-white text-sm text-gray-900 shadow-sm dark:border-gray-200 dark:bg-gradient-to-b dark:from-[#13161b] dark:to-[#141414] dark:text-white",
         className
       )}
       {...props}
     >
       {/* Left Side - Phone Image with Blur Effects */}
-      <aside className="grid w-1/2 shrink-0 grid-cols-1 grid-rows-1 items-center justify-center overflow-hidden rounded-tl-[15px] rounded-tr-none rounded-br-none rounded-bl-[15px]">
-        {/* Blur Effects Background Layers */}
+      <aside className="grid w-1/2 shrink-0 grid-cols-1 grid-rows-1 items-center justify-center overflow-hidden rounded-tl-[15px] rounded-tr-none rounded-br-none rounded-bl-[15px] bg-gray-50 dark:bg-transparent">
+        {/* Blur Effects Background Layers - Dark Mode Only */}
         <div
-          className="col-start-1 row-start-1 h-full w-full"
+          className="col-start-1 row-start-1 hidden h-full w-full dark:block"
           style={{
             backgroundImage: `
                 radial-gradient(circle 313px at -197.46px 392.97px, rgba(13, 186, 255, 0.31) 0%, transparent 70%),
@@ -96,7 +96,7 @@ export function AssignCreatorsCard({
         <div className="col-start-1 row-start-1 flex items-center justify-center">
           <div className="relative h-[447px] w-[363px]">
             {/* Placeholder for phone image - replace with actual image path */}
-            <div className="h-full w-full rounded-[20px] border-2 border-gray-600 bg-gray-800" />
+            <div className="h-full w-full rounded-[20px] border-2 border-gray-300 bg-gray-200 dark:border-gray-600 dark:bg-gray-800" />
           </div>
         </div>
       </aside>
@@ -106,10 +106,10 @@ export function AssignCreatorsCard({
         <div className="flex w-full flex-col items-start gap-[15px]">
           {/* Header */}
           <header className="flex w-full flex-col items-start gap-[5px]">
-            <h2 className="w-full text-lg leading-6 font-semibold tracking-[-0.01em]">
+            <h2 className="w-full text-lg leading-6 font-semibold tracking-[-0.01em] text-gray-900 dark:text-white">
               Assign to Creators
             </h2>
-            <p className="w-full text-base leading-6 font-medium tracking-[-0.01em] opacity-50">
+            <p className="w-full text-base leading-6 font-medium tracking-[-0.01em] text-gray-600 dark:text-white dark:opacity-50">
               {itemCount} Items selected
             </p>
           </header>
@@ -118,16 +118,16 @@ export function AssignCreatorsCard({
 
           {/* Search Bar */}
           <div className="w-full">
-            <InputGroup className="min-h-[36px] rounded-lg bg-[rgba(255,255,255,0.1)]">
+            <InputGroup className="min-h-[36px] rounded-lg border border-gray-200 bg-gray-50 dark:border-0 dark:bg-[rgba(255,255,255,0.1)]">
               <InputGroupAddon>
-                <Search className="h-[15px] w-[15px] text-white opacity-50" />
+                <Search className="h-[15px] w-[15px] text-gray-600 dark:text-white dark:opacity-50" />
               </InputGroupAddon>
               <InputGroupInput
                 type="text"
                 placeholder="Search creators..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="flex-1 bg-transparent text-sm leading-[21px] tracking-[-0.01em] text-white opacity-50 placeholder:text-white placeholder:opacity-50 focus:outline-none"
+                className="flex-1 bg-transparent text-sm leading-[21px] tracking-[-0.01em] text-gray-900 placeholder:text-gray-500 focus:outline-none dark:text-white dark:opacity-50 dark:placeholder:text-white dark:placeholder:opacity-50"
               />
             </InputGroup>
           </div>
@@ -142,7 +142,7 @@ export function AssignCreatorsCard({
                   className={cn(
                     "flex w-full items-center justify-between gap-5 rounded-[10px] p-[10px]",
                     isSelected
-                      ? "bg-[rgba(255,255,255,0.05)]"
+                      ? "border border-blue-200 bg-blue-50 dark:border-0 dark:bg-[rgba(255,255,255,0.05)]"
                       : "bg-transparent"
                   )}
                 >
@@ -153,10 +153,10 @@ export function AssignCreatorsCard({
                       </span>
                     </div>
                     <div className="flex flex-col items-start">
-                      <span className="text-sm leading-[21px] font-medium tracking-[0.01em]">
+                      <span className="text-sm leading-[21px] font-medium tracking-[0.01em] text-gray-900 dark:text-white">
                         {creator.name}
                       </span>
-                      <span className="text-[13px] leading-[18px] font-medium tracking-[0.01em] opacity-50">
+                      <span className="text-[13px] leading-[18px] font-medium tracking-[0.01em] text-gray-600 dark:text-white dark:opacity-50">
                         {creator.handle}
                       </span>
                     </div>
@@ -178,9 +178,9 @@ export function AssignCreatorsCard({
 
           {/* Note Field */}
           <div className="w-full">
-            <InputGroup className="min-h-[36px] rounded-lg bg-[rgba(255,255,255,0.1)]">
+            <InputGroup className="min-h-[36px] rounded-lg border border-gray-200 bg-gray-50 dark:border-0 dark:bg-[rgba(255,255,255,0.1)]">
               <InputGroupAddon>
-                <span className="text-sm leading-[21px] tracking-[-0.01em] opacity-50">
+                <span className="text-sm leading-[21px] tracking-[-0.01em] text-gray-600 dark:text-white dark:opacity-50">
                   Add a note...
                 </span>
               </InputGroupAddon>
@@ -189,10 +189,10 @@ export function AssignCreatorsCard({
                 placeholder=""
                 value={note}
                 onChange={(e) => setNote(e.target.value)}
-                className="flex-1 bg-transparent text-sm leading-[21px] tracking-[-0.01em] text-white opacity-50 focus:outline-none"
+                className="flex-1 bg-transparent text-sm leading-[21px] tracking-[-0.01em] text-gray-900 focus:outline-none dark:text-white dark:opacity-50"
               />
               <InputGroupAddon align="inline-end">
-                <span className="text-sm leading-[21px] tracking-[-0.01em] opacity-50">
+                <span className="text-sm leading-[21px] tracking-[-0.01em] text-gray-600 dark:text-white dark:opacity-50">
                   (optional)
                 </span>
               </InputGroupAddon>

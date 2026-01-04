@@ -80,7 +80,7 @@ export function AddCreatorForm({
   return (
     <article
       className={cn(
-        "flex w-full max-w-4xl items-stretch justify-center rounded-2xl border border-gray-200 bg-gradient-to-b from-[#13161b] to-[#141414] text-left text-lg text-white",
+        "flex w-full max-w-4xl items-stretch justify-center rounded-2xl border border-gray-300 bg-white text-left text-lg text-gray-900 shadow-sm dark:border-gray-200 dark:bg-gradient-to-b dark:from-[#13161b] dark:to-[#141414] dark:text-white",
         className
       )}
       {...props}
