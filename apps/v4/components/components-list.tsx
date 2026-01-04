@@ -30,6 +30,7 @@ export function ComponentsList() {
     "input-group",
     "tab",
     "tooltip",
+    "select",
   ]
   const excludedComponents = [
     "alert-dialog",

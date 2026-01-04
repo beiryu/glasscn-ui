@@ -26,7 +26,9 @@ function TabsList({
     <TabsPrimitive.List
       data-slot="tabs-list"
       className={cn(
-        "glass inline-flex w-full items-center justify-center rounded-[10px] bg-[rgba(255,255,255,0.1)] p-[3px] backdrop-blur-xs",
+        "glass inline-flex w-full items-center justify-center rounded-xl bg-[rgba(255,255,255,0.1)] p-1 backdrop-blur-xs",
+        // Ensure proper alignment when using grid
+        "[&.grid]:content-center [&.grid]:items-stretch",
         className
       )}
       {...props}

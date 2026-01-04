@@ -26,7 +26,9 @@ import {
 import {
   Select,
   SelectContent,
+  SelectGroup,
   SelectItem,
+  SelectLabel,
   SelectTrigger,
   SelectValue,
 } from "@/registry/new-york-v4/ui/select"
@@ -284,14 +286,19 @@ export function AddCreatorForm({
                 <FieldLabel>Timezone</FieldLabel>
                 <FieldContent className="w-full">
                   <Select defaultValue="UTC">
-                    <SelectTrigger className="min-h-[36px] w-full rounded-xl bg-gray-200 px-3 py-2">
-                      <SelectValue />
+                    <SelectTrigger className="w-full">
+                      <SelectValue placeholder="Select timezone" />
                     </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="UTC">UTC</SelectItem>
-                      <SelectItem value="EST">EST</SelectItem>
-                      <SelectItem value="PST">PST</SelectItem>
-                      <SelectItem value="GMT">GMT</SelectItem>
+                    <SelectContent className="">
+                      <SelectGroup>
+                        <SelectLabel className="text-white/70">
+                          Timezone
+                        </SelectLabel>
+                        <SelectItem value="UTC">UTC</SelectItem>
+                        <SelectItem value="EST">EST</SelectItem>
+                        <SelectItem value="PST">PST</SelectItem>
+                        <SelectItem value="GMT">GMT</SelectItem>
+                      </SelectGroup>
                     </SelectContent>
                   </Select>
                 </FieldContent>

@@ -140,6 +140,7 @@ export function DocsSidebar({
                         "multi-select",
                         "divider",
                         "spinner",
+                        "select",
                       ]
                       const excludedComponents: string[] = [
                         "input-otp",
