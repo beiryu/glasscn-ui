@@ -51,7 +51,7 @@ export default function BlocksLayout({
         <Announcement />
         <PageHeaderHeading>{title}</PageHeaderHeading>
         <PageHeaderDescription>{description}</PageHeaderDescription>
-        <PageActions>
+        <PageActions className="hidden">
           <Button asChild size="sm">
             <a href="#blocks">Browse Blocks</a>
           </Button>
@@ -66,7 +66,7 @@ export default function BlocksLayout({
           asChild
           variant="secondary"
           size="sm"
-          className="mr-7 hidden shadow-none lg:flex"
+          className="mr-7 hidden shadow-none lg:hidden"
         >
           <Link href="/blocks/sidebar">Browse all blocks</Link>
         </Button>

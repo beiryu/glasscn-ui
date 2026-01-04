@@ -7,7 +7,7 @@
   "files": [
     {
       "path": "registry/new-york-v4/examples/card-outline-demo.tsx",
-      "content": "import * as React from \"react\"\n\nimport { CardOutline } from \"@/registry/new-york-v4/ui/card-outline\"\n\nexport default function CardOutlineDemo() {\n  return (\n    <div className=\"grid grid-cols-1 gap-4 md:grid-cols-2\">\n      <CardOutline\n        title=\"Active Creators\"\n        value=\"07\"\n        icon=\"users\"\n        variant=\"success\"\n      />\n      <CardOutline\n        title=\"New Signups\"\n        value=\"03\"\n        icon=\"user-plus\"\n        variant=\"warning\"\n      />\n    </div>\n  )\n}\n\n\n",
+      "content": "import * as React from \"react\"\n\nimport { CardOutline } from \"@/registry/new-york-v4/ui/card-outline\"\n\nexport default function CardOutlineDemo() {\n  return (\n    <div className=\"grid grid-cols-1 gap-4 md:grid-cols-2\">\n      <CardOutline\n        title=\"Active Creators\"\n        value=\"07\"\n        icon=\"users\"\n        variant=\"success\"\n      />\n      <CardOutline\n        title=\"New Signups\"\n        value=\"03\"\n        icon=\"user-plus\"\n        variant=\"warning\"\n      />\n    </div>\n  )\n}\n",
       "type": "registry:example"
     }
   ],

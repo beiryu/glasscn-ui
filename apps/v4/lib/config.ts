@@ -13,6 +13,10 @@ export const siteConfig = {
       href: "/docs/components",
       label: "Components",
     },
+    {
+      href: "/blocks",
+      label: "Blocks",
+    },
   ],
 }
 

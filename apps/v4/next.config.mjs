@@ -27,6 +27,21 @@ const nextConfig = {
   },
   experimental: {
     turbopackFileSystemCacheForDev: true,
+    // Optimize for faster dev builds
+    optimizePackageImports: ["lucide-react", "@radix-ui/react-icons"],
+  },
+  // Optimize webpack for faster builds
+  webpack: (config, { dev, isServer }) => {
+    if (dev) {
+      // Faster rebuilds in dev
+      config.optimization = {
+        ...config.optimization,
+        removeAvailableModules: false,
+        removeEmptyChunks: false,
+        splitChunks: false,
+      }
+    }
+    return config
   },
   redirects() {
     return [

@@ -318,5 +318,50 @@
     "name": "otp-05",
     "description": "A simple OTP form with social providers.",
     "categories": ["authentication", "otp"]
+  },
+  {
+    "name": "creator-credentials-01",
+    "description": "A creator login credentials card with code, reference, and step-by-step guide.",
+    "categories": ["authentication", "dashboard"]
+  },
+  {
+    "name": "creator-credentials-02",
+    "description": "A creator login credentials card with orangered theme and pending status.",
+    "categories": ["authentication", "dashboard"]
+  },
+  {
+    "name": "delete-confirmation-01",
+    "description": "A delete confirmation dialog card with item preview and action buttons.",
+    "categories": ["dashboard"]
+  },
+  {
+    "name": "delete-confirmation-02",
+    "description": "A delete confirmation dialog card with forest green theme.",
+    "categories": ["dashboard"]
+  },
+  {
+    "name": "add-creator-01",
+    "description": "A step-by-step creator setup form with navigation sidebar and creator details form.",
+    "categories": ["dashboard"]
+  },
+  {
+    "name": "chat-ai-01",
+    "description": "A chat interface with Influere AI featuring message history and input field with purple-pink accent.",
+    "categories": ["dashboard"]
+  },
+  {
+    "name": "assign-creators-01",
+    "description": "A modal dialog for assigning items to creators with search, checkboxes, and optional note field.",
+    "categories": ["dashboard"]
+  },
+  {
+    "name": "card-solid-01",
+    "description": "Information cards with gradient backgrounds and different states.",
+    "categories": ["dashboard"]
+  },
+  {
+    "name": "card-outline-01",
+    "description": "Information cards with outline borders and different states.",
+    "categories": ["dashboard"]
   }
 ]

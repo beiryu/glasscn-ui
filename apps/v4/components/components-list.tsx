@@ -31,7 +31,13 @@ export function ComponentsList() {
     "tab",
     "tooltip",
   ]
-  const excludedComponents = ["alert-dialog"]
+  const excludedComponents = [
+    "alert-dialog",
+    "card-outline",
+    "card-solid",
+    "input-otp",
+    "table",
+  ]
 
   const list = components.children.filter((component) => {
     if (component.type !== "page") return false
@@ -39,11 +45,17 @@ export function ComponentsList() {
     const url = component.url?.toLowerCase() || ""
     const name = component.name?.toLowerCase() || ""
 
-    // Exclude alert-dialog explicitly
+    // Exclude components explicitly
     const isExcluded = excludedComponents.some((excluded) => {
       const urlMatch =
         url.includes(`/${excluded}`) || url.endsWith(`/${excluded}`)
-      const nameMatch = name === excluded || name === "alert dialog"
+      const nameMatch =
+        name === excluded ||
+        name === "alert dialog" ||
+        name === "card outline" ||
+        name === "card solid" ||
+        name === "input otp" ||
+        name === "table"
       return urlMatch || nameMatch
     })
 

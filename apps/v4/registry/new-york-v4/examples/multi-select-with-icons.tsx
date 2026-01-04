@@ -59,6 +59,3 @@ export default function MultiSelectWithIcons() {
     </div>
   )
 }
-
-
-

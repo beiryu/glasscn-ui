@@ -1496,4 +1496,180 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["authentication", "otp"],
   },
+  {
+    name: "creator-credentials-01",
+    description:
+      "A creator login credentials card with code, reference, and step-by-step guide.",
+    type: "registry:block",
+    registryDependencies: ["card", "button", "badge"],
+    files: [
+      {
+        path: "blocks/creator-credentials-01/page.tsx",
+        target: "app/creator-credentials/page.tsx",
+        type: "registry:page",
+      },
+      {
+        path: "blocks/creator-credentials-01/components/creator-credentials-card.tsx",
+        type: "registry:component",
+      },
+    ],
+    categories: ["authentication", "dashboard"],
+  },
+  {
+    name: "creator-credentials-02",
+    description:
+      "A creator login credentials card with orangered theme and pending status.",
+    type: "registry:block",
+    registryDependencies: ["card", "button", "badge"],
+    files: [
+      {
+        path: "blocks/creator-credentials-02/page.tsx",
+        target: "app/creator-credentials-02/page.tsx",
+        type: "registry:page",
+      },
+      {
+        path: "blocks/creator-credentials-02/components/creator-credentials-card.tsx",
+        type: "registry:component",
+      },
+    ],
+    categories: ["authentication", "dashboard"],
+  },
+  {
+    name: "delete-confirmation-01",
+    description:
+      "A delete confirmation dialog card with item preview and action buttons.",
+    type: "registry:block",
+    registryDependencies: ["button"],
+    files: [
+      {
+        path: "blocks/delete-confirmation-01/page.tsx",
+        target: "app/delete-confirmation/page.tsx",
+        type: "registry:page",
+      },
+      {
+        path: "blocks/delete-confirmation-01/components/delete-confirmation-card.tsx",
+        type: "registry:component",
+      },
+    ],
+    categories: ["dashboard"],
+  },
+  {
+    name: "delete-confirmation-02",
+    description: "A delete confirmation dialog card with forest green theme.",
+    type: "registry:block",
+    registryDependencies: ["button"],
+    files: [
+      {
+        path: "blocks/delete-confirmation-02/page.tsx",
+        target: "app/delete-confirmation-02/page.tsx",
+        type: "registry:page",
+      },
+      {
+        path: "blocks/delete-confirmation-02/components/delete-confirmation-card.tsx",
+        type: "registry:component",
+      },
+    ],
+    categories: ["dashboard"],
+  },
+  {
+    name: "add-creator-01",
+    description:
+      "A step-by-step creator setup form with navigation sidebar and creator details form.",
+    type: "registry:block",
+    registryDependencies: ["button", "input", "field", "select", "input-group"],
+    files: [
+      {
+        path: "blocks/add-creator-01/page.tsx",
+        target: "app/add-creator/page.tsx",
+        type: "registry:page",
+      },
+      {
+        path: "blocks/add-creator-01/components/add-creator-form.tsx",
+        type: "registry:component",
+      },
+    ],
+    categories: ["dashboard"],
+  },
+  {
+    name: "chat-ai-01",
+    description:
+      "A chat interface with Influere AI featuring message history and input field with purple-pink accent.",
+    type: "registry:block",
+    registryDependencies: ["button", "input-group"],
+    files: [
+      {
+        path: "blocks/chat-ai-01/page.tsx",
+        target: "app/chat-ai/page.tsx",
+        type: "registry:page",
+      },
+      {
+        path: "blocks/chat-ai-01/components/chat-ai-interface.tsx",
+        type: "registry:component",
+      },
+    ],
+    categories: ["dashboard"],
+  },
+  {
+    name: "assign-creators-01",
+    description:
+      "A modal dialog for assigning items to creators with search, checkboxes, and optional note field.",
+    type: "registry:block",
+    registryDependencies: [
+      "button",
+      "checkbox",
+      "dialog",
+      "input",
+      "input-group",
+      "textarea",
+    ],
+    files: [
+      {
+        path: "blocks/assign-creators-01/page.tsx",
+        target: "app/assign-creators/page.tsx",
+        type: "registry:page",
+      },
+      {
+        path: "blocks/assign-creators-01/components/assign-creators-dialog.tsx",
+        type: "registry:component",
+      },
+    ],
+    categories: ["dashboard"],
+  },
+  {
+    name: "card-solid-01",
+    description:
+      "Information cards with gradient backgrounds and different states.",
+    type: "registry:block",
+    registryDependencies: ["card-solid"],
+    files: [
+      {
+        path: "blocks/card-solid-01/page.tsx",
+        target: "app/card-solid/page.tsx",
+        type: "registry:page",
+      },
+      {
+        path: "blocks/card-solid-01/components/card-solid-demo.tsx",
+        type: "registry:component",
+      },
+    ],
+    categories: ["dashboard"],
+  },
+  {
+    name: "card-outline-01",
+    description: "Information cards with outline borders and different states.",
+    type: "registry:block",
+    registryDependencies: ["card-outline"],
+    files: [
+      {
+        path: "blocks/card-outline-01/page.tsx",
+        target: "app/card-outline/page.tsx",
+        type: "registry:page",
+      },
+      {
+        path: "blocks/card-outline-01/components/card-outline-demo.tsx",
+        type: "registry:component",
+      },
+    ],
+    categories: ["dashboard"],
+  },
 ]

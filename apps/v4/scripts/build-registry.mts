@@ -15,7 +15,25 @@ import { STYLES } from "@/registry/styles"
 // This is used by the v4 site.
 const WHITELISTED_STYLES = ["new-york-v4"]
 
+// Allow building only specific styles via environment variable for faster dev
+const DEV_STYLE = process.env.DEV_STYLE || process.env.NEXT_PUBLIC_DEV_STYLE
+const BUILD_ONLY_WHITELISTED =
+  process.env.BUILD_ONLY_WHITELISTED === "true" || !!DEV_STYLE
+
 function getStylesToBuild() {
+  // If DEV_STYLE is set, only build that style
+  if (DEV_STYLE) {
+    return [{ name: DEV_STYLE, title: DEV_STYLE }]
+  }
+
+  // If BUILD_ONLY_WHITELISTED is true, only build whitelisted styles
+  if (BUILD_ONLY_WHITELISTED) {
+    return legacyStyles.filter((style) =>
+      WHITELISTED_STYLES.includes(style.name)
+    )
+  }
+
+  // Otherwise, build all styles (original behavior)
   const stylesToBuild: { name: string; title: string }[] = [...legacyStyles]
 
   for (const base of BASES) {
@@ -31,11 +49,17 @@ function getStylesToBuild() {
 }
 
 try {
-  console.log("🏗️ Building bases...")
-  await buildBasesIndex(Array.from(BASES))
-  await buildBases(Array.from(BASES))
-
   const stylesToBuild = getStylesToBuild()
+
+  if (BUILD_ONLY_WHITELISTED || DEV_STYLE) {
+    console.log(
+      `⚡ Fast mode: Building only ${stylesToBuild.map((s) => s.name).join(", ")}`
+    )
+  } else {
+    console.log("🏗️ Building bases...")
+    await buildBasesIndex(Array.from(BASES))
+    await buildBases(Array.from(BASES))
+  }
 
   // We only need the legacy styles here for backward compatibility.
   console.log(`📦 Building registry/__index__.tsx...`)
@@ -153,6 +177,15 @@ export const Index: Record<string, Record<string, any>> = {`
 }
 
 async function buildBases(bases: Base[]) {
+  // Skip building bases if we're only building whitelisted styles
+  const skipBases =
+    process.env.BUILD_ONLY_WHITELISTED === "true" ||
+    !!process.env.DEV_STYLE ||
+    !!process.env.NEXT_PUBLIC_DEV_STYLE
+  if (skipBases) {
+    return
+  }
+
   for (const base of bases) {
     const { registry: baseRegistry } = await import(
       `../registry/bases/${base.name}/registry.ts`

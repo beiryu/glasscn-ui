@@ -4,7 +4,6 @@ import * as React from "react"
 import Image from "next/image"
 import Link from "next/link"
 import {
-  Check,
   ChevronRight,
   Clipboard,
   File,
@@ -14,7 +13,6 @@ import {
   RotateCw,
   Smartphone,
   Tablet,
-  Terminal,
 } from "lucide-react"
 import { type ImperativePanelHandle } from "react-resizable-panels"
 import {
@@ -31,7 +29,6 @@ import {
 import { cn } from "@/lib/utils"
 import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard"
 import { getIconForLanguageExtension } from "@/components/icons"
-import { OpenInV0Button } from "@/components/open-in-v0-button"
 import { type Style } from "@/registry/_legacy-styles"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import {
@@ -218,20 +215,6 @@ function BlockViewerToolbar({ styleName }: { styleName: Style["name"] }) {
             </Button>
           </ToggleGroup>
         </div>
-        <Separator orientation="vertical" className="mx-1 !h-4" />
-        <Button
-          variant="outline"
-          className="w-fit gap-1 px-2 shadow-none"
-          size="sm"
-          onClick={() => {
-            copyToClipboard(`npx shadcn@latest add ${item.name}`)
-          }}
-        >
-          {isCopied ? <Check /> : <Terminal />}
-          <span>npx shadcn add {item.name}</span>
-        </Button>
-        <Separator orientation="vertical" className="mx-1 !h-4" />
-        <OpenInV0Button name={item.name} />
       </div>
     </div>
   )

@@ -138,23 +138,30 @@ export function DocsSidebar({
                         "tab",
                         "tooltip",
                         "multi-select",
-                        "card-solid",
-                        "card-outline",
+                        "divider",
+                        "spinner",
                       ]
                       const excludedComponents: string[] = [
                         "input-otp",
                         "table",
+                        "card-outline",
+                        "card-solid",
                       ]
                       const url = item.url?.toLowerCase() || ""
                       const name = item.name?.toLowerCase() || ""
 
-                      // Exclude alert-dialog explicitly
+                      // Exclude components explicitly
                       const isExcluded = excludedComponents.some((excluded) => {
                         const urlMatch =
                           url.includes(`/${excluded}`) ||
                           url.endsWith(`/${excluded}`)
                         const nameMatch =
-                          name === excluded || name === "alert dialog"
+                          name === excluded ||
+                          name === "alert dialog" ||
+                          name === "input otp" ||
+                          name === "table" ||
+                          name === "card outline" ||
+                          name === "card solid"
                         return urlMatch || nameMatch
                       })
 
@@ -165,7 +172,17 @@ export function DocsSidebar({
                           const urlMatch =
                             url.includes(`/${allowed}`) ||
                             url.endsWith(`/${allowed}`)
-                          const nameMatch = name === allowed
+                          const nameMatch =
+                            name === allowed ||
+                            name === allowed.replace("-", " ") ||
+                            (allowed === "multi-select" &&
+                              name === "multi select") ||
+                            (allowed === "dropdown-menu" &&
+                              name === "dropdown menu") ||
+                            (allowed === "card-solid" &&
+                              name === "card solid") ||
+                            (allowed === "card-outline" &&
+                              name === "card outline")
                           return urlMatch || nameMatch
                         })
 

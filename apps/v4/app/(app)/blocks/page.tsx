@@ -8,11 +8,16 @@ export const dynamic = "force-static"
 export const revalidate = false
 
 const FEATURED_BLOCKS = [
-  "dashboard-01",
-  "sidebar-07",
-  "sidebar-03",
-  "login-03",
-  "login-04",
+  "creator-credentials-01",
+  "creator-credentials-02",
+  "delete-confirmation-01",
+  "delete-confirmation-02",
+  "add-creator-01",
+  "chat-ai-01",
+  "assign-creators-01",
+  "login-05",
+  "card-solid-01",
+  "card-outline-01",
 ]
 
 export default async function BlocksPage() {
