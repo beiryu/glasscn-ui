@@ -15,6 +15,7 @@ const FEATURED_BLOCKS = [
   "login-05",
   "card-solid-01",
   "card-outline-01",
+  "sidebar-07",
 ]
 
 export default async function BlocksPage() {

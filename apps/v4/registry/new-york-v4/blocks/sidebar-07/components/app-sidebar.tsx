@@ -2,171 +2,207 @@
 
 import * as React from "react"
 import {
-  AudioWaveform,
-  BookOpen,
-  Bot,
-  Command,
-  Frame,
-  GalleryVerticalEnd,
-  Map,
-  PieChart,
-  Settings2,
-  SquareTerminal,
+  BarChart3,
+  Bell,
+  ChevronRight,
+  ChevronsLeft,
+  ChevronsRight,
+  File,
+  FileText,
+  Folder,
+  FolderTree,
+  HelpCircle,
+  Home,
+  Menu,
+  Settings,
+  User,
 } from "lucide-react"
 
 import { NavMain } from "@/registry/new-york-v4/blocks/sidebar-07/components/nav-main"
-import { NavProjects } from "@/registry/new-york-v4/blocks/sidebar-07/components/nav-projects"
 import { NavUser } from "@/registry/new-york-v4/blocks/sidebar-07/components/nav-user"
-import { TeamSwitcher } from "@/registry/new-york-v4/blocks/sidebar-07/components/team-switcher"
+import { Button } from "@/registry/new-york-v4/ui/button"
 import {
   Sidebar,
   SidebarContent,
   SidebarFooter,
   SidebarHeader,
   SidebarRail,
+  useSidebar,
 } from "@/registry/new-york-v4/ui/sidebar"
 
-// This is sample data.
+// This is sample data matching the design
 const data = {
   user: {
-    name: "shadcn",
-    email: "m@example.com",
-    avatar: "/avatars/shadcn.jpg",
+    name: "Echo",
+    email: "Creator",
+    avatar: "",
   },
-  teams: [
-    {
-      name: "Acme Inc",
-      logo: GalleryVerticalEnd,
-      plan: "Enterprise",
-    },
-    {
-      name: "Acme Corp.",
-      logo: AudioWaveform,
-      plan: "Startup",
-    },
-    {
-      name: "Evil Corp.",
-      logo: Command,
-      plan: "Free",
-    },
-  ],
   navMain: [
     {
-      title: "Playground",
+      title: "Option 1",
       url: "#",
-      icon: SquareTerminal,
       isActive: true,
+      icon: Home,
+      items: [],
+    },
+    {
+      title: "Option 2",
+      url: "#",
+      isActive: false,
+      icon: FolderTree,
       items: [
         {
-          title: "History",
+          title: "Sub option 1",
           url: "#",
+          icon: File,
         },
         {
-          title: "Starred",
+          title: "Sub option 2",
           url: "#",
+          icon: Folder,
         },
         {
-          title: "Settings",
+          title: "Sub option 3",
           url: "#",
+          icon: File,
+        },
+        {
+          title: "Sub option 4",
+          url: "#",
+          icon: Folder,
         },
       ],
     },
     {
-      title: "Models",
+      title: "Option 3",
       url: "#",
-      icon: Bot,
-      items: [
-        {
-          title: "Genesis",
-          url: "#",
-        },
-        {
-          title: "Explorer",
-          url: "#",
-        },
-        {
-          title: "Quantum",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Documentation",
-      url: "#",
-      icon: BookOpen,
-      items: [
-        {
-          title: "Introduction",
-          url: "#",
-        },
-        {
-          title: "Get Started",
-          url: "#",
-        },
-        {
-          title: "Tutorials",
-          url: "#",
-        },
-        {
-          title: "Changelog",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Settings",
-      url: "#",
-      icon: Settings2,
-      items: [
-        {
-          title: "General",
-          url: "#",
-        },
-        {
-          title: "Team",
-          url: "#",
-        },
-        {
-          title: "Billing",
-          url: "#",
-        },
-        {
-          title: "Limits",
-          url: "#",
-        },
-      ],
+      isActive: false,
+      icon: FileText,
+      items: [],
     },
   ],
-  projects: [
+  navMenu2: [
     {
-      name: "Design Engineering",
+      title: "Option 4",
       url: "#",
-      icon: Frame,
+      isActive: false,
+      icon: Settings,
+      items: [],
     },
     {
-      name: "Sales & Marketing",
+      title: "Option 5",
       url: "#",
-      icon: PieChart,
+      isActive: false,
+      icon: User,
+      items: [],
+    },
+  ],
+  navMenu3: [
+    {
+      title: "Option 6",
+      url: "#",
+      isActive: false,
+      icon: BarChart3,
+      items: [],
     },
     {
-      name: "Travel",
+      title: "Option 7",
       url: "#",
-      icon: Map,
+      isActive: false,
+      icon: Bell,
+      items: [],
+    },
+  ],
+  navMenu4: [
+    {
+      title: "Option 8",
+      url: "#",
+      isActive: false,
+      icon: HelpCircle,
+      items: [],
     },
   ],
 }
 
-export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+function SidebarHeaderContent() {
+  const { toggleSidebar } = useSidebar()
+
   return (
-    <Sidebar collapsible="icon" {...props}>
-      <SidebarHeader>
-        <TeamSwitcher teams={data.teams} />
+    <>
+      <div className="flex items-center justify-between gap-5 group-data-[collapsible=icon]:w-full group-data-[collapsible=icon]:justify-center">
+        <div className="flex items-center gap-2.5 group-data-[collapsible=icon]:gap-0">
+          <div className="relative h-9 w-9 shrink-0">
+            <div className="absolute inset-0 rounded-[8.37px] border border-gray-300 [background:linear-gradient(36.29deg,_#8b63ff,_#f92ca8_50%,_#f78b55)]" />
+            <span className="absolute top-[calc(50%_-_13.09px)] left-[calc(50%_-_10.69px)] text-lg leading-none font-bold text-white">
+              if
+            </span>
+          </div>
+          <span className="text-[24px] leading-8 font-semibold tracking-[-0.02em] text-white group-data-[collapsible=icon]:hidden">
+            Influere
+          </span>
+        </div>
+        <Button
+          onClick={toggleSidebar}
+          variant="link"
+          size="icon"
+          className="mx-0 w-3 shrink-0 cursor-pointer bg-transparent p-0 text-white opacity-75 group-data-[collapsible=icon]:hidden hover:bg-transparent hover:opacity-100"
+          aria-label="Toggle Sidebar"
+        >
+          <ChevronsLeft />
+        </Button>
+      </div>
+    </>
+  )
+}
+
+export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+  const { toggleSidebar } = useSidebar()
+
+  return (
+    <Sidebar
+      collapsible="icon"
+      className="font-inter relative rounded-[15px] border border-[rgba(238,238,238,0.05)] bg-[#161618]"
+      {...props}
+    >
+      {/* Expand Button - Absolute positioned */}
+      <Button
+        onClick={toggleSidebar}
+        variant="outline"
+        size="icon"
+        className="absolute top-4 -right-4 z-10 hidden h-6 w-6 cursor-pointer group-data-[collapsible=icon]:flex"
+        aria-label="Expand Sidebar"
+      >
+        <ChevronsRight />
+      </Button>
+      <SidebarHeader className="border-b border-[rgba(238,238,238,0.1)] p-4 group-data-[collapsible=icon]:flex group-data-[collapsible=icon]:justify-center group-data-[collapsible=icon]:p-2">
+        <SidebarHeaderContent />
       </SidebarHeader>
-      <SidebarContent>
-        <NavMain items={data.navMain} />
-        <NavProjects projects={data.projects} />
+      <SidebarContent className="text-xs text-[rgba(255,255,255,0.6)]">
+        <NavMain
+          label="OPTION MENU 1"
+          items={data.navMain.slice(0, 1)}
+          className="border-b border-dashed border-[rgba(238,238,238,0.1)] group-data-[collapsible=icon]:border-0"
+        />
+        <NavMain
+          label="OPTION MENU 2"
+          items={data.navMain.slice(1)}
+          className="border-b border-dashed border-[rgba(238,238,238,0.1)] group-data-[collapsible=icon]:border-0"
+        />
+        <NavMain
+          label="OPTION MENU 3"
+          items={data.navMenu2}
+          className="border-b border-dashed border-[rgba(238,238,238,0.1)] group-data-[collapsible=icon]:border-0"
+        />
+        <NavMain
+          label="OPTION MENU 4"
+          items={data.navMenu3}
+          className="flex-1"
+        />
       </SidebarContent>
-      <SidebarFooter>
+      <SidebarFooter className="gap-0 border-t border-dashed border-[rgba(238,238,238,0.1)] p-0 group-data-[collapsible=icon]:border-0">
+        <div className="border-t border-dashed border-[rgba(238,238,238,0.1)] p-4 group-data-[collapsible=icon]:border-0 group-data-[collapsible=icon]:p-2">
+          <NavMain label="BOTTOM MENU" items={data.navMenu4} className="p-0" />
+        </div>
         <NavUser user={data.user} />
       </SidebarFooter>
       <SidebarRail />
