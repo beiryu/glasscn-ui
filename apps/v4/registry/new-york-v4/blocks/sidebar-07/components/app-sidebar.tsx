@@ -145,7 +145,7 @@ function SidebarHeaderContent() {
               if
             </span>
           </div>
-          <span className="text-[24px] leading-8 font-semibold tracking-[-0.02em] text-white group-data-[collapsible=icon]:hidden">
+          <span className="text-sidebar-foreground text-[24px] leading-8 font-semibold tracking-[-0.02em] group-data-[collapsible=icon]:hidden">
             Influere
           </span>
         </div>
@@ -153,7 +153,7 @@ function SidebarHeaderContent() {
           onClick={toggleSidebar}
           variant="link"
           size="icon"
-          className="mx-0 w-3 shrink-0 cursor-pointer bg-transparent p-0 text-white opacity-75 group-data-[collapsible=icon]:hidden hover:bg-transparent hover:opacity-100"
+          className="text-sidebar-foreground mx-0 w-3 shrink-0 cursor-pointer bg-transparent p-0 opacity-75 group-data-[collapsible=icon]:hidden hover:bg-transparent hover:opacity-100"
           aria-label="Toggle Sidebar"
         >
           <ChevronsLeft />
@@ -169,7 +169,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar
       collapsible="icon"
-      className="font-inter relative rounded-[15px] border border-[rgba(238,238,238,0.05)] bg-[#161618]"
+      className="font-inter bg-sidebar relative rounded-[15px] border"
       {...props}
     >
       {/* Expand Button - Absolute positioned */}
@@ -182,24 +182,24 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       >
         <ChevronsRight />
       </Button>
-      <SidebarHeader className="border-b border-[rgba(238,238,238,0.1)] p-4 group-data-[collapsible=icon]:flex group-data-[collapsible=icon]:justify-center group-data-[collapsible=icon]:p-2">
+      <SidebarHeader className="border-border border-b p-4 group-data-[collapsible=icon]:flex group-data-[collapsible=icon]:justify-center group-data-[collapsible=icon]:p-2">
         <SidebarHeaderContent />
       </SidebarHeader>
-      <SidebarContent className="text-xs text-[rgba(255,255,255,0.6)]">
+      <SidebarContent className="text-muted-foreground text-xs">
         <NavMain
           label="OPTION MENU 1"
           items={data.navMain.slice(0, 1)}
-          className="border-b border-dashed border-[rgba(238,238,238,0.1)] group-data-[collapsible=icon]:border-0"
+          className="border-border border-b border-dashed group-data-[collapsible=icon]:border-0"
         />
         <NavMain
           label="OPTION MENU 2"
           items={data.navMain.slice(1)}
-          className="border-b border-dashed border-[rgba(238,238,238,0.1)] group-data-[collapsible=icon]:border-0"
+          className="border-border border-b border-dashed group-data-[collapsible=icon]:border-0"
         />
         <NavMain
           label="OPTION MENU 3"
           items={data.navMenu2}
-          className="border-b border-dashed border-[rgba(238,238,238,0.1)] group-data-[collapsible=icon]:border-0"
+          className="border-border border-b border-dashed group-data-[collapsible=icon]:border-0"
         />
         <NavMain
           label="OPTION MENU 4"
@@ -207,8 +207,8 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           className="flex-1"
         />
       </SidebarContent>
-      <SidebarFooter className="gap-0 border-t border-dashed border-[rgba(238,238,238,0.1)] p-0 group-data-[collapsible=icon]:border-0">
-        <div className="border-t border-dashed border-[rgba(238,238,238,0.1)] p-4 group-data-[collapsible=icon]:border-0 group-data-[collapsible=icon]:p-2">
+      <SidebarFooter className="border-border gap-0 border-t border-dashed p-0 group-data-[collapsible=icon]:border-0">
+        <div className="border-border border-t border-dashed p-4 group-data-[collapsible=icon]:border-0 group-data-[collapsible=icon]:p-2">
           <NavMain label="BOTTOM MENU" items={data.navMenu4} className="p-0" />
         </div>
         <NavUser user={data.user} />

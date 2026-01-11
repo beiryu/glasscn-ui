@@ -132,13 +132,13 @@ function TaskCard({ task, columnId }: { task: Task; columnId: string }) {
   const getGradientColor = (columnId: string) => {
     switch (columnId) {
       case "todo":
-        return "linear-gradient(180deg, #ef4444, rgba(22, 22, 24, 0))" // Red
+        return "linear-gradient(180deg, #ef4444, transparent)" // Red
       case "in-progress":
-        return "linear-gradient(180deg, #eab308, rgba(22, 22, 24, 0))" // Yellow
+        return "linear-gradient(180deg, #eab308, transparent)" // Yellow
       case "done":
-        return "linear-gradient(180deg, #22c55e, rgba(22, 22, 24, 0))" // Green
+        return "linear-gradient(180deg, #22c55e, transparent)" // Green
       default:
-        return "linear-gradient(180deg, #ef4444, rgba(22, 22, 24, 0))" // Default to red
+        return "linear-gradient(180deg, #ef4444, transparent)" // Default to red
     }
   }
 
@@ -146,7 +146,7 @@ function TaskCard({ task, columnId }: { task: Task; columnId: string }) {
     <div
       ref={setNodeRef}
       style={style}
-      className="group relative box-border flex w-[294px] flex-col items-start rounded-[15px] border border-white/25 bg-[#161618]"
+      className="group bg-card relative box-border flex w-[294px] flex-col items-start rounded-[15px] border"
     >
       {/* Gradient Header */}
       <div
@@ -164,18 +164,18 @@ function TaskCard({ task, columnId }: { task: Task; columnId: string }) {
             <button
               {...attributes}
               {...listeners}
-              className="relative flex h-5 w-5 cursor-grab items-center justify-center text-white/60 transition-colors hover:text-white active:cursor-grabbing"
+              className="text-muted-foreground hover:text-foreground relative flex h-5 w-5 cursor-grab items-center justify-center transition-colors active:cursor-grabbing"
             >
               <GripVertical className="h-4 w-4" />
             </button>
-            <div className="relative text-base leading-[150%] font-medium tracking-[-0.02em] text-white">
+            <div className="text-foreground relative text-base leading-[150%] font-medium tracking-[-0.02em]">
               {task.title}
             </div>
           </div>
         </div>
 
         {/* Separator */}
-        <div className="relative h-px w-full max-w-full overflow-hidden bg-white/10" />
+        <div className="bg-border relative h-px w-full max-w-full overflow-hidden" />
 
         {/* Metadata Section */}
         <div className="flex w-full flex-col items-start gap-1.5 text-sm">
@@ -277,7 +277,7 @@ function KanbanColumn({ column }: { column: Column }) {
             <TaskCard key={task.id} task={task} columnId={column.id} />
           ))}
           {isAddingTask && (
-            <div className="relative box-border flex w-[294px] flex-col items-start rounded-[15px] border border-white/25 bg-[#161618] p-3">
+            <div className="bg-card relative box-border flex w-[294px] flex-col items-start rounded-[15px] border p-3">
               <Input
                 placeholder="Task title..."
                 value={newTaskTitle}
@@ -291,7 +291,7 @@ function KanbanColumn({ column }: { column: Column }) {
                   }
                 }}
                 autoFocus
-                className="mb-2 border-white/25 bg-transparent"
+                className="mb-2"
               />
               <div className="flex gap-2">
                 <Button size="sm" onClick={handleAddTask}>

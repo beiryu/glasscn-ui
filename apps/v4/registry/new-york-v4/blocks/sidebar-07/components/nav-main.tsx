@@ -43,7 +43,7 @@ export function NavMain({
       className={cn("p-4 group-data-[collapsible=icon]:p-2", className)}
     >
       {label && (
-        <SidebarGroupLabel className="mb-3 h-auto px-0 text-xs font-medium tracking-[-0.02em] text-white uppercase group-data-[collapsible=icon]:mb-0">
+        <SidebarGroupLabel className="text-sidebar-foreground mb-3 h-auto px-0 text-xs font-medium tracking-[-0.02em] uppercase group-data-[collapsible=icon]:mb-0">
           <span>{label}</span>
         </SidebarGroupLabel>
       )}
@@ -61,7 +61,7 @@ export function NavMain({
               >
                 <SidebarMenuItem className="group-data-[collapsible=icon]:flex group-data-[collapsible=icon]:w-full group-data-[collapsible=icon]:justify-center">
                   <CollapsibleTrigger asChild>
-                    <SidebarMenuButton className="h-auto rounded-[10px] px-3 py-2 text-base leading-[150%] font-medium tracking-[-0.02em] text-white opacity-80 transition-colors group-data-[collapsible=icon]:h-9 group-data-[collapsible=icon]:w-9 group-data-[collapsible=icon]:justify-center group-data-[collapsible=icon]:p-2 hover:bg-[rgba(255,255,255,0.05)]">
+                    <SidebarMenuButton className="text-sidebar-foreground hover:bg-sidebar-accent h-auto rounded-[10px] px-3 py-2 text-base leading-[150%] font-medium tracking-[-0.02em] opacity-80 transition-colors group-data-[collapsible=icon]:h-9 group-data-[collapsible=icon]:w-9 group-data-[collapsible=icon]:justify-center group-data-[collapsible=icon]:p-2">
                       {item.icon && <item.icon className="h-5 w-5 shrink-0" />}
                       <span className="group-data-[collapsible=icon]:hidden">
                         {item.title}
@@ -75,7 +75,7 @@ export function NavMain({
                         <SidebarMenuSubItem key={subItem.title}>
                           <SidebarMenuSubButton
                             asChild
-                            className="h-auto rounded-[10px] px-3 py-2 text-base leading-[150%] font-medium tracking-[-0.02em] text-white transition-colors hover:bg-[rgba(255,255,255,0.05)]"
+                            className="text-sidebar-foreground hover:bg-sidebar-accent h-auto rounded-[10px] px-3 py-2 text-base leading-[150%] font-medium tracking-[-0.02em] transition-colors"
                           >
                             <a href={subItem.url}>
                               {subItem.icon && (
@@ -103,10 +103,10 @@ export function NavMain({
               <SidebarMenuButton
                 asChild
                 className={cn(
-                  "h-auto rounded-[10px] px-3 py-2 text-base leading-[150%] font-medium tracking-[-0.02em] text-white transition-colors group-data-[collapsible=icon]:h-9 group-data-[collapsible=icon]:w-9 group-data-[collapsible=icon]:justify-center group-data-[collapsible=icon]:p-2",
+                  "text-sidebar-foreground h-auto rounded-[10px] px-3 py-2 text-base leading-[150%] font-medium tracking-[-0.02em] transition-colors group-data-[collapsible=icon]:h-9 group-data-[collapsible=icon]:w-9 group-data-[collapsible=icon]:justify-center group-data-[collapsible=icon]:p-2",
                   item.isActive
-                    ? "border border-[rgba(238,238,238,0.1)] [background:linear-gradient(180deg,_rgba(255,_255,_255,_0.1),_rgba(255,_255,_255,_0)),_linear-gradient(rgba(255,_255,_255,_0.05),_rgba(255,_255,_255,_0.05))]"
-                    : "opacity-80 hover:bg-[rgba(255,255,255,0.05)]"
+                    ? "bg-sidebar-accent text-sidebar-accent-foreground border"
+                    : "hover:bg-sidebar-accent opacity-80"
                 )}
               >
                 <a

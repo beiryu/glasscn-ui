@@ -1,8 +1,15 @@
 "use client"
 
 import * as React from "react"
+import { Play, Plus } from "lucide-react"
 
 import { cn } from "@/lib/utils"
+import {
+  InputGroup,
+  InputGroupAddon,
+  InputGroupButton,
+  InputGroupTextarea,
+} from "@/registry/new-york-v4/ui/input-group"
 import { Separator } from "@/registry/new-york-v4/ui/separator"
 
 interface ChatAIMessage {
@@ -125,15 +132,50 @@ export function ChatAIInterface({
         </section>
 
         {/* Input Field */}
-        <footer className="grid h-[103px] w-full grid-cols-1 grid-rows-1">
-          {/* Blur Effects Background Layer */}
+        <footer className="relative w-full">
+          {/* Gradient Border Background - Orange left, Pink top, Purple bottom/right */}
           <div
-            className="col-start-1 row-start-1 h-full w-full rounded-[15px] border-[2.3px] border-transparent blur-[10px]"
+            className="absolute inset-0 rounded-[15px] p-[2px]"
             style={{
               background:
-                "conic-gradient(from 180deg at 50% 50%, #8d99ff -88.2deg, #c686ff 28.8deg, #f5b9ea 57.6deg, #ffba71 104.4deg, #aa6eee 115.2deg, #ff6778 149.4deg, #bc82f3 205.2deg, #8d99ff 271.8deg, #c686ff 388.8deg)",
+                "conic-gradient(from 180deg at 50% 50%, #ffba71 0deg, #ff6778 90deg, #f5b9ea 180deg, #c686ff 270deg, #8d99ff 360deg)",
             }}
-          />
+          >
+            <div className="h-full w-full rounded-[13px] bg-white dark:bg-[#161618]" />
+          </div>
+
+          {/* Input Container */}
+          <div className="relative z-10 rounded-[13px] bg-white dark:bg-[#161618]">
+            <InputGroup className="border-0 bg-transparent shadow-none">
+              <InputGroupTextarea
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                placeholder="Awaiting your response"
+                className="min-h-0 text-sm leading-5 text-gray-900 placeholder:text-gray-500 dark:text-gray-400 dark:placeholder:text-gray-500"
+                rows={1}
+              />
+              <InputGroupAddon align="block-end" className="justify-between">
+                {/* Plus Button */}
+                <InputGroupButton
+                  variant="secondary"
+                  size="icon-sm"
+                  aria-label="Add attachment"
+                >
+                  <Plus className="h-4 w-4" />
+                </InputGroupButton>
+
+                {/* Send/Play Button */}
+                <InputGroupButton
+                  variant="secondary"
+                  size="icon-sm"
+                  aria-label="Send message"
+                  disabled={inputLength === 0}
+                >
+                  <Play className="h-4 w-4" />
+                </InputGroupButton>
+              </InputGroupAddon>
+            </InputGroup>
+          </div>
         </footer>
       </main>
     </article>
