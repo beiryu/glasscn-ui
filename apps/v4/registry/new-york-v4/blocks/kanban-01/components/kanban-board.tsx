@@ -3,12 +3,12 @@
 import * as React from "react"
 import {
   DndContext,
-  DragEndEvent,
-  DragOverEvent,
-  DragStartEvent,
   PointerSensor,
   useSensor,
   useSensors,
+  type DragEndEvent,
+  type DragOverEvent,
+  type DragStartEvent,
 } from "@dnd-kit/core"
 import {
   SortableContext,
@@ -17,12 +17,12 @@ import {
 } from "@dnd-kit/sortable"
 import { CSS } from "@dnd-kit/utilities"
 import {
+  Calendar,
   GripVertical,
+  Hash,
   MoreVertical,
   Plus,
   User,
-  Hash,
-  Calendar,
 } from "lucide-react"
 
 import { Button } from "@/registry/new-york-v4/ui/button"
@@ -146,60 +146,60 @@ function TaskCard({ task, columnId }: { task: Task; columnId: string }) {
     <div
       ref={setNodeRef}
       style={style}
-      className="group relative w-[294px] flex flex-col items-start rounded-[15px] bg-[#161618] border border-white/25 box-border"
+      className="group relative box-border flex w-[294px] flex-col items-start rounded-[15px] border border-white/25 bg-[#161618]"
     >
       {/* Gradient Header */}
       <div
-        className="w-full h-[18px] relative rounded-t-[15px] rounded-b-none"
+        className="relative h-[18px] w-full rounded-t-[15px] rounded-b-none"
         style={{
           background: getGradientColor(columnId),
         }}
       />
 
       {/* Content */}
-      <div className="w-full flex flex-col items-start px-4 pb-4 gap-3">
+      <div className="flex w-full flex-col items-start gap-3 px-4 pb-4">
         {/* Title Section */}
-        <div className="w-full flex flex-col items-start">
+        <div className="flex w-full flex-col items-start">
           <div className="flex items-center gap-2 opacity-80">
             <button
               {...attributes}
               {...listeners}
-              className="h-5 w-5 relative flex items-center justify-center cursor-grab active:cursor-grabbing text-white/60 hover:text-white transition-colors"
+              className="relative flex h-5 w-5 cursor-grab items-center justify-center text-white/60 transition-colors hover:text-white active:cursor-grabbing"
             >
               <GripVertical className="h-4 w-4" />
             </button>
-            <div className="relative text-base tracking-[-0.02em] leading-[150%] font-medium text-white">
+            <div className="relative text-base leading-[150%] font-medium tracking-[-0.02em] text-white">
               {task.title}
             </div>
           </div>
         </div>
 
         {/* Separator */}
-        <div className="w-full h-px relative max-w-full overflow-hidden bg-white/10" />
+        <div className="relative h-px w-full max-w-full overflow-hidden bg-white/10" />
 
         {/* Metadata Section */}
-        <div className="w-full flex flex-col items-start gap-1.5 text-sm">
+        <div className="flex w-full flex-col items-start gap-1.5 text-sm">
           {task.assigned && (
-            <div className="w-full h-6 flex items-center gap-2 text-[#1e90ff]">
+            <div className="flex h-6 w-full items-center gap-2 text-[#1e90ff]">
               <User className="h-3.5 w-3.5" />
-              <div className="relative tracking-[-0.02em] leading-[18px] font-medium">
+              <div className="relative leading-[18px] font-medium tracking-[-0.02em]">
                 {task.assigned}
               </div>
             </div>
           )}
           {task.platform && (
-            <div className="w-full h-6 flex items-center gap-2 text-[#ff1493]">
+            <div className="flex h-6 w-full items-center gap-2 text-[#ff1493]">
               <Hash className="h-3.5 w-3.5" />
-              <div className="relative tracking-[-0.02em] leading-[18px] font-medium">
+              <div className="relative leading-[18px] font-medium tracking-[-0.02em]">
                 {task.platform}
               </div>
             </div>
           )}
           {task.dueDate && (
-            <div className="w-full h-6 flex items-center justify-between gap-5 text-[#dc143c]">
+            <div className="flex h-6 w-full items-center justify-between gap-5 text-[#dc143c]">
               <div className="flex items-center gap-2">
                 <Calendar className="h-3.5 w-3.5" />
-                <div className="relative tracking-[-0.02em] leading-[18px] font-medium">
+                <div className="relative leading-[18px] font-medium tracking-[-0.02em]">
                   {task.dueDate}
                 </div>
               </div>
@@ -208,7 +208,7 @@ function TaskCard({ task, columnId }: { task: Task; columnId: string }) {
                 {[0, 1, 2, 3].map((index) => (
                   <div
                     key={index}
-                    className={`h-2 w-2 relative rounded-full ${
+                    className={`relative h-2 w-2 rounded-full ${
                       index < progress
                         ? "bg-[#ff7f50]"
                         : "bg-[#ff7f50] opacity-25"
@@ -277,7 +277,7 @@ function KanbanColumn({ column }: { column: Column }) {
             <TaskCard key={task.id} task={task} columnId={column.id} />
           ))}
           {isAddingTask && (
-            <div className="relative w-[294px] flex flex-col items-start rounded-[15px] bg-[#161618] border border-white/25 box-border p-3">
+            <div className="relative box-border flex w-[294px] flex-col items-start rounded-[15px] border border-white/25 bg-[#161618] p-3">
               <Input
                 placeholder="Task title..."
                 value={newTaskTitle}
@@ -291,7 +291,7 @@ function KanbanColumn({ column }: { column: Column }) {
                   }
                 }}
                 autoFocus
-                className="mb-2 bg-transparent border-white/25"
+                className="mb-2 border-white/25 bg-transparent"
               />
               <div className="flex gap-2">
                 <Button size="sm" onClick={handleAddTask}>

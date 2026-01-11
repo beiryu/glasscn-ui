@@ -31,13 +31,14 @@ export function ComponentsList() {
     "tab",
     "tooltip",
     "select",
+    "table",
   ]
   const excludedComponents = [
     "alert-dialog",
     "card-outline",
     "card-solid",
     "input-otp",
-    "table",
+    "data-table",
   ]
 
   const list = components.children.filter((component) => {
@@ -56,7 +57,7 @@ export function ComponentsList() {
         name === "card outline" ||
         name === "card solid" ||
         name === "input otp" ||
-        name === "table"
+        name === "data table"
       return urlMatch || nameMatch
     })
 

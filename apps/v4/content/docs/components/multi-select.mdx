@@ -70,25 +70,22 @@ function MyComponent() {
 
 ### MultiSelect
 
-| Prop | Type | Default | Description |
-| --- | --- | --- | --- |
-| `options` | `MultiSelectOption[]` | - | Array of options to display |
-| `onValueChange` | `(value: string[]) => void` | - | Callback when selection changes |
-| `defaultValue` | `string[]` | `[]` | Default selected values |
-| `placeholder` | `string` | `"Select items"` | Placeholder text |
-| `animation` | `number` | `0` | Animation duration in seconds |
-| `maxCount` | `number` | `3` | Maximum number of badges to show |
-| `modalPopover` | `boolean` | `false` | Whether to use modal popover |
-| `asChild` | `boolean` | `false` | Render as child component |
-| `className` | `string` | - | Additional CSS classes |
+| Prop            | Type                        | Default          | Description                      |
+| --------------- | --------------------------- | ---------------- | -------------------------------- |
+| `options`       | `MultiSelectOption[]`       | -                | Array of options to display      |
+| `onValueChange` | `(value: string[]) => void` | -                | Callback when selection changes  |
+| `defaultValue`  | `string[]`                  | `[]`             | Default selected values          |
+| `placeholder`   | `string`                    | `"Select items"` | Placeholder text                 |
+| `animation`     | `number`                    | `0`              | Animation duration in seconds    |
+| `maxCount`      | `number`                    | `3`              | Maximum number of badges to show |
+| `modalPopover`  | `boolean`                   | `false`          | Whether to use modal popover     |
+| `asChild`       | `boolean`                   | `false`          | Render as child component        |
+| `className`     | `string`                    | -                | Additional CSS classes           |
 
 ### MultiSelectOption
 
-| Prop | Type | Description |
-| --- | --- | --- |
-| `label` | `string` | Display text for the option |
-| `value` | `string` | Unique value for the option |
-| `icon` | `React.ComponentType<{ className?: string }>` | Optional icon component |
-
-
-
+| Prop    | Type                                          | Description                 |
+| ------- | --------------------------------------------- | --------------------------- |
+| `label` | `string`                                      | Display text for the option |
+| `value` | `string`                                      | Unique value for the option |
+| `icon`  | `React.ComponentType<{ className?: string }>` | Optional icon component     |

@@ -1,0 +1,37 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tasks-01",
+  "description": "A task and issue tracker built using Tanstack Table with filtering, sorting, and pagination.",
+  "dependencies": [
+    "@tanstack/react-table",
+    "zod"
+  ],
+  "registryDependencies": [
+    "table",
+    "button",
+    "dropdown-menu",
+    "input",
+    "badge",
+    "checkbox"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/tasks-01/page.tsx",
+      "content": "import { TasksDemo } from \"./components/tasks-demo\"\n\nexport default function Page() {\n  return (\n    <div className=\"flex min-h-screen w-full items-start justify-center p-6 md:p-10\">\n      <div className=\"w-full max-w-7xl\">\n        <TasksDemo />\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:page",
+      "target": "app/tasks/page.tsx"
+    },
+    {
+      "path": "registry/new-york-v4/blocks/tasks-01/components/tasks-demo.tsx",
+      "content": "\"use client\"\n\nimport { columns } from \"@/app/(app)/examples/tasks/components/columns\"\nimport { DataTable } from \"@/app/(app)/examples/tasks/components/data-table\"\nimport { UserNav } from \"@/app/(app)/examples/tasks/components/user-nav\"\nimport { type Task } from \"@/app/(app)/examples/tasks/data/schema\"\n\n// Sample tasks data\nconst sampleTasks: Task[] = [\n  {\n    id: \"TASK-8782\",\n    title:\n      \"You can't compress the program without quantifying the open-source SSD pixel!\",\n    status: \"in progress\",\n    label: \"documentation\",\n    priority: \"medium\",\n  },\n  {\n    id: \"TASK-7878\",\n    title:\n      \"Try to calculate the EXE feed, maybe it will index the multi-byte pixel!\",\n    status: \"backlog\",\n    label: \"documentation\",\n    priority: \"medium\",\n  },\n  {\n    id: \"TASK-7839\",\n    title: \"We need to bypass the neural TCP card!\",\n    status: \"todo\",\n    label: \"bug\",\n    priority: \"high\",\n  },\n  {\n    id: \"TASK-5562\",\n    title:\n      \"The SAS interface is down, bypass the open-source pixel so we can back up the PNG bandwidth!\",\n    status: \"backlog\",\n    label: \"feature\",\n    priority: \"medium\",\n  },\n  {\n    id: \"TASK-8686\",\n    title:\n      \"I'll parse the wireless SSL protocol, that should driver the API panel!\",\n    status: \"canceled\",\n    label: \"feature\",\n    priority: \"medium\",\n  },\n  {\n    id: \"TASK-1280\",\n    title:\n      \"Use the online FTP application, then you can calculate the bluetooth panel!\",\n    status: \"done\",\n    label: \"bug\",\n    priority: \"high\",\n  },\n  {\n    id: \"TASK-7262\",\n    title:\n      \"The TCP port is down, parse the optical bandwidth so we can input the HTTP panel!\",\n    status: \"todo\",\n    label: \"bug\",\n    priority: \"high\",\n  },\n  {\n    id: \"TASK-1138\",\n    title:\n      \"Generating the driver won't do anything, we need to quantify the 1080p SMTP bandwidth!\",\n    status: \"in progress\",\n    label: \"feature\",\n    priority: \"medium\",\n  },\n  {\n    id: \"TASK-7184\",\n    title: \"We need to program the back-end THX pixel!\",\n    status: \"todo\",\n    label: \"feature\",\n    priority: \"low\",\n  },\n  {\n    id: \"TASK-5160\",\n    title:\n      \"Calculating the bus won't do anything, we need to navigate the back-end JSON protocol!\",\n    status: \"in progress\",\n    label: \"documentation\",\n    priority: \"high\",\n  },\n]\n\nexport function TasksDemo() {\n  return (\n    <div className=\"flex h-full flex-1 flex-col gap-8\">\n      <div className=\"flex items-center justify-between gap-2\">\n        <div className=\"flex flex-col gap-1\">\n          <h2 className=\"text-2xl font-semibold tracking-tight\">\n            Welcome back!\n          </h2>\n          <p className=\"text-muted-foreground\">\n            Here&apos;s a list of your tasks for this month.\n          </p>\n        </div>\n        <div className=\"flex items-center gap-2\">\n          <UserNav />\n        </div>\n      </div>\n      <DataTable data={sampleTasks} columns={columns} />\n    </div>\n  )\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "iframeHeight": "800px"
+  },
+  "categories": [
+    "dashboard"
+  ],
+  "type": "registry:block"
+}

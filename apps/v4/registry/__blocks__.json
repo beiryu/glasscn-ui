@@ -368,5 +368,10 @@
     "name": "kanban-01",
     "description": "A Kanban board with drag and drop functionality for task management.",
     "categories": ["dashboard"]
+  },
+  {
+    "name": "tasks-01",
+    "description": "A task and issue tracker built using Tanstack Table with filtering, sorting, and pagination.",
+    "categories": ["dashboard"]
   }
 ]

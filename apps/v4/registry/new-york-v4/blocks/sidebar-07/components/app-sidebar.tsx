@@ -15,6 +15,7 @@ import {
   Home,
   Menu,
   Settings,
+  Table,
   User,
 } from "lucide-react"
 
@@ -110,6 +111,13 @@ const data = {
       url: "#",
       isActive: false,
       icon: Bell,
+      items: [],
+    },
+    {
+      title: "Data Table",
+      url: "#",
+      isActive: false,
+      icon: Table,
       items: [],
     },
   ],

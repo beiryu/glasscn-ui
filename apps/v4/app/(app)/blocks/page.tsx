@@ -17,6 +17,7 @@ const FEATURED_BLOCKS = [
   "card-outline-01",
   "sidebar-07",
   "kanban-01",
+  "tasks-01",
 ]
 
 export default async function BlocksPage() {

@@ -1,6 +1,7 @@
 "use client"
 
 import * as React from "react"
+import { ChevronDown } from "lucide-react"
 
 import {
   Avatar,
@@ -25,8 +26,6 @@ import {
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@/registry/new-york-v4/ui/dropdown-menu"
-import { ChevronDown } from "lucide-react"
-
 import { IconPlaceholder } from "@/app/(create)/components/icon-placeholder"
 
 export function DropdownMenuDemo() {

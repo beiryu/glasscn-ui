@@ -2976,6 +2976,40 @@
       "type": "registry:block"
     },
     {
+      "name": "tasks-01",
+      "description": "A task and issue tracker built using Tanstack Table with filtering, sorting, and pagination.",
+      "dependencies": [
+        "@tanstack/react-table",
+        "zod"
+      ],
+      "registryDependencies": [
+        "table",
+        "button",
+        "dropdown-menu",
+        "input",
+        "badge",
+        "checkbox"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/tasks-01/page.tsx",
+          "type": "registry:page",
+          "target": "app/tasks/page.tsx"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/tasks-01/components/tasks-demo.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "iframeHeight": "800px"
+      },
+      "categories": [
+        "dashboard"
+      ],
+      "type": "registry:block"
+    },
+    {
       "name": "chart-area-axes",
       "registryDependencies": [
         "card",

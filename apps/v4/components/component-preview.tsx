@@ -16,6 +16,7 @@ import { type Style } from "@/registry/_legacy-styles"
 function getComponentFromSource(
   name: string,
   styleName: Style["name"]
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
 ): React.LazyExoticComponent<React.ComponentType<any>> | null {
   if (process.env.NODE_ENV !== "development") {
     return null

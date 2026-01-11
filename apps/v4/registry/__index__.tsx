@@ -2877,6 +2877,29 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["dashboard"],
       meta: {"iframeHeight":"800px"},
     },
+    "tasks-01": {
+      name: "tasks-01",
+      title: "undefined",
+      description: "A task and issue tracker built using Tanstack Table with filtering, sorting, and pagination.",
+      type: "registry:block",
+      registryDependencies: ["table","button","dropdown-menu","input","badge","checkbox"],
+      files: [{
+        path: "registry/new-york-v4/blocks/tasks-01/page.tsx",
+        type: "registry:page",
+        target: "app/tasks/page.tsx"
+      },{
+        path: "registry/new-york-v4/blocks/tasks-01/components/tasks-demo.tsx",
+        type: "registry:component",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/tasks-01/page.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["dashboard"],
+      meta: {"iframeHeight":"800px"},
+    },
     "chart-area-axes": {
       name: "chart-area-axes",
       title: "undefined",

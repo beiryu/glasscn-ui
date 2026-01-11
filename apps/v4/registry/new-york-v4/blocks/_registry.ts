@@ -1695,4 +1695,34 @@ export const blocks: Registry["items"] = [
       iframeHeight: "800px",
     },
   },
+  {
+    name: "tasks-01",
+    description:
+      "A task and issue tracker built using Tanstack Table with filtering, sorting, and pagination.",
+    type: "registry:block",
+    dependencies: ["@tanstack/react-table", "zod"],
+    registryDependencies: [
+      "table",
+      "button",
+      "dropdown-menu",
+      "input",
+      "badge",
+      "checkbox",
+    ],
+    files: [
+      {
+        path: "blocks/tasks-01/page.tsx",
+        target: "app/tasks/page.tsx",
+        type: "registry:page",
+      },
+      {
+        path: "blocks/tasks-01/components/tasks-demo.tsx",
+        type: "registry:component",
+      },
+    ],
+    categories: ["dashboard"],
+    meta: {
+      iframeHeight: "800px",
+    },
+  },
 ]

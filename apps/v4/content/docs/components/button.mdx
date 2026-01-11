@@ -5,11 +5,17 @@ featured: true
 component: true
 ---
 
-<ComponentPreview name="button-demo" description="Button variants" className="mb-4" />
+<ComponentPreview
+  name="button-demo"
+  description="Button variants"
+  className="mb-4"
+/>
 
 ```tsx showLineNumbers
-{/* Top Row - Action Buttons */}
-<div className="flex flex-wrap items-center gap-2">
+{
+  /* Top Row - Action Buttons */
+}
+;<div className="flex flex-wrap items-center gap-2">
   <Button variant="success">
     <CheckIcon />
     Approve
@@ -32,8 +38,10 @@ component: true
   </Button>
 </div>
 
-{/* Middle Row - Navigation Buttons */}
-<div className="flex flex-wrap items-center gap-2">
+{
+  /* Middle Row - Navigation Buttons */
+}
+;<div className="flex flex-wrap items-center gap-2">
   <Button variant="secondary">
     <ArrowLeftIcon />
     Previous
@@ -44,8 +52,10 @@ component: true
   </Button>
 </div>
 
-{/* Bottom Row - Control Buttons */}
-<div className="flex flex-wrap items-center gap-2">
+{
+  /* Bottom Row - Control Buttons */
+}
+;<div className="flex flex-wrap items-center gap-2">
   <Button variant="outline">
     Dropdown
     <ChevronDownIcon />
@@ -267,8 +277,8 @@ To create a button group, use the `ButtonGroup` component. See the [Button Group
 
 The `Button` component is a wrapper around the `button` element that adds a variety of styles and functionality.
 
-| Prop      | Type                                                                    | Default     |
-| --------- | ----------------------------------------------------------------------- | ----------- |
+| Prop      | Type                                                                  | Default     |
+| --------- | --------------------------------------------------------------------- | ----------- |
 | `variant` | `"default" \| "outline" \| "destructive" \| "secondary" \| "success"` | `"default"` |
-| `size`    | `"default" \| "sm" \| "lg" \| "icon" \| "icon-sm" \| "icon-lg"`               | `"default"` |
-| `asChild` | `boolean`                                                                     | `false`     |
+| `size`    | `"default" \| "sm" \| "lg" \| "icon" \| "icon-sm" \| "icon-lg"`       | `"default"` |
+| `asChild` | `boolean`                                                             | `false`     |

@@ -141,12 +141,13 @@ export function DocsSidebar({
                         "divider",
                         "spinner",
                         "select",
+                        "table",
                       ]
                       const excludedComponents: string[] = [
                         "input-otp",
-                        "table",
                         "card-outline",
                         "card-solid",
+                        "data-table",
                       ]
                       const url = item.url?.toLowerCase() || ""
                       const name = item.name?.toLowerCase() || ""
@@ -160,9 +161,9 @@ export function DocsSidebar({
                           name === excluded ||
                           name === "alert dialog" ||
                           name === "input otp" ||
-                          name === "table" ||
                           name === "card outline" ||
-                          name === "card solid"
+                          name === "card solid" ||
+                          name === "data table"
                         return urlMatch || nameMatch
                       })
 
