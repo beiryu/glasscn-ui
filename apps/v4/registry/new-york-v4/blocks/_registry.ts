@@ -1672,4 +1672,27 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["dashboard"],
   },
+  {
+    name: "kanban-01",
+    description:
+      "A Kanban board with drag and drop functionality for task management.",
+    type: "registry:block",
+    dependencies: ["@dnd-kit/core", "@dnd-kit/sortable", "@dnd-kit/utilities"],
+    registryDependencies: ["card", "button", "dropdown-menu", "input"],
+    files: [
+      {
+        path: "blocks/kanban-01/page.tsx",
+        target: "app/kanban/page.tsx",
+        type: "registry:page",
+      },
+      {
+        path: "blocks/kanban-01/components/kanban-board.tsx",
+        type: "registry:component",
+      },
+    ],
+    categories: ["dashboard"],
+    meta: {
+      iframeHeight: "800px",
+    },
+  },
 ]

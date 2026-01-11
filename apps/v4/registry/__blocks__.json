@@ -363,5 +363,10 @@
     "name": "card-outline-01",
     "description": "Information cards with outline borders and different states.",
     "categories": ["dashboard"]
+  },
+  {
+    "name": "kanban-01",
+    "description": "A Kanban board with drag and drop functionality for task management.",
+    "categories": ["dashboard"]
   }
 ]

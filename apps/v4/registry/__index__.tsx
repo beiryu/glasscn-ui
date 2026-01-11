@@ -2854,6 +2854,29 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["dashboard"],
       meta: undefined,
     },
+    "kanban-01": {
+      name: "kanban-01",
+      title: "undefined",
+      description: "A Kanban board with drag and drop functionality for task management.",
+      type: "registry:block",
+      registryDependencies: ["card","button","dropdown-menu","input"],
+      files: [{
+        path: "registry/new-york-v4/blocks/kanban-01/page.tsx",
+        type: "registry:page",
+        target: "app/kanban/page.tsx"
+      },{
+        path: "registry/new-york-v4/blocks/kanban-01/components/kanban-board.tsx",
+        type: "registry:component",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/kanban-01/page.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["dashboard"],
+      meta: {"iframeHeight":"800px"},
+    },
     "chart-area-axes": {
       name: "chart-area-axes",
       title: "undefined",

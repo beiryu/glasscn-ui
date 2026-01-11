@@ -2943,6 +2943,39 @@
       "type": "registry:block"
     },
     {
+      "name": "kanban-01",
+      "description": "A Kanban board with drag and drop functionality for task management.",
+      "dependencies": [
+        "@dnd-kit/core",
+        "@dnd-kit/sortable",
+        "@dnd-kit/utilities"
+      ],
+      "registryDependencies": [
+        "card",
+        "button",
+        "dropdown-menu",
+        "input"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/kanban-01/page.tsx",
+          "type": "registry:page",
+          "target": "app/kanban/page.tsx"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/kanban-01/components/kanban-board.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "iframeHeight": "800px"
+      },
+      "categories": [
+        "dashboard"
+      ],
+      "type": "registry:block"
+    },
+    {
       "name": "chart-area-axes",
       "registryDependencies": [
         "card",

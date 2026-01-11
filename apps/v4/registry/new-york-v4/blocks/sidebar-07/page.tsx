@@ -7,7 +7,7 @@ import {
 export default function Page() {
   return (
     <SidebarProvider>
-      <div className="flex items-center justify-center min-h-screen p-6 bg-background">
+      <div className="bg-background flex min-h-screen items-center justify-center p-6">
         <div className="w-full max-w-[280px]">
           <AppSidebar />
         </div>
