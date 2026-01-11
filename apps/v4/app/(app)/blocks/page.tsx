@@ -18,6 +18,7 @@ const FEATURED_BLOCKS = [
   "sidebar-07",
   "kanban-01",
   "tasks-01",
+  "calendar-18",
 ]
 
 export default async function BlocksPage() {
